@@ -1,79 +1,144 @@
 import React from 'react'
+import {join} from 'path'
 import {withRouter} from 'next/router'
-import NextLink from 'next/link'
-import {BorderBox, Box, Link, Flex, Relative} from '@primer/components'
-import root from './nav'
+import {Box, BorderBox, Flex, Relative} from '@primer/components'
+import NodeLink from './NodeLink'
+import {rootPage} from './utils'
 
-export default withRouter(({router, ...rest}) => {
-  const sections = getSectionsForPath(router.pathname, node => node.meta.nav === 'side')
+export default function SideNav(props) {
   return (
-    <Relative {...rest}>
-      <BorderBox
-        id="sidenav"
-        width={['100%', '100%', 256, 256]}
-        height="100%"
-        bg="gray.0"
-        borderLeft={0}
-        borderBottom={0}
-        borderRight={1}
-        borderTop={[1, 1, 0, 0]}
-        borderColor="gray.2"
-        borderRadius={0}
-      >
-        {sections.map(node => (
-          <Section key={node.path} node={node} />
-        ))}
-      </BorderBox>
+    <Relative is="nav">
+      <Box id="sidenav" {...props}>
+        <Flex flexDirection="column" alignItems="start">
+          <Router>
+            <RouteMatch path="/css">
+              <Section path="components" />
+            </RouteMatch>
+          </Router>
+        </Flex>
+      </Box>
     </Relative>
+  )
+}
+
+/**
+ * A <Section> gets a `path` and optional children. If it has children it will
+ * render those and prepend each child's `href` prop with the provided `path`.
+ * This means that you can do:
+ *
+ * ```jsx
+ * <Section path="/section">
+ *   <Link href="foo">Links to /section/foo</Link>
+ * </Section>
+ * ```
+ *
+ * If no children are provided, it renders a <NavList> with the provided
+ * `path`.
+ */
+const Section = ({path, children}) => (
+  <BorderBox p={5} border={0} borderBottom={1} borderRadius={0} width="100%">
+    {children && path ? React.Children.map(children, child => addPath(child, path)) : <NavList path={path} />}
+  </BorderBox>
+)
+
+/**
+ * A <NavList> renders a <SectionLink> for the given `path` and looks up the
+ * path in the page tree. If a node is found, it renders a <NavLink> for each
+ * of the node's children.
+ */
+function NavList({path}) {
+  const node = rootPage.first(node => node.path === path)
+  const children = node ? node.children.sort(nodeSort) : []
+  return (
+    <>
+      <SectionLink href={path} mb={3} />
+      {children.map(child => (
+        <NavLink href={child.path} key={child.path} />
+      ))}
+    </>
+  )
+}
+
+/**
+ * A <SectionLink> is really just a <NodeLink> that's bold when its `href`
+ * matches the current path, wrapped in a <Box> for whitespace.
+ */
+const SectionLink = withRouter(({href, router, ...rest}) => (
+  <Box {...rest}>
+    <NodeLink href={href} color="gray.9" fontSize={2} fontWeight={router.pathname.startsWith(href) ? 'bold' : null} />
+  </Box>
+))
+
+/**
+ * A <NavLink> is a <NodeLink> that turns black when its `href` matches the
+ * current path, wrapped in a <Box> for whitespace.
+ */
+const NavLink = withRouter(({href, router, ...rest}) => {
+  return (
+    <Box mt={2}>
+      <NodeLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
+    </Box>
   )
 })
 
-function getSectionsForPath(path, check) {
-  const node = root.first(node => node.path === path)
-  if (check(node)) {
-    return node.parent.children.filter(check)
-  }
-  // find the first ancestor (going "up" from this node) with *children* that
-  // pass the check()
-  const parent = node
-    .getPath()
-    .reverse()
-    .find(ancestor => ancestor.children.some(check))
-  return parent ? parent.children.filter(check) : []
+/**
+ * This inspired React Router's <Router> component, in that it looks for
+ * children with the `path` prop and only renders the _first_ one that matches
+ * the beginning of the current path. Children without a `path` prop are always
+ * rendered.
+ */
+const Router = withRouter(({router, children}) => {
+  let matched = false
+  return React.Children.toArray(children).map(child => {
+    if (child.props.path) {
+      if (!matched && router.pathname.indexOf(child.props.path) === 0) {
+        return (matched = child)
+      }
+    } else {
+      return child
+    }
+  })
+})
+
+/**
+ * <RouteMatch> is just a way to conditionally render content without a wrapper
+ * element when contained directly in a <Router>:
+ *
+ * ```jsx
+ * <Router>
+ *   <RouteMatch path="/some/dir">
+ *     this will only show up on pages whose path begins with "/some/dir"
+ *   </RouteMatch>
+ * </Router>
+ * ```
+ */
+function RouteMatch({path, children}) {
+  return path ? React.Children.map(children, child => addPath(child, path)) : children
 }
 
-function Section({node, ...rest}) {
-  if (node.meta.hidden === true) {
-    return null
-  }
-  const {path = '', name} = node
-  const links = node.children.filter(child => !child.meta.hidden).map(child => (
-    <PageLink key={child.path} href={child.path}>
-      {child.name}
-    </PageLink>
-  ))
-  return (
-    <BorderBox px={5} py={3} border={0} borderBottom={1} borderColor="gray.2" borderRadius={0} bg={null} {...rest}>
-      <Flex flexDirection="column" alignItems="start">
-        <SectionLink href={path}>{name}</SectionLink>
-        {links}
-      </Flex>
-    </BorderBox>
-  )
+function sortCompare(a, b, get) {
+  const aa = get(a)
+  const bb = get(b)
+  return typeof aa === 'string' && typeof bb === 'string' ? aa.localeCompare(bb) : undefined
 }
 
-const SectionLink = withRouter(({href, router, ...rest}) => (
-  <Box my={3}>
-    <NextLink href={href}>
-      <Link href={href} color="gray.9" fontWeight={router.pathname.startsWith(href) ? 'bold' : null} {...rest} />
-    </NextLink>
-  </Box>
-))
+function nodeSort(a, b) {
+  return sortCompare(a, b, node => node.meta.sort_title || node.meta.title)
+}
 
-const PageLink = withRouter(({href, router, ...rest}) => (
-  <Box mb={3}>
-    <NextLink href={href}>
-      <Link href={href} color={router.pathname === href ? 'gray.9' : 'blue.5'} fontSize={1} {...rest} />
-    </NextLink>
-  </Box>
-))
+function addPath(el, path) {
+  // if there's no path, just return the element
+  if (!path) return el
+
+  // if this is a link it'll have an "href"; otherwise, add "path"
+  const prop = el.props.href ? 'href' : 'path'
+  const value = el.props[prop]
+  const props = {}
+  // if there's a value and it's not absolute, prefix it with the path
+  if (value && !value.match(/^(\/|https?:)/)) {
+    props[prop] = join(path, value)
+  } else {
+    props[prop] = path
+  }
+  return React.cloneElement(el, props)
+}

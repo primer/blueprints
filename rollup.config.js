@@ -14,13 +14,4 @@ export default [
       name: 'primer'
     }))
   },
-  {
-    input: 'src/css.js',
-    plugins,
-    output: {
-      file: 'dist/css.js',
-      format: 'umd',
-      name: 'primerCSS'
-    }
-  }
 ]
