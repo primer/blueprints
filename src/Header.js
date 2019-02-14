@@ -18,9 +18,7 @@ const Header = ({title, root, children}) => (
           </Flex>
         </Link>
         <Box display={['none', 'none', 'block']}>
-          <HeaderText>
-            {children}
-          </HeaderText>
+          <HeaderText>{children}</HeaderText>
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
@@ -47,8 +45,8 @@ Header.defaultProps = {
   root: ''
 }
 Header.propTypes = {
-  title: PropTypes.string.isRequired,
-  root: PropTypes.string.isRequired
+  root: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 }
 
 export default Header

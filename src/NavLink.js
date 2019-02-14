@@ -1,3 +1,4 @@
+import React from 'react'
 import {withRouter} from 'next/router'
 import NodeLink from './NodeLink'
 

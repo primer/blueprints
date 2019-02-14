@@ -9,7 +9,7 @@ import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
-const {Header, SideNav, NavLink, Link, CodeExample, Outline} = docsComponents
+const {Header, SideNav, NavLink, Link, Outline} = docsComponents
 
 function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
