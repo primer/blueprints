@@ -82,7 +82,7 @@ const NavLink = withRouter(({href, router, ...rest}) => {
 })
 
 /**
- * This inspired React Router's <Router> component, in that it looks for
+ * This is inspired by React Router's <Router> component, in that it looks for
  * children with the `path` prop and only renders the _first_ one that matches
  * the beginning of the current path. Children without a `path` prop are always
  * rendered.
