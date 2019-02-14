@@ -1,30 +1,25 @@
 import React from 'react'
-import {withRouter} from 'next/router'
+import PropTypes from 'prop-types'
 import Octicon, {MarkGithub} from '@githubprimer/octicons-react'
 import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
 import BoxShadow from './BoxShadow'
 import Link from './Link'
-import NodeLink from './NodeLink'
-
-const NavLink = withRouter(({is: Tag = NodeLink, href, router, ...rest}) => (
-  <Tag href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
-))
 
 const HeaderText = props => <Text fontSize={2} {...props} />
 
-const Header = props => (
+const Header = ({title, children}) => (
   <Sticky zIndex={100}>
-    <BoxShadow py={3} bg="gray.9" color="white" {...props}>
+    <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Link href="/css" color="white" ml={3}>
           <Flex alignItems="center" justifyContent="center">
             <Octicon icon={MarkGithub} size="medium" />
-            <HeaderText ml={3}>Primer CSS</HeaderText>
+            <HeaderText ml={3}>{title}</HeaderText>
           </Flex>
         </Link>
         <Box display={['none', 'none', 'block']}>
           <HeaderText>
-            <NavLink href="/css">Docs</NavLink>
+            {children}
           </HeaderText>
         </Box>
         <Box display={['block', 'block', 'none']}>
@@ -48,5 +43,9 @@ const Header = props => (
     </BoxShadow>
   </Sticky>
 )
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired
+}
 
 export default Header
