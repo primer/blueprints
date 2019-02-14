@@ -1,2 +1,2 @@
 import redirect from '../src/redirect'
-export default redirect('/css')
+export default redirect('/docs-components')

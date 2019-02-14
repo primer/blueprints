@@ -11,7 +11,7 @@ const Header = ({title, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
-        <Link href="/css" color="white" ml={3}>
+        <Link href="/docs-components" color="white" ml={3}>
           <Flex alignItems="center" justifyContent="center">
             <Octicon icon={MarkGithub} size="medium" />
             <HeaderText ml={3}>{title}</HeaderText>

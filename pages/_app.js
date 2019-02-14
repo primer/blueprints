@@ -56,10 +56,10 @@ export default class MyApp extends App {
       <BaseStyles fontSize={2} style={{fontFamily: theme.fonts.normal}}>
         <Container>
           <Head>
-            <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
+            <title>Primer Docs Components{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header>
-            <NavLink href="/css">Docs</NavLink>
+            <NavLink href="/docs-components">Docs</NavLink>
           </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}

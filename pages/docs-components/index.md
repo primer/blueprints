@@ -13,7 +13,7 @@ export const Hero = () => (
     <Box maxWidth={CONTENT_MAX_WIDTH} p={6} mx="auto" mb={3}>
       <Box mt={4} mb={4}>
         <Heading color="blue.4" fontSize={7} pb={3} m={0}>
-          Primer CSS
+          Primer Docs Components
         </Heading>
         <Box is={HeaderImage} mb={6} />
       </Box>
@@ -23,4 +23,4 @@ export const Hero = () => (
 
 # Introduction
 
-Our goal is to create a system that enables us to build consistent user experiences with ease, yet with enough flexibility to support the broad spectrum of GitHub websites. This goal is embedded in our design and code decisions. Our approach to CSS is influenced by Object Oriented CSS principles, functional CSS, and BEM architecture.
+These components are to be used to build documentation sites across our different Primer projects.

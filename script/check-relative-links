@@ -19,7 +19,7 @@ const checks = {
   'trailing slash': ({href}) => stripFragment(href).endsWith('/')
 }
 
-const dir = join(__dirname, '../pages/css')
+const dir = join(__dirname, '../pages/docs-components')
 globby(join(dir, '**/*.md'))
   .then(docs => Promise.all(docs.map(getLinks)))
   .then(docs => {
