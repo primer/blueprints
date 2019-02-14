@@ -3,7 +3,7 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
-import {Header, PackageHeader, SideNav} from '../src/components'
+import {Header, SideNav, NavLink} from '../src/components'
 import getComponents from '../src/markdown'
 import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
@@ -36,7 +36,9 @@ export default class MyApp extends App {
           <Head>
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header />
+          <Header>
+            <NavLink href="/css">Docs</NavLink>
+          </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
             alignContent="stretch"
@@ -47,7 +49,6 @@ export default class MyApp extends App {
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
                   {!meta.hero && meta.title ? <h1>{meta.title}</h1> : null}
-                  <PackageHeader {...meta} />
                   <MDXProvider components={components}>
                     <Component {...page} />
                   </MDXProvider>
