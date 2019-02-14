@@ -1,12 +1,35 @@
 import React from 'react'
 import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
+import {withMDXLive} from 'mdx-live'
 import Head from 'next/head'
-import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
-import {Header, SideNav, NavLink} from '../src/components'
-import getComponents from '../src/markdown'
+import {BaseStyles, BorderBox, Box, Flex, theme, Heading} from '@primer/components'
+import * as docsComponents from '../src/components'
 import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
+
+export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
+const {Header, SideNav, NavLink, Link, CodeExample, Outline} = docsComponents
+
+function getComponents(page = {}) {
+  const {outline: getOutline = () => []} = page
+
+  return {
+    h1: H1,
+    a: Link,
+    code: withMDXLive('pre'),
+    p: ({children, ...rest}) => {
+      if (children === '{:toc}') {
+        return <Outline outline={getOutline()} {...rest} />
+      } else {
+        return <p {...rest}>{children}</p>
+      }
+    },
+    // "unwrap" <pre> elements around <code> blocks
+    pre: props => props.children,
+    ...docsComponents
+  }
+}
 
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
@@ -26,7 +49,6 @@ export default class MyApp extends App {
 
     const node = rootPage.first(node => node.path === pathname) || {}
     const {file, meta = {}} = node || {}
-    const components = getComponents(node)
 
     const Hero = file ? requirePage(file).Hero : null
 
@@ -49,7 +71,7 @@ export default class MyApp extends App {
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
                   {!meta.hero && meta.title ? <h1>{meta.title}</h1> : null}
-                  <MDXProvider components={components}>
+                  <MDXProvider components={getComponents(node)}>
                     <Component {...page} />
                   </MDXProvider>
                   {config.production ? null : (
