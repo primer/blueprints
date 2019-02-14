@@ -7,11 +7,11 @@ import Link from './Link'
 
 const HeaderText = props => <Text fontSize={2} {...props} />
 
-const Header = ({title, children}) => (
+const Header = ({title, root, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
-        <Link href="/docs-components" color="white" ml={3}>
+        <Link href={`/${root}`} color="white" ml={3}>
           <Flex alignItems="center" justifyContent="center">
             <Octicon icon={MarkGithub} size="medium" />
             <HeaderText ml={3}>{title}</HeaderText>
@@ -43,9 +43,12 @@ const Header = ({title, children}) => (
     </BoxShadow>
   </Sticky>
 )
-
+Header.defaultProps = {
+  root: ''
+}
 Header.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  root: PropTypes.string.isRequired
 }
 
 export default Header
