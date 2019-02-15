@@ -1,4 +1,4 @@
-workflow "Primer Docs Components Workflow" {
+workflow "Lint, deploy & publish" {
   on = "push"
   resolves = [
     "npm lint",
