@@ -58,7 +58,7 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Docs Components{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header>
+          <Header title="Docs Components" root={'docs-components'}>
             <NavLink href="/docs-components">Docs</NavLink>
           </Header>
           <Flex
