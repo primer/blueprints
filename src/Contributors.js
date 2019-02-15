@@ -56,30 +56,27 @@ function generateLastEdited(lastAuthor) {
 
 const Contributors = ({filePath, repoPath, contributors}) => {
   const [authors, setAuthors] = useState([])
-  useEffect(
-    () => {
-      const url = `https://api.github.com/repos/${repoPath}/commits?path=${filePath}`
-      fetch(url)
-        .then(response => response.json())
-        .then(commits => {
-          const commitData = []
-          const ids = []
-          for (let i = 0; i < commits.length; i++) {
-            if (!ids.includes(commits[i].author.id)) {
-              commitData.push({
-                login: commits[i].author.login,
-                avatar: commits[i].author.avatar_url,
-                time: new Date(commits[i].commit.author.date),
-                commitUrl: commits[i].html_url
-              })
-              ids.push(commits[i].author.id)
-            }
+  useEffect(() => {
+    const url = `https://api.github.com/repos/${repoPath}/commits?path=${filePath}`
+    fetch(url)
+      .then(response => response.json())
+      .then(commits => {
+        const commitData = []
+        const ids = []
+        for (let i = 0; i < commits.length; i++) {
+          if (!ids.includes(commits[i].author.id)) {
+            commitData.push({
+              login: commits[i].author.login,
+              avatar: commits[i].author.avatar_url,
+              time: new Date(commits[i].commit.author.date),
+              commitUrl: commits[i].html_url
+            })
+            ids.push(commits[i].author.id)
           }
-          setAuthors(commitData)
-        })
-    },
-    [filePath]
-  )
+        }
+        setAuthors(commitData)
+      })
+  }, [filePath])
 
   return (
     <Text fontSize={1}>
