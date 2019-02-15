@@ -1,6 +1,7 @@
 export {default as BoxShadow} from './BoxShadow'
 export {default as ClipboardCopy} from './ClipboardCopy'
 export {default as CodeExample} from './CodeExample'
+export {default as Contributors} from './Contributors'
 export {default as DetailsDialog} from './DetailsDialog'
 export {default as Frame} from './Frame'
 export {default as Header} from './Header'
