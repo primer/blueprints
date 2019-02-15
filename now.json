@@ -1,6 +1,6 @@
 {
-  "name": "primer-components",
-  "alias": "primer-components.now.sh",
+  "name": "primer-docs-components",
+  "alias": "primer-docs-components.now.sh",
   "scale": {
     "sfo": {
       "min": 1,
