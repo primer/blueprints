@@ -1,11 +1,4 @@
-import {Box, Flex, Heading, Link, Text} from '@primer/components'
-import {
-  HeaderImage,
-  MetaPackageBox,
-  PrimerPackageBox,
-  PrimitivesOverview,
-  StylesOverview
-} from '../../src/landing'
+import {Box, Heading} from '@primer/components'
 import {CONTENT_MAX_WIDTH} from '../../src/constants'
 
 export const Hero = () => (
