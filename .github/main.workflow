@@ -2,7 +2,6 @@ workflow "Lint, Deploy, Publish" {
   on = "push"
   resolves = [
     "npm lint",
-    "npm test",
     "publish",
     "deploy",
   ]
