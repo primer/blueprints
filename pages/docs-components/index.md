@@ -8,7 +8,6 @@ export const Hero = () => (
         <Heading color="blue.4" fontSize={7} pb={3} m={0}>
           Primer Docs Components
         </Heading>
-        <Box is={HeaderImage} mb={6} />
       </Box>
     </Box>
   </Box>
