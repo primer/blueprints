@@ -2,7 +2,7 @@
 
 React components for building Primer documentation sites!
 
-⚠️⚠️⚠️ Work in progress alert!!! ⚠️⚠️⚠️
+### ⚠️⚠️⚠️ Work in progress alert!!! ⚠️⚠️⚠️
 - The repository is brand new as of 2.20.19 and is still very much a work in progress. Please don't use it in production yet, you've been warned.
 
 ### 👀 COMING SOON! 👀
