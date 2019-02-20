@@ -1,5 +1,5 @@
 {
-  "name": "@primer/docs-components",
+  "name": "@primer/blueprints",
   "version": "1.0.0",
   "description": "Components for GitHub Documentation Sites",
   "main": "dist/index.umd.js",
@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run dist",
     "lint": "eslint src pages"
   },
-  "repository": "primer/docs-components",
+  "repository": "primer/blueprints",
   "keywords": [
     "react",
     "components",

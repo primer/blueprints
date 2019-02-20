@@ -11,7 +11,7 @@ export default function SideNav(props) {
       <Box id="sidenav" {...props}>
         <Flex flexDirection="column" alignItems="start">
           <Router>
-            <RouteMatch path="/docs-components">
+            <RouteMatch path="/blueprints">
               <Section path="components" />
             </RouteMatch>
           </Router>
