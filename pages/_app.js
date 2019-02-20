@@ -58,8 +58,8 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Docs Components{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header title="Docs Components" root={'docs-components'}>
-            <NavLink href="/docs-components">Docs</NavLink>
+          <Header title="Docs Components" root={'blueprints'}>
+            <NavLink href="/blueprints">Docs</NavLink>
           </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}

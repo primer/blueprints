@@ -1,4 +1,4 @@
-# docs-components
+# Primer Blueprints
 
 React components for building Primer documentation sites!
 
@@ -9,9 +9,9 @@ React components for building Primer documentation sites!
 ### But that's not all!
 You can also clone this repository and spin up a docs site of your own! In the future, we'd like to make this process much simpler, but for now there are a few things you'll need to do after you clone:
 
-1. Rename the `docs-components` folder in `/pages` to whatever you'd like your root url to be.
+1. Rename the `blueprints` folder in `/pages` to whatever you'd like your root url to be.
 
-2. Find and replace `docs-components` with whichever name you chose in step 1.
+2. Find and replace `blueprints` with whichever name you chose in step 1.
 
 3. Delete the `src` folder!
 

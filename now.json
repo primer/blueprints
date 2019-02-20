@@ -1,6 +1,6 @@
 {
-  "name": "primer-docs-components",
-  "alias": "primer-docs-components.now.sh",
+  "name": "primer-blueprints",
+  "alias": "primer-blueprints.now.sh",
   "scale": {
     "sfo": {
       "min": 1,

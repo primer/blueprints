@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta property="og:title" content="Primer CSS" />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://primer.style/docs-components/" />
+          <meta property="og:url" content="https://primer.style/blueprints/" />
           <meta property="og:description" content="Shareable Components from Primer Documentation Sites" />
           <meta
             property="og:image"
