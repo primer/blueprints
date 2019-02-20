@@ -56,9 +56,9 @@ export default class MyApp extends App {
       <BaseStyles fontSize={2} style={{fontFamily: theme.fonts.normal}}>
         <Container>
           <Head>
-            <title>Primer Docs Components{meta.title ? ` / ${meta.title}` : null}</title>
+            <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header title="Docs Components" root={'blueprints'}>
+          <Header title="Primer Blueprints" root={'blueprints'}>
             <NavLink href="/blueprints">Docs</NavLink>
           </Header>
           <Flex
