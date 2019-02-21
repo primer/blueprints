@@ -20,5 +20,4 @@ Use the Contributors component to add contributor credit to the bottom of any do
 | :- | :- | :-: | :- |
 | filePath | String | | The path to the file you'd like to pull contributor data from. |
 | repoPath | String | | The repository path on GitHub. For example: `primer/components` |
-| contributors | Array | | Prop for adding additional contributors not reflected in commit history. Format is an array of objects with a `login` key.
-Ex. `[{login: 'emplums'}, {login: 'broccolini'}]` |
+| contributors | Array | | Prop for adding additional contributors not reflected in commit history. Format is an array of objects with a `login` key. Ex. `[{login: 'emplums'}, {login: 'broccolini'}]` |
