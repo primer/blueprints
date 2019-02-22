@@ -3,13 +3,14 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import {withMDXLive} from 'mdx-live'
 import Head from 'next/head'
-import {BaseStyles, BorderBox, Box, Flex, theme, Heading} from '@primer/components'
+import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
 import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
 const {Header, SideNav, NavLink, Link, Outline} = docsComponents
+const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
 
 function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
@@ -27,7 +28,8 @@ function getComponents(page = {}) {
     },
     // "unwrap" <pre> elements around <code> blocks
     pre: props => props.children,
-    ...docsComponents
+    ...docsComponents,
+    ...primerComponents
   }
 }
 
