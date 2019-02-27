@@ -6,7 +6,7 @@ export const Hero = () => (
     <Box maxWidth={CONTENT_MAX_WIDTH} p={6} mx="auto" mb={3}>
       <Box mt={4} mb={4}>
         <Heading fontWeight="bold" color="blue.4" fontSize={7} pb={3} m={0}>
-          Primer Docs Components
+          Primer Blueprints
         </Heading>
       </Box>
     </Box>
