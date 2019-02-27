@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import Octicon, {MarkGithub} from '@githubprimer/octicons-react'
 import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
-import BoxShadow from './BoxShadow'
 import Link from './Link'
+
+const BoxShadow = styled(Box)`
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+`
 
 const HeaderText = props => <Text fontSize={2} {...props} />
 

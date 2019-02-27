@@ -24,6 +24,7 @@ export default class MyDocument extends Document {
           <meta charSet="utf8" />
           <link rel="icon" href={getAssetPath('favicon.png')} />
           <link rel="apple-touch-icon" href={getAssetPath('apple-touch-icon.png')} />
+          <link rel="stylesheet" href="https://unpkg.com/primer-markdown@4.0.0/build/build.css" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta property="og:title" content="Primer CSS" />
           <meta property="og:type" content="website" />
