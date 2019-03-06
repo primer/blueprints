@@ -1,6 +1,6 @@
 ---
 title: PackageHeader
-path: components/packageheader
+path: content-components/package-header
 ---
 
 
