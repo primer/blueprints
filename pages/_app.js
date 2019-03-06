@@ -61,7 +61,7 @@ export default class MyApp extends App {
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header title="Primer Blueprints" root={'blueprints'}>
-            <Section.Link color="white" href="/blueprints">Docs</Section.Link>
+            <Section.Link px={4} color="white" href="/blueprints">Docs</Section.Link>
           </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
