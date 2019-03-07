@@ -7,9 +7,9 @@ The NavLink component is a NodeLink that turns black when it's href matches the 
 
 
 ```.jsx
-<Text mb={4}>Matches current path:</Text>
-<NavLink href='/blueprints/navigation-components/NavLink' />
+Matches current path:
+<NavLink mb={4} href='/blueprints/navigation-components/NavLink' />
 
-<Text mt={4}>Does not match current path:</Text>
+Does not match current path:
 <NavLink href='/blueprints/navigation-components/Section' />
 ```
