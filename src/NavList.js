@@ -16,7 +16,7 @@ export default function NavList({path}) {
     <>
       <Section.Link color='gray.9' href={path} mb={3} />
       {children.map(child => (
-        <NavLink href={child.path} key={child.path} />
+        <NavLink mt={2} href={child.path} key={child.path} />
       ))}
     </>
   )

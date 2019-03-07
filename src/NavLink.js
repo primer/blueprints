@@ -5,7 +5,7 @@ import NodeLink from './NodeLink'
 
 const NavLink = withRouter(({href, router, ...rest}) => {
   return (
-    <Box mt={2}>
+    <Box {...rest}>
       <NodeLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
     </Box>
   )
