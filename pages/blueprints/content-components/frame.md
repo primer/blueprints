@@ -1,6 +1,5 @@
 ---
 title: Frame
-path: components/frame
 ---
 
 The Frame component wraps children components in an iframe

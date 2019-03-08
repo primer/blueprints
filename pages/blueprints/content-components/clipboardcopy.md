@@ -1,6 +1,5 @@
 ---
 title: ClipboardCopy
-path: components/clipoboardcopy
 ---
 
 Use the ClipboardCopy component to add copying functionality next to code blocks in documentation.

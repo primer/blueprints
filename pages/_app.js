@@ -9,7 +9,7 @@ import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
-const {Header, SideNav, NavLink, Link, Outline} = docsComponents
+const {Header, SideNav, RouteMatch, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
 
 function getComponents(page = {}) {
@@ -61,7 +61,9 @@ export default class MyApp extends App {
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header title="Primer Blueprints" root={'blueprints'}>
-            <NavLink href="/blueprints">Docs</NavLink>
+            <Section.Link px={4} color="white" href="/blueprints">
+              Docs
+            </Section.Link>
           </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
@@ -83,7 +85,6 @@ export default class MyApp extends App {
                     </details>
                   )}
                 </div>
-                {/* TODO: bring back edit link! */}
               </Box>
             </Box>
             <BorderBox
@@ -96,7 +97,12 @@ export default class MyApp extends App {
               borderRight={1}
               borderTop={[1, 1, 0, 0]}
             >
-              <SideNav />
+              <SideNav>
+                <RouteMatch path="/blueprints">
+                  <Section path="content-components" />
+                  <Section path="navigation-components" />
+                </RouteMatch>
+              </SideNav>
             </BorderBox>
           </Flex>
         </Container>

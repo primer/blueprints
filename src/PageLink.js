@@ -3,7 +3,7 @@ import Link from './Link'
 import {rootPage} from './utils'
 
 /**
- * The NodeLink component takes an `href` and optional `children`.
+ * The PageLink component takes an `href` and optional `children`.
  * If no `children` are provided, we look up the "node" of the corresponding
  * page in the tree (the one whose `path` matches the given `href`) and use
  * that node's `meta.title` if it's set. In other words, given the following
@@ -15,14 +15,14 @@ import {rootPage} from './utils'
  * ---
  * ```
  *
- * The following instance of NodeLink should render a link to "/foo/bar" with
+ * The following instance of PageLink should render a link to "/foo/bar" with
  * "Foo Bar" as its text:
  *
  * ```jsx
- * <NodeLink href="/foo/bar" />
+ * <PageLink href="/foo/bar" />
  * ```
  */
-export default function NodeLink(props) {
+export default function PageLink(props) {
   const {href, children: content} = props
   if (content) {
     return <Link {...props} />

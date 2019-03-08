@@ -1,7 +1,14 @@
 import React from 'react'
 import {withRouter} from 'next/router'
-import NodeLink from './NodeLink'
+import {Box} from '@primer/components'
+import PageLink from './PageLink'
 
-export default withRouter(({is: Tag = NodeLink, href, router, ...rest}) => (
-  <Tag href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
-))
+const NavLink = withRouter(({href, router, ...rest}) => {
+  return (
+    <Box {...rest}>
+      <PageLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
+    </Box>
+  )
+})
+
+export default NavLink

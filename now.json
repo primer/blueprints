@@ -17,6 +17,7 @@
     "package-lock.json",
     "pages",
     "rollup.config.js",
-    "src"
+    "src",
+    "static"
   ]
 }
