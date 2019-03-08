@@ -2,7 +2,7 @@ import React from 'react'
 import {BorderBox, Box} from '@primer/components'
 import {withRouter} from 'next/router'
 import NavList from './NavList'
-import NodeLink from './NodeLink'
+import PageLink from './PageLink'
 import {addPath} from './utils'
 
 /**
@@ -28,12 +28,12 @@ const Section = ({path, children}) => {
 }
 
 /**
- * A <Section.Link> is really just a <NodeLink> that's bold when its `href`
+ * A <Section.Link> is really just a <PageLink> that's bold when its `href`
  * matches the current path, wrapped in a <Box> for whitespace.
  */
 const SectionLink = withRouter(({href, router, ...rest}) => (
   <Box {...rest}>
-    <NodeLink href={href} {...rest} fontSize={2} fontWeight={router.pathname.startsWith(href) ? 'bold' : null} />
+    <PageLink href={href} {...rest} fontSize={2} fontWeight={router.pathname.startsWith(href) ? 'bold' : null} />
   </Box>
 ))
 
