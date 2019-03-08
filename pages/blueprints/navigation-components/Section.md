@@ -1,6 +1,5 @@
 ---
 title: Section
-path: navigation-components/section
 ---
 
 A `Section` gets a `path` and optional children. If it has children it will
