@@ -1,4 +1,4 @@
-import React from  'react'
+import React from 'react'
 import {BorderBox, Box} from '@primer/components'
 import {withRouter} from 'next/router'
 import NavList from './NavList'

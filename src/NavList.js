@@ -9,12 +9,11 @@ import Section from './Section'
  * of the node's children.
  */
 export default function NavList({path}) {
-  console.log(path)
   const node = rootPage.first(node => node.path === path)
   const children = node ? node.children.sort(nodeSort) : []
   return (
     <>
-      <Section.Link color='gray.9' href={path} mb={3} />
+      <Section.Link color="gray.9" href={path} mb={3} />
       {children.map(child => (
         <NavLink mt={2} href={child.path} key={child.path} />
       ))}

@@ -1,6 +1,5 @@
 import React from 'react'
 import {withRouter} from 'next/router'
-import {rootPage} from './utils'
 
 /**
  * This is inspired by React Router's <Router> component, in that it looks for

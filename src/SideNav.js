@@ -7,9 +7,7 @@ function SideNav(props) {
     <Relative is="nav">
       <Box id="sidenav" {...props}>
         <Flex flexDirection="column" alignItems="start">
-          <Router>
-            {props.children}
-          </Router>
+          <Router>{props.children}</Router>
         </Flex>
       </Box>
     </Relative>
