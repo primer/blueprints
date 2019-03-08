@@ -85,7 +85,6 @@ export default class MyApp extends App {
                     </details>
                   )}
                 </div>
-                {/* TODO: bring back edit link! */}
               </Box>
             </Box>
             <BorderBox
