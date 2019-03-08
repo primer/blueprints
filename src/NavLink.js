@@ -4,10 +4,11 @@ import {Box} from '@primer/components'
 import PageLink from './PageLink'
 
 const NavLink = withRouter(({href, router, ...rest}) => {
-  ret
-  <Box {...rest}>
-    <PageLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
-  </Box>
-
+  return (
+    <Box {...rest}>
+      <PageLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
+    </Box>
+  )
+})
 
 export default NavLink
