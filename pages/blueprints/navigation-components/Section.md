@@ -12,5 +12,5 @@ This means that you can do:
 </Section>
 ```
 
-If no children are provided, it renders a `NavList` with the provided
+If no children are provided, it renders a [`NavList`](/blueprints/nav-components/NavList) with the provided
 `path`.
