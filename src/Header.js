@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Octicon, {MarkGithub} from '@githubprimer/octicons-react'
-import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
+import {MarkGithub, ChevronRight} from '@githubprimer/octicons-react'
+import {Text, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
 import Link from './Link'
 
 const BoxShadow = styled(Box)`
@@ -17,8 +17,10 @@ const Header = ({title, root, children}) => (
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Link href={`/${root}`} color="white" ml={3}>
           <Flex alignItems="center" justifyContent="center">
-            <Octicon icon={MarkGithub} size="medium" />
-            <HeaderText ml={3}>{title}</HeaderText>
+            <StyledOcticon color='blue.4' icon={MarkGithub} size="medium" />
+            <HeaderText ml={3} color='blue.4' fontFamily='mono'>Primer</HeaderText>
+            <StyledOcticon icon={ChevronRight} mx={2} color='blue.2'/>
+            <HeaderText fontWeight='bold'>{title}</HeaderText>
           </Flex>
         </Link>
         <Box display={['none', 'none', 'block']}>
