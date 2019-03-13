@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {MarkGithub, ChevronRight} from '@githubprimer/octicons-react'
 import {Text, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
 import Link from './Link'
+import NavDropdown from './NavDropdown'
 
 const BoxShadow = styled(Box)`
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -24,7 +25,9 @@ const Header = ({title, root, children}) => (
           </Flex>
         </Link>
         <Box display={['none', 'none', 'block']}>
-          <HeaderText>{children}</HeaderText>
+          <Link>
+            <NavDropdown/>
+          </Link>
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
