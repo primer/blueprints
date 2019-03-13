@@ -24,10 +24,12 @@ const Header = ({title, root, children}) => (
             <HeaderText fontWeight='bold'>{title}</HeaderText>
           </Flex>
         </Link>
-        <Box display={['none', 'none', 'block']}>
-          <Link>
-            <NavDropdown/>
-          </Link>
+        <Box display={['none', 'none', 'flex']}>
+          <NavDropdown>What's new</NavDropdown>
+          <NavDropdown>Design</NavDropdown>
+          <NavDropdown>Development</NavDropdown>
+          <NavDropdown>Content</NavDropdown>
+          <NavDropdown>Tools</NavDropdown>
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
