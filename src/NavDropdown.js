@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Text, Details, Absolute, BorderBox, theme, Box} from '@primer/components'
+import {Text, Absolute, BorderBox, theme, Box} from '@primer/components'
+import Details from './Details'
 import {get} from './constants'
 
 const DropdownItem = styled.a`
