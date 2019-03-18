@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {COMMON} from './constants'
-import theme from './theme'
+import {theme} from '@primer/components'
+import {space, color} from 'styled-system'
 
 const DetailsReset = styled('details')`
   & > summary {
@@ -47,7 +47,10 @@ function DetailsBase({children, overlay, render = getRenderer(children), ...rest
   )
 }
 
-const Details = styled(DetailsBase)(COMMON)
+const Details = styled(DetailsBase)`
+  ${space};
+  ${color};
+`
 
 Details.defaultProps = {
   theme,
@@ -61,7 +64,6 @@ Details.propTypes = {
   overlay: PropTypes.bool,
   render: PropTypes.func,
   theme: PropTypes.object,
-  ...COMMON.propTypes
 }
 
 export default Details

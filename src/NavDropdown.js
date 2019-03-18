@@ -1,6 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {Text, Absolute, BorderBox, theme, Box} from '@primer/components'
+import {Text, Relative, BorderBox, theme, Box, Dropdown} from '@primer/components'
+import getDirectionStyles from './NavDropdownStyles'
 import Details from './Details'
 import {get} from './constants'
 
@@ -23,22 +25,34 @@ const DropdownItem = styled.a`
   }
 `
 
-export default function NavDropdown({children}) {
+const DropdownMenu = styled.div`
+  ${props => (props.direction ? getDirectionStyles(props.theme, props.direction) : '')};
+`
+
+export default function NavDropdown({children, direction}) {
   return (
     <Box>
-      <Details overlay mx={3} render={({toggle}) => (
+      <Details style={{position: 'relative'}} overlay mx={3} render={({toggle}) => (
         <>
           <Text fontWeight='bold' color='blue.2' is="summary" onClick={toggle}>{children}</Text>
-          <Absolute is={BorderBox} borderRadius={2} zIndex={90} borderColor='blue.1' bg='black' >
-              <DropdownItem>Overview</DropdownItem>
-              <DropdownItem>Interface Guidelines</DropdownItem>
-              <DropdownItem>Icons</DropdownItem>
-          </Absolute>
+          <DropdownMenu as={BorderBox} style={{position: 'absolute'}} borderRadius={2} zIndex={90} borderColor='blue.1' bg='black' direction={direction}>
+            <DropdownItem>Overview</DropdownItem>
+            <DropdownItem>Interface Guidelines</DropdownItem>
+            <DropdownItem>Icons</DropdownItem>
+          </DropdownMenu>
         </>
       )}
       />
     </Box>
   )
+}
+
+DropdownMenu.propTypes = {
+  direction: PropTypes.oneOf(['ne', 'e', 'se', 's', 'sw', 'w'])
+}
+
+DropdownMenu.defaultProps = {
+  direction: 'sw'
 }
 
 DropdownItem.defaultProps = { theme }

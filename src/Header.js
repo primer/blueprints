@@ -25,11 +25,11 @@ const Header = ({title, root, children}) => (
           </Flex>
         </Link>
         <Box display={['none', 'none', 'flex']}>
-          <NavDropdown>What's new</NavDropdown>
-          <NavDropdown>Design</NavDropdown>
-          <NavDropdown>Development</NavDropdown>
-          <NavDropdown>Content</NavDropdown>
-          <NavDropdown>Tools</NavDropdown>
+          <NavDropdown direction='se'>What's new</NavDropdown>
+          <NavDropdown direction='se'>Design</NavDropdown>
+          <NavDropdown direction='se'>Development</NavDropdown>
+          <NavDropdown direction='se'>Content</NavDropdown>
+          <NavDropdown direction='sw'>Tools</NavDropdown>
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
