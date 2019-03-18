@@ -9,7 +9,7 @@ import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
-const {Header, SideNav, RouteMatch, Section, Link, Outline} = docsComponents
+const {Header, SideNav, RouteMatch, NavDropdown, NavItem, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
 
 function getComponents(page = {}) {
@@ -60,7 +60,33 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header title="Primer Blueprints" root={'blueprints'}/>
+          <Header title="Hello world!" root='/blueprints'>
+            <NavDropdown title='What/s new'>
+              <NavItem>Overview</NavItem>
+              <NavItem>Interface Guidelines</NavItem>
+              <NavItem>Octicons</NavItem>
+            </NavDropdown>
+            <NavDropdown title='Design'>
+              <NavItem>Overview</NavItem>
+              <NavItem>Interface Guidelines</NavItem>
+              <NavItem>Octicons</NavItem>
+            </NavDropdown>
+            <NavDropdown title='Development'>
+              <NavItem>Overview</NavItem>
+              <NavItem>Interface Guidelines</NavItem>
+              <NavItem>Octicons</NavItem>
+            </NavDropdown>
+            <NavDropdown title='Content'>
+              <NavItem>Overview</NavItem>
+              <NavItem>Interface Guidelines</NavItem>
+              <NavItem>Octicons</NavItem>
+            </NavDropdown>
+            <NavDropdown title='Tools'>
+              <NavItem>Overview</NavItem>
+              <NavItem>Interface Guidelines</NavItem>
+              <NavItem>Octicons</NavItem>
+            </NavDropdown>
+          </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
             alignContent="stretch"

@@ -25,11 +25,7 @@ const Header = ({title, root, children}) => (
           </Flex>
         </Link>
         <Box display={['none', 'none', 'flex']}>
-          <NavDropdown direction='se'>What's new</NavDropdown>
-          <NavDropdown direction='se'>Design</NavDropdown>
-          <NavDropdown direction='se'>Development</NavDropdown>
-          <NavDropdown direction='se'>Content</NavDropdown>
-          <NavDropdown direction='sw'>Tools</NavDropdown>
+          {children}
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
