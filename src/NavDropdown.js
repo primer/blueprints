@@ -15,17 +15,19 @@ const DropdownMenu = styled.div`
   ${props => (props.direction ? getDirectionStyles(props.theme, props.direction) : '')};
 `
 
-export default function NavDropdown({children, title, direction = 'sw'}) {
+export default function NavDropdown({children, title, direction = 'se'}) {
   return (
     <Box>
-      <Details style={{position: 'relative'}} overlay mx={3} render={({toggle}) => (
+      <Details overlay mx={3} render={({toggle}) => (
         <>
           <Text fontWeight='bold' color='blue.2' is="summary" onClick={toggle}>
             {title} <StyledOcticon icon={ChevronDown}/>
           </Text>
-          <DropdownMenu as={Absolute} zIndex={90} bg='black' direction={direction}>
-            {children}
-          </DropdownMenu>
+          <Relative>
+            <DropdownMenu as={Absolute} zIndex={90} bg='black' direction={direction}>
+              {children}
+            </DropdownMenu>
+          </Relative>
         </>
       )}
       />

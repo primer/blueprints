@@ -12,16 +12,16 @@ const BoxShadow = styled(Box)`
 
 const HeaderText = props => <Text fontSize={2} {...props} />
 
-const Header = ({title, root, children}) => (
+const Header = ({title, subtitle, root, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Link href={`/${root}`} color="white" ml={3}>
           <Flex alignItems="center" justifyContent="center">
             <StyledOcticon color='blue.4' icon={MarkGithub} size="medium" />
-            <HeaderText ml={3} color='blue.4' fontFamily='mono'>Primer</HeaderText>
+            <HeaderText ml={3} color='blue.4' fontFamily='mono'>{title}</HeaderText>
             <StyledOcticon icon={ChevronRight} mx={2} color='blue.2'/>
-            <HeaderText fontWeight='bold'>{title}</HeaderText>
+            <HeaderText fontWeight='bold'>{subtitle}</HeaderText>
           </Flex>
         </Link>
         <Box display={['none', 'none', 'flex']}>

@@ -9,7 +9,7 @@ import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
-const {Header, SideNav, RouteMatch, NavDropdown, NavItem, Section, Link, Outline} = docsComponents
+const {Header, SideNav, RouteMatch, PrimerHeader, NavDropdown, NavItem, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
 
 function getComponents(page = {}) {
@@ -60,30 +60,7 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header title="Hello world!" root='/blueprints'>
-            <Link href='https://primer.style/news'>What's New</Link>
-            <NavDropdown title='Design'>
-              <NavItem href="https://primer.style#design">Overview</NavItem>
-              <NavItem>Interface Guidelines</NavItem>
-              <NavItem>Icons</NavItem>
-              <NavItem>Illustrations</NavItem>
-              <NavItem>Presentations</NavItem>
-            </NavDropdown>
-            <NavDropdown title='Development'>
-              <NavItem href="https://primer.style#development">Overview</NavItem>
-              <NavItem>Primer CSS</NavItem>
-              <NavItem>Primer Components</NavItem>
-              <NavItem>Deploy</NavItem>
-              <NavItem>Prototype</NavItem>
-            </NavDropdown>
-            <NavDropdown title='Tools'>
-              <NavItem href="https://primer.style#tools">Overview</NavItem>
-              <NavItem>Atom packages</NavItem>
-              <NavItem>Docs set</NavItem>
-              <NavItem>GitHub local environment</NavItem>
-              <NavItem>Linting</NavItem>
-            </NavDropdown>
-          </Header>
+          <PrimerHeader root={'/blueprints'}/>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
             alignContent="stretch"

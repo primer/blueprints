@@ -6,6 +6,7 @@ const NavItem = styled(Link)`
   display: block;
   padding: 0 ${theme.space[3]}px;
   line-height: 30px;
+  white-space: nowrap;
   &:hover {
     color: ${theme.colors.black};
     background-color: ${theme.colors.blue[4]};
