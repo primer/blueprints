@@ -1,7 +1,7 @@
-import {theme} from '@primer/components'
+import {theme, Link} from '@primer/components'
 import styled from 'styled-components'
 
-const NavItem = styled.a`
+const NavItem = styled(Link)`
   color: ${theme.colors.blue[2]};
   display: block;
   padding: 0 ${theme.space[3]}px;
@@ -9,6 +9,7 @@ const NavItem = styled.a`
   &:hover {
     color: ${theme.colors.black};
     background-color: ${theme.colors.blue[4]};
+    text-decoration: none;
   }
   &:last-child:hover {
     border-bottom-left-radius: 4px;

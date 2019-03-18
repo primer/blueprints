@@ -61,30 +61,27 @@ export default class MyApp extends App {
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header title="Hello world!" root='/blueprints'>
-            <NavDropdown title='What/s new'>
-              <NavItem>Overview</NavItem>
-              <NavItem>Interface Guidelines</NavItem>
-              <NavItem>Octicons</NavItem>
-            </NavDropdown>
+            <Link href='https://primer.style/news'>What's New</Link>
             <NavDropdown title='Design'>
-              <NavItem>Overview</NavItem>
+              <NavItem href="https://primer.style#design">Overview</NavItem>
               <NavItem>Interface Guidelines</NavItem>
-              <NavItem>Octicons</NavItem>
+              <NavItem>Icons</NavItem>
+              <NavItem>Illustrations</NavItem>
+              <NavItem>Presentations</NavItem>
             </NavDropdown>
             <NavDropdown title='Development'>
-              <NavItem>Overview</NavItem>
-              <NavItem>Interface Guidelines</NavItem>
-              <NavItem>Octicons</NavItem>
-            </NavDropdown>
-            <NavDropdown title='Content'>
-              <NavItem>Overview</NavItem>
-              <NavItem>Interface Guidelines</NavItem>
-              <NavItem>Octicons</NavItem>
+              <NavItem href="https://primer.style#development">Overview</NavItem>
+              <NavItem>Primer CSS</NavItem>
+              <NavItem>Primer Components</NavItem>
+              <NavItem>Deploy</NavItem>
+              <NavItem>Prototype</NavItem>
             </NavDropdown>
             <NavDropdown title='Tools'>
-              <NavItem>Overview</NavItem>
-              <NavItem>Interface Guidelines</NavItem>
-              <NavItem>Octicons</NavItem>
+              <NavItem href="https://primer.style#tools">Overview</NavItem>
+              <NavItem>Atom packages</NavItem>
+              <NavItem>Docs set</NavItem>
+              <NavItem>GitHub local environment</NavItem>
+              <NavItem>Linting</NavItem>
             </NavDropdown>
           </Header>
           <Flex
