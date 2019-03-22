@@ -37,7 +37,7 @@ function Search({root}) {
             item: result,
             index,
             key: result.ref,
-            href: `/css/${doc.path}`,
+            href: `/${root}/${doc.path}`,
             isHighlighted: highlightedIndex === index
           })}
         >
@@ -47,12 +47,30 @@ function Search({root}) {
     })
   }
 
+  const onSelect = (item) => {
+    Router.push(`/${root}/${item.ref}`)
+  }
+
+  function stateReducer(state, changes) {
+    switch (changes.type) {
+      case Downshift.stateChangeTypes.keyDownEnter:
+      case Downshift.stateChangeTypes.clickItem:
+        return {
+          ...changes,
+          inputValue: ''
+        }
+      default:
+        return changes
+    }
+  }
+
   return (
     <Box is={Relative}>
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? documents[item.ref].title : '')}
-        onSelect={item => Router.push(`/${root}/${item.ref}`)}
+        onSelect={onSelect}
+        stateReducer={stateReducer}
       >
         {({getInputProps, getMenuProps, getLabelProps, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
           <div>
@@ -62,9 +80,7 @@ function Search({root}) {
             </label>
             <SearchInput
               placeholder="Search"
-              {...getInputProps({
-                onChange
-              })}
+              {...getInputProps({onChange})}
             />
             <SearchResults open={isOpen} {...getMenuProps()}>
               {renderResults(selectedItem, getItemProps, highlightedIndex)}
