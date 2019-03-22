@@ -91,5 +91,10 @@
     "unist-util-select": "^2.0.0",
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0"
+  },
+  "dependencies": {
+    "downshift": "3.2.7",
+    "lunr": "2.3.6",
+    "uuid": "3.3.2"
   }
 }

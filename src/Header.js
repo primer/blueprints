@@ -5,6 +5,7 @@ import {MarkGithub, ChevronRight} from '@githubprimer/octicons-react'
 import {Text, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
 import Link from './Link'
 import NavDropdown from './NavDropdown'
+import Search from './Search'
 
 const BoxShadow = styled(Box)`
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -16,14 +17,18 @@ const Header = ({title, subtitle, root, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
-        <Link href={`/${root}`} color="white" ml={3}>
-          <Flex alignItems="center" justifyContent="center">
-            <StyledOcticon color='blue.4' icon={MarkGithub} size="medium" />
-            <HeaderText ml={3} color='blue.4' fontFamily='mono'>{title}</HeaderText>
-            <StyledOcticon icon={ChevronRight} mx={2} color='blue.2'/>
-            <HeaderText fontWeight='bold'>{subtitle}</HeaderText>
-          </Flex>
-        </Link>
+        <Flex alignItems="center" justifyContent="center">
+          <Link href={`/${root}`} color="white" mx={3}>
+            <Flex alignItems='center'>
+              <StyledOcticon color='blue.4' icon={MarkGithub} size="medium" />
+              <HeaderText ml={3} color='blue.4' fontFamily='mono'>{title}</HeaderText>
+              <StyledOcticon icon={ChevronRight} mx={2} color='blue.2'/>
+              <HeaderText fontWeight='bold'>{subtitle}</HeaderText>
+            </Flex>
+          </Link>
+          <Search root='blueprints'/>
+        </Flex>
+
         <Box display={['none', 'none', 'flex']}>
           {children}
         </Box>

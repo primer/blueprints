@@ -1,5 +1,6 @@
 ---
 title: Contributors
+path: content-components/contributors
 ---
 
 Use the Contributors component to add contributor credit to the bottom of any docs page. With a provided file path & repo path, the component will fetch commit data from the GitHub API and display all contributors to that file. In instances where you'd like to add additional contributor credits that are not reflected in the commit data (for example, if a repository has been moved and the git history lost) you can use the `contributor` prop to add additional contributors.
