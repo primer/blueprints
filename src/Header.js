@@ -18,7 +18,7 @@ const Header = ({title, subtitle, root, children}) => (
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Flex alignItems="center" justifyContent="center">
-          <Link href={`/${root}`} color="white" mx={3}>
+          <Link href={`https://primer.style/${root}`} color="white" mx={3}>
             <Flex alignItems='center'>
               <StyledOcticon color='blue.4' icon={MarkGithub} size="medium" />
               <HeaderText ml={3} color='blue.4' fontFamily='mono'>{title}</HeaderText>
@@ -26,7 +26,7 @@ const Header = ({title, subtitle, root, children}) => (
               <HeaderText fontWeight='bold'>{subtitle}</HeaderText>
             </Flex>
           </Link>
-          <Search root='blueprints'/>
+          <Search root={root}/>
         </Flex>
 
         <Box display={['none', 'none', 'flex']}>

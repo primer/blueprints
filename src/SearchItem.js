@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import Link from './Link'
 
-const SearchItem = styled.a`
+const SearchItem = styled(Link)`
   display: block;
   text-decoration: none;
   color: ${props => (props.isHighlighted ? '#fff' : '#24292e')};

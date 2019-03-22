@@ -47,10 +47,6 @@ function Search({root}) {
     })
   }
 
-  const onSelect = (item) => {
-    Router.push(`/${root}/${item.ref}`)
-  }
-
   function stateReducer(state, changes) {
     switch (changes.type) {
       case Downshift.stateChangeTypes.keyDownEnter:
@@ -69,7 +65,6 @@ function Search({root}) {
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? documents[item.ref].title : '')}
-        onSelect={onSelect}
         stateReducer={stateReducer}
       >
         {({getInputProps, getMenuProps, getLabelProps, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
