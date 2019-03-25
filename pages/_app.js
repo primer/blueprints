@@ -11,7 +11,7 @@ import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {Header, MarkdownHeading, SideNav, RouteMatch, PrimerHeader, NavDropdown, NavItem, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
-const generateId = (title) => title.toLowerCase().replace(' ', '-')
+const generateId = (title) => title.toString().toLowerCase().replace(' ', '-')
 
 export const H1 = props => <MarkdownHeading fontSize={5} id={generateId(props.children)} fontWeight="light" {...props} />
 export const H2 = props => <MarkdownHeading as='h2' fontSize={4} id={generateId(props.children)} fontWeight="light" {...props} />
