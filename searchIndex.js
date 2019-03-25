@@ -80,5 +80,30 @@ export default {
     "title": "Tools",
     "path": "tools/index",
     "content": "\nComing soon\n"
+  },
+  "index": {
+    "title": "Primer Blueprints",
+    "path": "index",
+    "content": "\n\nimport {Box, Heading} from '@primer/components'\nimport {CONTENT_MAX_WIDTH} from '../../src/constants'\n\nexport const Hero = () => (\n  <Box bg=\"black\">\n    <Box maxWidth={CONTENT_MAX_WIDTH} p={6} mx=\"auto\" mb={3}>\n      <Box mt={4} mb={4}>\n        <Heading fontWeight=\"bold\" color=\"blue.4\" fontSize={7} pb={3} m={0}>\n          Primer Blueprints\n        </Heading>\n      </Box>\n    </Box>\n  </Box>\n)\n\n# Introduction\n\nThese components are to be used to build documentation sites across our different Primer projects.\n"
+  },
+  "/": {
+    "title": "Primer Blueprints",
+    "path": "/",
+    "content": "\n\nimport {Box, Heading} from '@primer/components'\nimport {CONTENT_MAX_WIDTH} from '../../src/constants'\n\nexport const Hero = () => (\n  <Box bg=\"black\">\n    <Box maxWidth={CONTENT_MAX_WIDTH} p={6} mx=\"auto\" mb={3}>\n      <Box mt={4} mb={4}>\n        <Heading fontWeight=\"bold\" color=\"blue.4\" fontSize={7} pb={3} m={0}>\n          Primer Blueprints\n        </Heading>\n      </Box>\n    </Box>\n  </Box>\n)\n\n# Introduction\n\nThese components are to be used to build documentation sites across our different Primer projects.\n"
+  },
+  "navigation-components": {
+    "title": "Navigation Components",
+    "path": "navigation-components",
+    "content": "\nNavigation components can be used to build navigation on documentation sites\n"
+  },
+  "content-components": {
+    "title": "Content Components",
+    "path": "content-components",
+    "content": "\n Components are reusable React components that can be used to build UI for our documentation sites.\n"
+  },
+  "tools": {
+    "title": "Tools",
+    "path": "tools",
+    "content": "\nComing soon\n"
   }
 }

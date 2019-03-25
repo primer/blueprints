@@ -1,6 +1,6 @@
 ---
 title: Tools
-path: tools/index
+path: tools
 ---
 
 Coming soon

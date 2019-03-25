@@ -1,3 +1,9 @@
+---
+title: Primer Blueprints
+path: /
+---
+
+
 import {Box, Heading} from '@primer/components'
 import {CONTENT_MAX_WIDTH} from '../../src/constants'
 

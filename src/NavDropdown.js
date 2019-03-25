@@ -12,6 +12,8 @@ const DropdownMenu = styled.div`
   box-shadow: 0px 4px 12px rgba(27, 31, 35, 0.15);
   border: 1px solid rgba(219, 237, 255, 0.3);
   border-radius: 4px;
+  max-width: 215px;
+  overflow: hidden;
   ${props => (props.direction ? getDirectionStyles(props.theme, props.direction) : '')};
 `
 

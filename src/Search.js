@@ -34,8 +34,12 @@ function Search({root}) {
   }
 
   const renderResults = (selectedItem, getItemProps, highlightedIndex) => {
+    if (results.length < 1) {
+      return <Text as={Relative} p={2} color='black'>No results found</Text>
+    }
     return results.map((result, index) => {
       const doc = documents[result.ref]
+      if (!doc.path) return
       return (
         <SearchItem //eslint-disable-line
           {...getItemProps({
@@ -78,14 +82,14 @@ function Search({root}) {
           <div>
             <label hidden {...getLabelProps()}>
               {' '}
-              //eslint-disable-line Search docs
+              Search docs
             </label>
             <SearchInput
               placeholder="Search"
               {...getInputProps({onChange})}
             />
-            <SearchResults open={isOpen} {...getMenuProps()}>
-              {renderResults(selectedItem, getItemProps, highlightedIndex)}
+            <SearchResults color='black' open={isOpen} {...getMenuProps()}>
+              {renderResults(selectedItem, getItemProps, highlightedIndex, results)}
             </SearchResults>
           </div>
         )}
