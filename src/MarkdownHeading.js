@@ -1,35 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 import classnames from 'classnames'
-import {StyledOcticon, Heading} from '@primer/components'
+import {StyledOcticon, Heading, Box, Text} from '@primer/components'
 import {Link} from '@githubprimer/octicons-react'
 
-const Anchor = ({id, className}) =>
-  <a href={`#${id}`} className={classnames('anchor', className)}>
+const Anchor = ({id}) =>
+  <a href={`#${id}`}>
     <StyledOcticon color='black' icon={Link}/>
   </a>
 
+
 const StyledHeading = styled(Heading)`
-  .anchor {
-    display: none;
-  }
-  &:hover .anchor {
+  &:hover .anchorWrapper {
     display: inline-block;
   }
-  &:focus .anchor {
+  &:focus .anchorWrapper {
     display: inline-block;
   }
 `
-const MarkdownHeading = ({children, ...rest}) => {
+const MarkdownHeading = ({children, className, ...rest}) => {
   const id = children.toString().toLowerCase().replace(' ', '-')
   return (
-    <StyledHeading id={id} {...rest}>
-      <Anchor id={id}/>
+    <StyledHeading id={id} className={className} {...rest}>
+      <Box as={Text} lineHeight={1} className='anchorWrapper' pr={1} ml={'-20px'} display={'none'}>
+        <Anchor id={id}/>
+      </Box>
       {children}
     </StyledHeading>
   )
 }
-
-
 
 export default MarkdownHeading
