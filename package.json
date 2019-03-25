@@ -93,6 +93,7 @@
     "unist-util-visit": "^1.4.0"
   },
   "dependencies": {
+    "classnames": "2.2.6",
     "downshift": "3.2.7",
     "lunr": "2.3.6",
     "uuid": "3.3.2"

@@ -8,15 +8,26 @@ import * as docsComponents from '../src/components'
 import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
-export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
-const {Header, SideNav, RouteMatch, PrimerHeader, NavDropdown, NavItem, Section, Link, Outline} = docsComponents
+
+const {Header, MarkdownHeading, SideNav, RouteMatch, PrimerHeader, NavDropdown, NavItem, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
+const generateId = (title) => title.toLowerCase().replace(' ', '-')
+
+export const H1 = props => <MarkdownHeading fontSize={5} id={generateId(props.children)} fontWeight="light" {...props} />
+export const H2 = props => <MarkdownHeading as='h2' fontSize={4} id={generateId(props.children)} fontWeight="light" {...props} />
+export const H3 = props => <MarkdownHeading as='h3' fontSize={3} id={generateId(props.children)} fontWeight="light" {...props} />
+export const H4 = props => <MarkdownHeading as='h4' fontSize={2} id={generateId(props.children)} fontWeight="light" {...props} />
+export const H5 = props => <MarkdownHeading as='h5' fontSize={1} id={generateId(props.children)} fontWeight="light" {...props} />
 
 function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
 
   return {
     h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    h5: H5,
     a: Link,
     code: withMDXLive('pre'),
     p: ({children, ...rest}) => {
@@ -70,7 +81,7 @@ export default class MyApp extends App {
               {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
-                  {!meta.hero && meta.title ? <h1>{meta.title}</h1> : null}
+                  {!meta.hero && meta.title ? <H1>{meta.title}</H1> : null}
                   <MDXProvider components={getComponents(node)}>
                     <Component {...page} />
                   </MDXProvider>
