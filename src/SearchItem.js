@@ -7,6 +7,10 @@ const SearchItem = styled(Link)`
   color: ${props => (props.isHighlighted ? '#fff' : '#24292e')};
   background-color: ${props => (props.isHighlighted ? '#0366d6' : '#fff')};
   padding: 8px;
+
+  &:hover {
+    text-decoration: none;
+  }
 `
 
 export default SearchItem

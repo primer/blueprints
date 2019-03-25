@@ -1,13 +1,18 @@
 import React, {useState} from 'react'
 import Router from 'next/router'
 import lunr from 'lunr'
-import {Relative, Box} from '@primer/components'
+import {Relative, Box, Text} from '@primer/components'
 import documents from '../searchIndex'
 import SearchItem from './SearchItem'
 import Downshift from 'downshift'
 import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 
+const generateBreadcrumb = (path) => {
+  let a = path.toLowerCase().split('-').join(' ')
+  let b = a.split('/').join(' / ')
+  return b.split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ')
+}
 function Search({root}) {
   const idx = lunr(function() {
     this.ref('path') //eslint-disable-line
@@ -41,6 +46,8 @@ function Search({root}) {
             isHighlighted: highlightedIndex === index
           })}
         >
+          {doc.path &&
+            <Text as='div' fontSize={0}>{generateBreadcrumb(doc.path)}</Text>}
           {doc.title}
         </SearchItem>
       )

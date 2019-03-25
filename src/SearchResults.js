@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const SearchResults = styled.div`
   box-shadow: 0 1px 5px rgba(27, 31, 35, 0.15);
+  min-width: 320px;
   width: 100%;
   overflow: auto;
   right: 0;
