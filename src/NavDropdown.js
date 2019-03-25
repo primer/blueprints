@@ -20,7 +20,7 @@ export default function NavDropdown({children, title, direction = 'se'}) {
     <Box>
       <Details overlay mx={3} render={({toggle}) => (
         <>
-          <Text fontWeight='bold' color='blue.2' is="summary" onClick={toggle}>
+          <Text fontWeight='bold' color='blue.2' as="summary" onClick={toggle}>
             {title} <StyledOcticon icon={ChevronDown}/>
           </Text>
           <Relative>

@@ -10,7 +10,7 @@ export default {
   "content-components/code-example": {
     "title": "CodeExample",
     "path": "content-components/code-example",
-    "content": "\nUse the CodeExample component to wrap HTML code examples. This component was created to prevent CSS from our markdown styles from bleeding over into examples by displaying examples in an iframe.\n\nThis component can also be passed to the component prop of your MDXProvider to replace all code blocks with CodeExample like so:\n\n```\nconst components = {\n  code: CodeExample\n}\n\nreturn (\n  <MDXProvider components={components}>\n    <Component {...page} />\n  </MDXProvider>\n)\n\n```\n\n```.jsx\n<CodeExample>\n  <div>hello world!</div>\n</CodeExample>\n\n```\n"
+    "content": "\nUse the CodeExample component to wrap HTML code examples. This component was created to prevent CSS from our markdown styles from bleeding over into examples by displaying examples in an iframe.\n\nThis component can also be passed to the component prop of your MDXProvider to replace all code blocks with CodeExample like so:\n\n\n## H2\n### h3\n#### h4\n##### h5\n```\nconst components = {\n  code: CodeExample\n}\n\nreturn (\n  <MDXProvider components={components}>\n    <Component {...page} />\n  </MDXProvider>\n)\n\n```\n\n```.jsx\n<CodeExample>\n  <div>hello world!</div>\n</CodeExample>\n\n```\n"
   },
   "content-components/frame": {
     "title": "Frame",

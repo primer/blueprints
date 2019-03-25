@@ -61,7 +61,7 @@ function Search({root}) {
   }
 
   return (
-    <Box is={Relative}>
+    <Box as={Relative}>
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? documents[item.ref].title : '')}
