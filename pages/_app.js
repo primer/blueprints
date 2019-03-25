@@ -11,13 +11,12 @@ import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {Header, MarkdownHeading, SideNav, RouteMatch, PrimerHeader, NavDropdown, NavItem, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
-const generateId = (title) => title.toString().toLowerCase().replace(' ', '-')
 
-export const H1 = props => <MarkdownHeading fontSize={5} id={generateId(props.children)} fontWeight="light" {...props} />
-export const H2 = props => <MarkdownHeading as='h2' fontSize={4} id={generateId(props.children)} fontWeight="light" {...props} />
-export const H3 = props => <MarkdownHeading as='h3' fontSize={3} id={generateId(props.children)} fontWeight="light" {...props} />
-export const H4 = props => <MarkdownHeading as='h4' fontSize={2} id={generateId(props.children)} fontWeight="light" {...props} />
-export const H5 = props => <MarkdownHeading as='h5' fontSize={1} id={generateId(props.children)} fontWeight="light" {...props} />
+export const H1 = props => <MarkdownHeading fontSize={5} fontWeight="light" {...props} />
+export const H2 = props => <MarkdownHeading as='h2' fontSize={4} fontWeight="light" {...props} />
+export const H3 = props => <MarkdownHeading as='h3' fontSize={3} fontWeight="light" {...props} />
+export const H4 = props => <MarkdownHeading as='h4' fontSize={2} fontWeight="light" {...props} />
+export const H5 = props => <MarkdownHeading as='h5' fontSize={1} fontWeight="light" {...props} />
 
 function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
@@ -81,7 +80,7 @@ export default class MyApp extends App {
               {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
-                  {!meta.hero && meta.title ? <MarkdownHeading id={generateId(meta.title)}>{meta.title}</MarkdownHeading> : null}
+                  {!meta.hero && meta.title ? <MarkdownHeading>{meta.title}</MarkdownHeading> : null}
                   <MDXProvider components={getComponents(node)}>
                     <Component {...page} />
                   </MDXProvider>

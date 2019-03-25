@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import {StyledOcticon, Heading} from '@primer/components'
 import {Link} from '@githubprimer/octicons-react'
 
-
 const Anchor = ({id, className}) =>
   <a href={`#${id}`} className={classnames('anchor', className)}>
     <StyledOcticon color='black' icon={Link}/>
@@ -21,7 +20,8 @@ const StyledHeading = styled(Heading)`
     display: inline-block;
   }
 `
-const MarkdownHeading = ({children, id, ...rest}) => {
+const MarkdownHeading = ({children, ...rest}) => {
+  const id = children.toString().toLowerCase().replace(' ', '-')
   return (
     <StyledHeading id={id} {...rest}>
       <Anchor id={id}/>
