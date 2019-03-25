@@ -9,24 +9,23 @@ const PrimerHeader = ({root}) => {
       <Link color='blue.2' fontWeight='bold' href='https://primer.style/news'>What's New</Link>
       <NavDropdown title='Design'>
         <NavItem href="https://primer.style#design">Overview</NavItem>
-        <NavItem>Interface Guidelines</NavItem>
-        <NavItem>Icons</NavItem>
-        <NavItem>Illustrations</NavItem>
-        <NavItem>Presentations</NavItem>
+        <NavItem href="https://primer.style/design">Interface Guidelines</NavItem>
+        <NavItem href="https://octicons.github.com/">Icons</NavItem>
+        <NavItem href="https://github.com/primer/presentations">Presentations</NavItem>
       </NavDropdown>
       <NavDropdown title='Development'>
         <NavItem href="https://primer.style#development">Overview</NavItem>
-        <NavItem>Primer CSS</NavItem>
-        <NavItem>Primer Components</NavItem>
-        <NavItem>Deploy</NavItem>
-        <NavItem>Prototype</NavItem>
+        <NavItem href="https://primer.style/css">Primer CSS</NavItem>
+        <NavItem href="https://primer.style/components">Primer Components</NavItem>
+        <NavItem href="https://github.com/primer/deploy">Deploy</NavItem>
+        <NavItem href="https://primer.style/css/tools/prototyping">Prototyping</NavItem>
       </NavDropdown>
       <NavDropdown direction='sw' title='Tools'>
         <NavItem href="https://primer.style#tools">Overview</NavItem>
-        <NavItem>Atom packages</NavItem>
-        <NavItem>Docs set</NavItem>
-        <NavItem>GitHub local environment</NavItem>
-        <NavItem>Linting</NavItem>
+        <NavItem href="https://primer.style/css/tools/atom-packages">Atom packages</NavItem>
+        <NavItem href="https://primer.style/css/tools/docset">Docs set</NavItem>
+        <NavItem href="https://primer.style/css/tools/local-primer">GitHub local environment</NavItem>
+        <NavItem href="https://primer.style/css/tools/linting">Linting</NavItem>
       </NavDropdown>
     </Header>
   )
