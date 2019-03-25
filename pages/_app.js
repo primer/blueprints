@@ -81,7 +81,7 @@ export default class MyApp extends App {
               {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
-                  {!meta.hero && meta.title ? <H1>{meta.title}</H1> : null}
+                  {!meta.hero && meta.title ? <MarkdownHeading id={generateId(meta.title)}>{meta.title}</MarkdownHeading> : null}
                   <MDXProvider components={getComponents(node)}>
                     <Component {...page} />
                   </MDXProvider>

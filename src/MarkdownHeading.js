@@ -21,11 +21,15 @@ const StyledHeading = styled(Heading)`
     display: inline-block;
   }
 `
-const MarkdownHeading = ({children, id, ...rest}) =>
-  <StyledHeading id={id} {...rest}>
-    <Anchor id={id}/>
-    {children}
-  </StyledHeading>
+const MarkdownHeading = ({children, id, ...rest}) => {
+  return (
+    <StyledHeading id={id} {...rest}>
+      <Anchor id={id}/>
+      {children}
+    </StyledHeading>
+  )
+}
+
 
 
 export default MarkdownHeading

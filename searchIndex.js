@@ -7,35 +7,30 @@ export default {
     "path": "content-components/clipboard-copy",
     "content": "\nUse the ClipboardCopy component to add copying functionality next to code blocks in documentation.\nThe `value` prop must be provided with the current value of the code block.\n\n```.jsx\n<ClipboardCopy value={'hihihi'}/>\n\n```\n\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| value | String | | The content that will be added to the user's clipboard when clicked.\n"
   },
-  "content-components/contributors": {
-    "title": "Contributors",
-    "path": "content-components/contributors",
-    "content": "\nUse the Contributors component to add contributor credit to the bottom of any docs page. With a provided file path & repo path, the component will fetch commit data from the GitHub API and display all contributors to that file. In instances where you'd like to add additional contributor credits that are not reflected in the commit data (for example, if a repository has been moved and the git history lost) you can use the `contributor` prop to add additional contributors.\n\n\n```.jsx\n<Contributors\n  filePath='README.md'\n  repoPath='primer/components'\n  contributors={[{login: 'emplums'}, {login: 'broccolini'}]}\n/>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| filePath | String | | The path to the file you'd like to pull contributor data from. |\n| repoPath | String | | The repository path on GitHub. For example: `primer/components` |\n| contributors | Array | | Prop for adding additional contributors not reflected in commit history. Format is an array of objects with a `login` key. Ex. `[{login: 'emplums'}, {login: 'broccolini'}]` |\n"
+  "content-components/frame": {
+    "title": "Frame",
+    "path": "content-components/frame",
+    "content": "\nThe Frame component wraps children components in an iframe\n\n\n```.jsx\n<Frame minHeight={50}>\n  <Text>Hi</Text>\n</Frame>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| minHeight | String or Number | 0 | minHeight of iframe\n| border | String | 0 | border for element\n| borderRadius | String or Number | 0 | borderRadius for element\n| width | String or Number | 100% | width of iframe\n"
   },
   "content-components/code-example": {
     "title": "CodeExample",
     "path": "content-components/code-example",
     "content": "\nUse the CodeExample component to wrap HTML code examples. This component was created to prevent CSS from our markdown styles from bleeding over into examples by displaying examples in an iframe.\n\nThis component can also be passed to the component prop of your MDXProvider to replace all code blocks with CodeExample like so:\n\n```\nconst components = {\n  code: CodeExample\n}\n\nreturn (\n  <MDXProvider components={components}>\n    <Component {...page} />\n  </MDXProvider>\n)\n\n```\n\n```.jsx\n<CodeExample>\n  <div>hello world!</div>\n</CodeExample>\n\n```\n"
   },
-  "content-components/frame": {
-    "title": "Frame",
-    "path": "content-components/frame",
-    "content": "\nThe Frame component wraps children components in an iframe\n\n\n```.jsx\n<Frame minHeight={50}>\n  <Text>Hi</Text>\n</Frame>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| minHeight | String or Number | 0 | minHeight of iframe\n| border | String | 0 | border for element\n| borderRadius | String or Number | 0 | borderRadius for element\n| width | String or Number | 100% | width of iframe\n"
-  },
-  "content-components/link": {
-    "title": "Link",
-    "path": "content-components/link",
-    "content": "\nUse the Link component to add links within documentation. The link component wraps the standard Primer link with Next's link component for easy routing in Next.js applications.\n\n```.jsx\n<Link href=\"https://github.com/primer\">Primer</Link>\n\n```\n"
-  },
   "content-components/index": {
     "title": "Content Components",
     "path": "content-components/index",
     "content": "\n Components are reusable React components that can be used to build UI for our documentation sites.\n"
   },
-  "navigation-components/index": {
-    "title": "Navigation Components",
-    "path": "navigation-components/index",
-    "content": "\nNavigation components can be used to build navigation on documentation sites\n"
+  "content-components/contributors": {
+    "title": "Contributors",
+    "path": "content-components/contributors",
+    "content": "\nUse the Contributors component to add contributor credit to the bottom of any docs page. With a provided file path & repo path, the component will fetch commit data from the GitHub API and display all contributors to that file. In instances where you'd like to add additional contributor credits that are not reflected in the commit data (for example, if a repository has been moved and the git history lost) you can use the `contributor` prop to add additional contributors.\n\n\n```.jsx\n<Contributors\n  filePath='README.md'\n  repoPath='primer/components'\n  contributors={[{login: 'emplums'}, {login: 'broccolini'}]}\n/>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| filePath | String | | The path to the file you'd like to pull contributor data from. |\n| repoPath | String | | The repository path on GitHub. For example: `primer/components` |\n| contributors | Array | | Prop for adding additional contributors not reflected in commit history. Format is an array of objects with a `login` key. Ex. `[{login: 'emplums'}, {login: 'broccolini'}]` |\n"
+  },
+  "content-components/link": {
+    "title": "Link",
+    "path": "content-components/link",
+    "content": "\nUse the Link component to add links within documentation. The link component wraps the standard Primer link with Next's link component for easy routing in Next.js applications.\n\n```.jsx\n<Link href=\"https://github.com/primer\">Primer</Link>\n\n```\n"
   },
   "navigation-components/header": {
     "title": "Header",
@@ -46,10 +41,10 @@ export default {
     ],
     "content": "\nUse Header to provide a top navigation for your site. Children of `Header` will be rendered on the right side of the component. Children should be top level navigation links. The `title` prop specifies what should be rendered to the right of the GitHub Mark. The `root` prop specifies where you'd like the GitHub Mark to link to. Leave blank if you'd like it to route to `/`.\n```.jsx\n<Header title=\"Hello world!\" root='/blueprints'>\n  <NavDropdown title={`What's new`}>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Design'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Development'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Content'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Tools'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n</Header>\n```\n"
   },
-  "navigation-components/nav-link": {
-    "title": "NavLink",
-    "path": "navigation-components/nav-link",
-    "content": "\nThe NavLink component is a PageLink that turns black when it's href matches the current path. NavLinks are typically used in sidebar sub-navigation.\n\n\n```.jsx\nMatches current path:\n<NavLink mb={4} href='/blueprints/navigation-components/NavLink' />\n\nDoes not match current path:\n<NavLink href='/blueprints/navigation-components/Section' />\n```\n"
+  "navigation-components/index": {
+    "title": "Navigation Components",
+    "path": "navigation-components/index",
+    "content": "\nNavigation components can be used to build navigation on documentation sites\n"
   },
   "navigation-components/nav-list": {
     "title": "NavList",
@@ -70,6 +65,11 @@ export default {
     "title": "RouteMatch",
     "path": "navigation-components/route-match",
     "content": "\nUse `RouteMatch` to conditionally render content without a wrapper\nelement when contained directly in a `Router`. `RouteMatch` is most commonly used to conditionally render a chunk of side navigation links.\n\n\n```.jsx\n<Router>\n  <RouteMatch path=\"/blueprints/navigation-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/navigation-components\"</Box>\n  </RouteMatch>\n  <RouteMatch path=\"/blueprints/content-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/content-components\"</Box>\n  </RouteMatch>\n</Router>\n\n```\n"
+  },
+  "navigation-components/nav-link": {
+    "title": "NavLink",
+    "path": "navigation-components/nav-link",
+    "content": "\nThe NavLink component is a PageLink that turns black when it's href matches the current path. NavLinks are typically used in sidebar sub-navigation.\n\n\n```.jsx\nMatches current path:\n<NavLink mb={4} href='/blueprints/navigation-components/NavLink' />\n\nDoes not match current path:\n<NavLink href='/blueprints/navigation-components/Section' />\n```\n"
   },
   "navigation-components/side-nav": {
     "title": "SideNav",
