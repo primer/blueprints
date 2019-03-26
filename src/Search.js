@@ -13,6 +13,7 @@ const generateBreadcrumb = (path) => {
   let b = a.split('/').join(' / ')
   return b.split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ')
 }
+
 function Search({root}) {
   const idx = lunr(function() {
     this.ref('path') //eslint-disable-line

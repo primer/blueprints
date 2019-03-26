@@ -6,7 +6,7 @@ import NavItem from './NavItem'
 const PrimerHeader = ({root}) => {
   return (
     <Header title="Primer" subtitle='Blueprints' root={root}>
-      <Link color='blue.2' fontWeight='bold' href='https://primer.style/news'>What's New</Link>
+      <Link color='blue.2' fontWeight='bold' mx={3} href='https://primer.style/news'>What's New</Link>
       <NavDropdown title='Design'>
         <NavItem href="https://primer.style/design">Interface Guidelines</NavItem>
         <NavItem href="https://octicons.github.com/">Icons</NavItem>

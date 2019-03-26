@@ -21,9 +21,11 @@ const Header = ({title, subtitle, root, children}) => (
           <Link href={`https://primer.style/${root}`} color="white" mx={3}>
             <Flex alignItems='center'>
               <StyledOcticon color='blue.4' icon={MarkGithub} size="medium" />
-              <HeaderText ml={3} color='blue.4' fontWeight='bold'>{title}</HeaderText>
-              <StyledOcticon icon={ChevronRight} mx={2} color='blue.2'/>
-              <HeaderText fontWeight='bold'>{subtitle}</HeaderText>
+              <Flex alignItems='center'>
+                <HeaderText ml={3} color='blue.4' fontFamily='mono' fontWeight='bold'>{title}</HeaderText>
+                <StyledOcticon icon={ChevronRight} mx={2} color='blue.2'/>
+                <HeaderText fontWeight='bold' color='blue.2'>{subtitle}</HeaderText>
+              </Flex>
             </Flex>
           </Link>
           <Search root={root}/>
