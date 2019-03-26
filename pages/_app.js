@@ -93,7 +93,7 @@ export default class MyApp extends App {
               </Box>
             </Box>
             <BorderBox
-              width={['100%', '100%', 256]}
+              width={['100%', '100%', '100%', 256]}
               minWidth={256}
               bg="gray.0"
               borderColor="gray.2"

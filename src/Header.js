@@ -33,8 +33,8 @@ const Header = ({title, subtitle, root, children}) => (
           </Link>
           <Search root={root} />
         </Flex>
-        <Box display={['none', 'none', 'flex']}>{children}</Box>
-        <Box display={['block', 'block', 'none']}>
+        <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
+        <Box display={['block', 'block', 'block', 'none']}>
           <Link href="#sidenav">
             <BorderBox
               border={1}
