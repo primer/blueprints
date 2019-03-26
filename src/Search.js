@@ -10,6 +10,8 @@ import SearchItem from './SearchItem'
 import Downshift from 'downshift'
 import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
+import ResponsiveSearchInput from './ResponsiveSearchInput'
+
 
 const generateBreadcrumb = path => {
   const a = path
@@ -106,7 +108,12 @@ function Search({root}) {
               {' '}
               Search docs
             </label>
-            <SearchInput placeholder="Search" {...getInputProps({onChange})} />
+            <Box display={['none', 'none', 'none', 'flex']}>
+              <SearchInput placeholder="Search" {...getInputProps({onChange})} />
+            </Box>
+            <Box display={['inline-block', 'inline-block', 'inline-block', 'none']}>
+              <ResponsiveSearchInput {...getInputProps({onChange})} />
+            </Box>
             <SearchResults color="black" open={isOpen} {...getMenuProps()}>
               {renderResults(selectedItem, getItemProps, highlightedIndex, results)}
             </SearchResults>

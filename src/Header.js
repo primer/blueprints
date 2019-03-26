@@ -31,10 +31,10 @@ const Header = ({title, subtitle, root, children}) => (
               {subtitle}
             </HeaderText>
           </Link>
+          <Box display={['none', 'none', 'none', 'flex']}><Search root={root} /></Box>
         </Flex>
-        <Search order={[0, 0, 0, 1]} root={root} />
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
-        <Box display={['block', 'block', 'block', 'none']}>
+        <Box display={['flex', 'flex', 'flex', 'none']}>
           <Link href="#sidenav">
             <BorderBox
               border={1}
@@ -51,6 +51,7 @@ const Header = ({title, subtitle, root, children}) => (
               </Text>
             </BorderBox>
           </Link>
+          <Search root={root} />
         </Box>
       </Flex>
     </BoxShadow>

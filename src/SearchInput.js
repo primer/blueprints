@@ -1,4 +1,5 @@
 import {TextInput} from '@primer/components'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const SearchInput = styled(TextInput)`
@@ -13,5 +14,4 @@ const SearchInput = styled(TextInput)`
     box-shadow: none;
   }
 `
-
 export default SearchInput
