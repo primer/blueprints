@@ -16,7 +16,7 @@ const Header = ({title, subtitle, root, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
-        <Flex alignItems='center'>
+        <Flex alignItems="center">
           <Link href={'https://primer.style/'} color="white" ml={5}>
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
           </Link>
@@ -31,8 +31,8 @@ const Header = ({title, subtitle, root, children}) => (
               {subtitle}
             </HeaderText>
           </Link>
-          <Search root={root} />
         </Flex>
+        <Search order={[0, 0, 0, 1]} root={root} />
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
         <Box display={['block', 'block', 'block', 'none']}>
           <Link href="#sidenav">
