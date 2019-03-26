@@ -44,6 +44,7 @@ const Header = ({title, subtitle, root, children}) => (
               display="inline-block"
               px="12px"
               py="6px"
+              mr={3}
             >
               <Text fontWeight="bold" fontSize={1}>
                 Menu
