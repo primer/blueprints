@@ -17,14 +17,16 @@ const Header = ({title, subtitle, root, children}) => (
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Flex alignItems='center'>
-          <Link style={{display: 'flex', alignItems: 'center'}} href={'https://primer.style/'} color="white" mx={3}>
+          <Link href={'https://primer.style/'} color="white" ml={5}>
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
-            <HeaderText ml={3} color="blue.4" fontSize={3} fontFamily="mono" fontWeight="bold">
+          </Link>
+          <Link href={'https://primer.style/'} color="white" mx={3}>
+            <HeaderText color="blue.4" fontSize={3} fontFamily="mono" fontWeight="bold">
               {title}
             </HeaderText>
           </Link>
           <StyledOcticon icon={ChevronRight} mx={1} color="blue.2" />
-          <Link href={`https://primer.style/${root}`} color="white" mx={3}>
+          <Link href={`https://primer.style/${root}`} color="white" ml={3} mr={4}>
             <HeaderText fontWeight="bold" color="blue.2">
               {subtitle}
             </HeaderText>
