@@ -44,6 +44,7 @@
     "clipboard-copy-element": "^0.5.0",
     "colorette": "^1.0.7",
     "details-dialog-element": "^1.4.0",
+    "downshift": "3.2.7",
     "eslint": "4.19.1",
     "eslint-plugin-github": "1.0.0",
     "eslint-plugin-prettier": "^3.0.0",
@@ -54,6 +55,7 @@
     "html-2-jsx": "^0.5.1-dev",
     "klaw": "^3.0.0",
     "loader-utils": "^1.1.0",
+    "lunr": "2.3.6",
     "mdx-constant": "^0.1.0",
     "mdx-live": "2.0.0-alpha.2",
     "metalsmith": "^2.3.0",
@@ -90,12 +92,7 @@
     "unified": "^7.1.0",
     "unist-util-select": "^2.0.0",
     "unist-util-stringify-position": "^2.0.0",
-    "unist-util-visit": "^1.4.0"
-  },
-  "dependencies": {
-    "classnames": "2.2.6",
-    "downshift": "3.2.7",
-    "lunr": "2.3.6",
+    "unist-util-visit": "^1.4.0",
     "uuid": "3.3.2"
   }
 }
