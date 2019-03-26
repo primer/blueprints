@@ -1,3 +1,6 @@
+// downshift applies htmlFor for the label, but eslint doesn't recognize that
+// also disabling the specific line causes some weirdness when running lint for syntax
+/* eslint-disable jsx-a11y/label-has-for */
 import React, {useState} from 'react'
 import Router from 'next/router'
 import lunr from 'lunr'
@@ -8,10 +11,16 @@ import Downshift from 'downshift'
 import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 
-const generateBreadcrumb = (path) => {
-  let a = path.toLowerCase().split('-').join(' ')
-  let b = a.split('/').join(' / ')
-  return b.split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ')
+const generateBreadcrumb = path => {
+  const a = path
+    .toLowerCase()
+    .split('-')
+    .join(' ')
+  const b = a.split('/').join(' / ')
+  return b
+    .split(' ')
+    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ')
 }
 
 function Search({root}) {
@@ -36,7 +45,11 @@ function Search({root}) {
 
   const renderResults = (selectedItem, getItemProps, highlightedIndex) => {
     if (results.length < 1) {
-      return <Text as={Relative} p={2} color='black'>No results found</Text>
+      return (
+        <Text as={Relative} p={2} color="black">
+          No results found
+        </Text>
+      )
     }
     return results.map((result, index) => {
       const doc = documents[result.ref]
@@ -48,11 +61,14 @@ function Search({root}) {
             index,
             key: result.ref,
             href: `/${root}/${doc.path}`,
-            isHighlighted: highlightedIndex === index,
+            isHighlighted: highlightedIndex === index
           })}
         >
-          {doc.path &&
-            <Text as='div' fontSize={0}>{generateBreadcrumb(doc.path)}</Text>}
+          {doc.path && (
+            <Text as="div" fontSize={0}>
+              {generateBreadcrumb(doc.path)}
+            </Text>
+          )}
           {doc.title}
         </SearchItem>
       )
@@ -72,7 +88,7 @@ function Search({root}) {
     }
   }
 
-  const onSelect = (item) => {
+  const onSelect = item => {
     Router.push(`/${root}/${item.ref}`)
   }
 
@@ -90,11 +106,8 @@ function Search({root}) {
               {' '}
               Search docs
             </label>
-            <SearchInput
-              placeholder="Search"
-              {...getInputProps({onChange})}
-            />
-            <SearchResults color='black' open={isOpen} {...getMenuProps()}>
+            <SearchInput placeholder="Search" {...getInputProps({onChange})} />
+            <SearchResults color="black" open={isOpen} {...getMenuProps()}>
               {renderResults(selectedItem, getItemProps, highlightedIndex, results)}
             </SearchResults>
           </div>

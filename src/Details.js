@@ -31,13 +31,13 @@ function DetailsBase({children, overlay, render = getRenderer(children), ...rest
   function openMenu() {
     if (!open) {
       setOpen(true)
-      document.addEventListener('click', closeMenu);
+      document.addEventListener('click', closeMenu)
     }
   }
 
   function closeMenu() {
     setOpen(false)
-    document.removeEventListener('click', closeMenu);
+    document.removeEventListener('click', closeMenu)
   }
   return (
     <DetailsReset {...rest} open={open} overlay={overlay}>
@@ -62,7 +62,7 @@ Details.propTypes = {
   open: PropTypes.bool,
   overlay: PropTypes.bool,
   render: PropTypes.func,
-  theme: PropTypes.object,
+  theme: PropTypes.object
 }
 
 export default Details

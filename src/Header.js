@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import {MarkGithub, ChevronRight} from '@githubprimer/octicons-react'
 import {Text, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
 import Link from './Link'
-import NavDropdown from './NavDropdown'
 import Search from './Search'
 
 const BoxShadow = styled(Box)`
@@ -19,21 +18,23 @@ const Header = ({title, subtitle, root, children}) => (
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Flex alignItems="center" justifyContent="center">
           <Link href={`https://primer.style/${root}`} color="white" mx={3}>
-            <Flex alignItems='center'>
-              <StyledOcticon color='blue.4' icon={MarkGithub} size="medium" />
-              <Flex alignItems='center'>
-                <HeaderText ml={3} color='blue.4' fontFamily='mono' fontWeight='bold'>{title}</HeaderText>
-                <StyledOcticon icon={ChevronRight} mx={2} color='blue.2'/>
-                <HeaderText fontWeight='bold' color='blue.2'>{subtitle}</HeaderText>
+            <Flex alignItems="center">
+              <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
+              <Flex alignItems="center">
+                <HeaderText ml={3} color="blue.4" fontFamily="mono" fontWeight="bold">
+                  {title}
+                </HeaderText>
+                <StyledOcticon icon={ChevronRight} mx={2} color="blue.2" />
+                <HeaderText fontWeight="bold" color="blue.2">
+                  {subtitle}
+                </HeaderText>
               </Flex>
             </Flex>
           </Link>
-          <Search root={root}/>
+          <Search root={root} />
         </Flex>
 
-        <Box display={['none', 'none', 'flex']}>
-          {children}
-        </Box>
+        <Box display={['none', 'none', 'flex']}>{children}</Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
             <BorderBox
