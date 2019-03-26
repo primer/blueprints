@@ -47,7 +47,7 @@ function Search({root}) {
             index,
             key: result.ref,
             href: `/${root}/${doc.path}`,
-            isHighlighted: highlightedIndex === index
+            isHighlighted: highlightedIndex === index,
           })}
         >
           {doc.path &&
@@ -71,12 +71,17 @@ function Search({root}) {
     }
   }
 
+  const onSelect = (item) => {
+    Router.push(`/${root}/${item.ref}`)
+  }
+
   return (
     <Box as={Relative}>
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? documents[item.ref].title : '')}
         stateReducer={stateReducer}
+        onSelect={onSelect}
       >
         {({getInputProps, getMenuProps, getLabelProps, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
           <div>
