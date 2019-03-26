@@ -16,24 +16,21 @@ const Header = ({title, subtitle, root, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
-        <Flex alignItems="center" justifyContent="center">
+        <Flex alignItems='center'>
+          <Link style={{display: 'flex', alignItems: 'center'}} href={'https://primer.style/'} color="white" mx={3}>
+            <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
+            <HeaderText ml={3} color="blue.4" fontSize={3} fontFamily="mono" fontWeight="bold">
+              {title}
+            </HeaderText>
+          </Link>
+          <StyledOcticon icon={ChevronRight} mx={1} color="blue.2" />
           <Link href={`https://primer.style/${root}`} color="white" mx={3}>
-            <Flex alignItems="center">
-              <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
-              <Flex alignItems="center">
-                <HeaderText ml={3} color="blue.4" fontFamily="mono" fontWeight="bold">
-                  {title}
-                </HeaderText>
-                <StyledOcticon icon={ChevronRight} mx={2} color="blue.2" />
-                <HeaderText fontWeight="bold" color="blue.2">
-                  {subtitle}
-                </HeaderText>
-              </Flex>
-            </Flex>
+            <HeaderText fontWeight="bold" color="blue.2">
+              {subtitle}
+            </HeaderText>
           </Link>
           <Search root={root} />
         </Flex>
-
         <Box display={['none', 'none', 'flex']}>{children}</Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
