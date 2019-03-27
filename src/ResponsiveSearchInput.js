@@ -1,9 +1,8 @@
-import {TextInput, Flex, BorderBox, Button, Text, StyledOcticon} from '@primer/components'
+import {Flex, StyledOcticon} from '@primer/components'
 import {Search, X} from '@githubprimer/octicons-react'
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import SearchInput from './SearchInput'
-
 
 const StyledButton = styled.button`
   background: none;
@@ -19,7 +18,8 @@ const StyledButton = styled.button`
   border-radius: 3px;
   height: 38px;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: #fff;
     background-color: #0366d6;
     background-image: none;
@@ -27,20 +27,17 @@ const StyledButton = styled.button`
   }
 `
 
-
-const ResponsiveSearchInput = (props) => {
+const ResponsiveSearchInput = props => {
   const [open, setOpen] = useState(false)
   const handleClick = () => setOpen(!open)
   return (
     <Flex>
-      {open &&
-        <SearchInput mr={3}{...props}/>}
+      {open && <SearchInput mr={3} {...props} />}
       <StyledButton onClick={handleClick}>
-        <StyledOcticon icon={open ? X : Search}/>
+        <StyledOcticon icon={open ? X : Search} />
       </StyledButton>
     </Flex>
   )
 }
-
 
 export default ResponsiveSearchInput

@@ -69,7 +69,7 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <PrimerHeader root='https://primer.style' subfolder='blueprints' />
+          <PrimerHeader root="https://primer.style" subfolder="blueprints" />
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
             alignContent="stretch"

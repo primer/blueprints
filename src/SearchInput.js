@@ -1,5 +1,4 @@
 import {TextInput} from '@primer/components'
-import React, {useState} from 'react'
 import {space} from 'styled-system'
 import styled from 'styled-components'
 

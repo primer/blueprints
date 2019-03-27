@@ -31,7 +31,9 @@ const Header = ({title, subtitle, root, subfolder, children}) => (
               {subtitle}
             </HeaderText>
           </Link>
-          <Box display={['none', 'none', 'none', 'flex']}><Search subfolder={subfolder} /></Box>
+          <Box display={['none', 'none', 'none', 'flex']}>
+            <Search subfolder={subfolder} />
+          </Box>
         </Flex>
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
         <Box display={['flex', 'flex', 'flex', 'none']}>

@@ -12,7 +12,6 @@ import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 import ResponsiveSearchInput from './ResponsiveSearchInput'
 
-
 const generateBreadcrumb = path => {
   const a = path
     .toLowerCase()
