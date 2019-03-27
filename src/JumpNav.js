@@ -17,7 +17,7 @@ const JumpNav = () => {
         <NavItem href="https://octicons.github.com/">Icons</NavItem>
         <NavItem href="https://github.com/primer/presentations">Presentations</NavItem>
       </NavDropdown>
-      <NavDropdown title="Development" mr={3} direction='sw'>
+      <NavDropdown title="Development" mr={3} direction="sw">
         <NavItem href="https://primer.style/css">Primer CSS</NavItem>
         <NavItem href="https://primer.style/components">Primer Components</NavItem>
         <NavItem href="https://github.com/primer/deploy">Deploy</NavItem>
