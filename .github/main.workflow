@@ -19,7 +19,7 @@ action "npm lint" {
 }
 
 action "deploy" {
-  uses = "primer/deploy@v2.0.0"
+  uses = "primer/deploy@v3.0.0"
   needs = ["npm install"]
   secrets = ["GITHUB_TOKEN", "NOW_TOKEN"]
 }
