@@ -5,7 +5,6 @@ import React, {useState} from 'react'
 import Router from 'next/router'
 import lunr from 'lunr'
 import styled from 'styled-components'
-import documents from '~/searchIndex'
 import {Relative, Box, Text} from '@primer/components'
 import SearchItem from './SearchItem'
 import Downshift from 'downshift'
@@ -32,13 +31,12 @@ const generateBreadcrumb = path => {
     .join(' ')
 }
 
-function Search({subfolder}) {
+function Search({subfolder, documents}) {
   const idx = lunr(function() {
     this.ref('path') //eslint-disable-line
     this.field('title')//eslint-disable-line
     this.field('content')//eslint-disable-line
     this.field('keywords')//eslint-disable-line
-
     for (const doc of Object.values(documents)) {
       this.add(doc) //eslint-disable-line
     }

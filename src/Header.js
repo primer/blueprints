@@ -12,7 +12,7 @@ const BoxShadow = styled(Box)`
 
 const HeaderText = props => <Text fontSize={2} {...props} />
 
-const Header = ({title, subtitle, root, subfolder, children}) => (
+const Header = ({title, subtitle, root, subfolder, documents, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
@@ -34,7 +34,7 @@ const Header = ({title, subtitle, root, subfolder, children}) => (
             </HeaderText>
           </Link>
           <Box display={['none', 'none', 'none', 'flex']}>
-            <Search subfolder={subfolder} />
+            <Search documents={documents} subfolder={subfolder} />
           </Box>
         </Flex>
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
@@ -55,7 +55,7 @@ const Header = ({title, subtitle, root, subfolder, children}) => (
               </Text>
             </BorderBox>
           </Link>
-          <Search root={root} />
+          <Search documents={documents} root={root} />
         </Box>
       </Flex>
     </BoxShadow>
