@@ -69,7 +69,7 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <PrimerHeader root={'blueprints'} />
+          <PrimerHeader root="blueprints" />
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
             alignContent="stretch"
