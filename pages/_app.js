@@ -8,7 +8,7 @@ import * as docsComponents from '../src/components'
 import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
-const {MarkdownHeading, SideNav, RouteMatch, Header, JumpNav, Section, Link, Outline} = docsComponents
+const {MarkdownHeading, SideNav, ResponsiveJumpNav, RouteMatch, Header, JumpNav, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme} = primerComponents
 
 export const H1 = props => <MarkdownHeading fontSize={5} fontWeight="light" {...props} />
@@ -104,6 +104,9 @@ export default class MyApp extends App {
               borderRight={1}
               borderTop={[1, 1, 0, 0]}
             >
+              <Box display={['block', 'block', 'block', 'none']}>
+                <ResponsiveJumpNav/>
+              </Box>
               <SideNav>
                 <RouteMatch path="/blueprints">
                   <Section path="content-components" />

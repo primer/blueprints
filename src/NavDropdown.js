@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {ChevronDown} from '@githubprimer/octicons-react'
 import {Text, Relative, StyledOcticon, Absolute, Box} from '@primer/components'
@@ -13,15 +14,15 @@ const DropdownMenu = styled.div`
   overflow: hidden;
   ${props => (props.direction ? getDirectionStyles(props.theme, props.direction) : '')};
 `
-export default function NavDropdown({children, title, direction = 'se'}) {
+function NavDropdown({children, title, color, direction = 'se', ...rest}) {
   return (
-    <Box>
+    <Box {...rest}>
       <Details
         overlay
         mx={3}
         render={({toggle}) => (
           <>
-            <Text fontWeight="bold" color="blue.2" as="summary" onClick={toggle}>
+            <Text fontWeight="bold" color={color} as="summary" onClick={toggle}>
               {title} <StyledOcticon icon={ChevronDown} />
             </Text>
             <Relative>
@@ -35,3 +36,34 @@ export default function NavDropdown({children, title, direction = 'se'}) {
     </Box>
   )
 }
+
+const Responsive = ({children, title, color, ...rest}) => {
+  return (
+    <Box {...rest}>
+      <Details
+        render={({toggle}) => (
+          <>
+            <Text fontWeight="bold" color={color} as="summary" onClick={toggle}>
+              {title} <StyledOcticon icon={ChevronDown} />
+            </Text>
+            <Relative>
+              {children}
+            </Relative>
+          </>
+        )}
+      />
+    </Box>
+  )
+}
+
+NavDropdown.Responsive = Responsive
+
+NavDropdown.defaultProps = {
+  color: 'blue.2'
+}
+
+NavDropdown.propTypes = {
+  color: PropTypes.string
+}
+
+export default NavDropdown
