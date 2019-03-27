@@ -3,8 +3,7 @@
     "next/babel"
   ],
   "plugins": [
-    "add-react-displayname",
-    "babel-plugin-root-import"
+    "add-react-displayname"
   ],
   "env": {
     "test": {

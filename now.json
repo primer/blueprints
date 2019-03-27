@@ -18,7 +18,6 @@
     "pages",
     "rollup.config.js",
     "src",
-    "static",
-    "searchIndex.js"
+    "static"
   ]
 }
