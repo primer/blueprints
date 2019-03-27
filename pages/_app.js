@@ -8,7 +8,7 @@ import * as docsComponents from '../src/components'
 import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
-const {MarkdownHeading, SideNav, RouteMatch, PrimerHeader, Section, Link, Outline} = docsComponents
+const {MarkdownHeading, SideNav, RouteMatch, Header, JumpNav, Section, Link, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Flex, theme} = primerComponents
 
 export const H1 = props => <MarkdownHeading fontSize={5} fontWeight="light" {...props} />
@@ -69,7 +69,9 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <PrimerHeader root="https://primer.style" subfolder="blueprints" />
+          <Header root="https://primer.style" subfolder="blueprints" title='Primer' subtitle='Blueprints'>
+            <JumpNav/>
+          </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
             alignContent="stretch"
