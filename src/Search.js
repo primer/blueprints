@@ -41,7 +41,7 @@ function Search({subfolder}) {
 
   const onChange = e => {
     if (e.target) {
-      setResults(idx.search(e.target.value))
+      setResults(idx.search(`${e.target.value}*`))
     }
   }
 
