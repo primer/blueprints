@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {ChevronDown} from '@githubprimer/octicons-react'
 import {Text, Relative, StyledOcticon, Absolute, Box} from '@primer/components'
-import getDirectionStyles from './NavDropdownStyles'
+import getDirectionStyles from './getDirectionStyles'
 import Details from './Details'
 
 const DropdownMenu = styled.div`
