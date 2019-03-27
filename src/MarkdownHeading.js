@@ -10,9 +10,7 @@ const Anchor = ({id}) => (
 )
 
 const StyledHeading = styled(Heading)`
-  &:hover .anchorWrapper {
-    display: inline-block;
-  }
+  &:hover .anchorWrapper,
   &:focus .anchorWrapper {
     display: inline-block;
   }
