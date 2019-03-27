@@ -1,5 +1,4 @@
 ---
-title: Primer Blueprints
 path: /
 ---
 
