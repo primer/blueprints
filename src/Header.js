@@ -12,26 +12,26 @@ const BoxShadow = styled(Box)`
 
 const HeaderText = props => <Text fontSize={2} {...props} />
 
-const Header = ({title, subtitle, root, children}) => (
+const Header = ({title, subtitle, root, subfolder, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
-          <Link href={'https://primer.style/'} color="white" ml={5}>
+          <Link href={root} color="white" ml={5}>
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
           </Link>
-          <Link href={'https://primer.style/'} color="white" mx={3}>
+          <Link href={root} color="white" mx={3}>
             <HeaderText color="blue.4" fontSize={3} fontFamily="mono" fontWeight="bold">
               {title}
             </HeaderText>
           </Link>
           <StyledOcticon icon={ChevronRight} mx={1} color="blue.2" />
-          <Link href={`https://primer.style/${root}`} color="white" ml={3} mr={4}>
+          <Link href={`${root}/${subfolder}`} color="white" ml={3} mr={4}>
             <HeaderText fontWeight="bold" color="blue.2">
               {subtitle}
             </HeaderText>
           </Link>
-          <Box display={['none', 'none', 'none', 'flex']}><Search root={root} /></Box>
+          <Box display={['none', 'none', 'none', 'flex']}><Search subfolder={subfolder} /></Box>
         </Flex>
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
         <Box display={['flex', 'flex', 'flex', 'none']}>
@@ -57,11 +57,10 @@ const Header = ({title, subtitle, root, children}) => (
     </BoxShadow>
   </Sticky>
 )
-Header.defaultProps = {
-  root: ''
-}
+
 Header.propTypes = {
   root: PropTypes.string.isRequired,
+  subfolder: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }
 

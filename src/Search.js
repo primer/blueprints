@@ -25,7 +25,7 @@ const generateBreadcrumb = path => {
     .join(' ')
 }
 
-function Search({root}) {
+function Search({subfolder}) {
   const idx = lunr(function() {
     this.ref('path') //eslint-disable-line
     this.field('title')//eslint-disable-line
@@ -62,7 +62,7 @@ function Search({root}) {
             item: result,
             index,
             key: result.ref,
-            href: `/${root}/${doc.path}`,
+            href: `/${subfolder}/${doc.path}`,
             isHighlighted: highlightedIndex === index
           })}
         >
@@ -91,7 +91,7 @@ function Search({root}) {
   }
 
   const onSelect = item => {
-    Router.push(`/${root}/${item.ref}`)
+    Router.push(`/${subfolder}/${item.ref}`)
   }
 
   return (

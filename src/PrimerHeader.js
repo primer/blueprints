@@ -4,9 +4,9 @@ import Header from './Header'
 import NavDropdown from './NavDropdown'
 import NavItem from './NavItem'
 
-const PrimerHeader = ({root}) => {
+const PrimerHeader = ({root, subfolder}) => {
   return (
-    <Header title="Primer" subtitle="Blueprints" root={root}>
+    <Header title="Primer" subtitle="Blueprints" root={root} subfolder={subfolder}>
       <Link color="blue.2" fontWeight="bold" mx={3} href="https://primer.style/news">
         What’s New
       </Link>
