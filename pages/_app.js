@@ -79,7 +79,13 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header documents={documents} root="https://primer.style" subfolder="blueprints" title="Primer" subtitle="Blueprints">
+          <Header
+            documents={documents}
+            root="https://primer.style"
+            subfolder="blueprints"
+            title="Primer"
+            subtitle="Blueprints"
+          >
             <JumpNav />
           </Header>
           <Flex
