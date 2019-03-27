@@ -109,7 +109,16 @@ function Search({subfolder}) {
         stateReducer={stateReducer}
         onSelect={onSelect}
       >
-        {({getInputProps, getMenuProps, getLabelProps, closeMenu, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
+        {({
+          getInputProps,
+          getMenuProps,
+          getLabelProps,
+          closeMenu,
+          getItemProps,
+          isOpen,
+          highlightedIndex,
+          selectedItem
+        }) => (
           <div>
             <label hidden {...getLabelProps()}>
               {' '}
