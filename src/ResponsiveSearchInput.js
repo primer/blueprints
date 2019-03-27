@@ -29,7 +29,12 @@ const StyledButton = styled.button`
 
 const ResponsiveSearchInput = props => {
   const [open, setOpen] = useState(false)
-  const handleClick = () => setOpen(!open)
+  const handleClick = () => {
+    if (open) {
+      props.closeMenu()
+    }
+    setOpen(!open)
+  }
   return (
     <Flex>
       {open && <SearchInput mr={3} {...props} />}

@@ -4,6 +4,7 @@
 import React, {useState} from 'react'
 import Router from 'next/router'
 import lunr from 'lunr'
+import styled from 'styled-components'
 import {Relative, Box, Text} from '@primer/components'
 import documents from '../searchIndex'
 import SearchItem from './SearchItem'
@@ -11,6 +12,13 @@ import Downshift from 'downshift'
 import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 import ResponsiveSearchInput from './ResponsiveSearchInput'
+
+const SearchContainer = styled.div`
+  position: relative;
+  @media (max-width: 1012px) {
+    position: initial;
+  }
+`
 
 const generateBreadcrumb = path => {
   const a = path
@@ -94,14 +102,14 @@ function Search({subfolder}) {
   }
 
   return (
-    <Box as={Relative}>
+    <SearchContainer>
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? documents[item.ref].title : '')}
         stateReducer={stateReducer}
         onSelect={onSelect}
       >
-        {({getInputProps, getMenuProps, getLabelProps, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
+        {({getInputProps, getMenuProps, getLabelProps, closeMenu, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
           <div>
             <label hidden {...getLabelProps()}>
               {' '}
@@ -111,15 +119,15 @@ function Search({subfolder}) {
               <SearchInput placeholder="Search" {...getInputProps({onChange})} />
             </Box>
             <Box display={['inline-block', 'inline-block', 'inline-block', 'none']}>
-              <ResponsiveSearchInput {...getInputProps({onChange})} />
+              <ResponsiveSearchInput closeMenu={closeMenu} {...getInputProps({onChange})} />
             </Box>
             <SearchResults color="black" open={isOpen} {...getMenuProps()}>
-              {renderResults(selectedItem, getItemProps, highlightedIndex, results)}
+              {renderResults(selectedItem, getItemProps, highlightedIndex)}
             </SearchResults>
           </div>
         )}
       </Downshift>
-    </Box>
+    </SearchContainer>
   )
 }
 
