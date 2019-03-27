@@ -1,7 +1,6 @@
 import React from 'react'
 import {rootPage, nodeSort} from './utils'
 import NavLink from './NavLink'
-import Section from './Section'
 import SectionLink from './SectionLink'
 
 /**

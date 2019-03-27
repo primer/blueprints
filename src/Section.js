@@ -1,5 +1,5 @@
 import React from 'react'
-import {BorderBox, Box} from '@primer/components'
+import {BorderBox} from '@primer/components'
 import NavList from './NavList'
 import {addPath} from './utils'
 
