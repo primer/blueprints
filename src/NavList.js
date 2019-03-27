@@ -2,6 +2,7 @@ import React from 'react'
 import {rootPage, nodeSort} from './utils'
 import NavLink from './NavLink'
 import Section from './Section'
+import SectionLink from './SectionLink'
 
 /**
  * A <NavList> renders a <Section.Link> for the given `path` and looks up the
@@ -13,7 +14,7 @@ export default function NavList({path}) {
   const children = node ? node.children.sort(nodeSort) : []
   return (
     <>
-      <Section.Link color="gray.9" href={path} mb={3} />
+      <SectionLink color="gray.9" href={path} mb={3} />
       {children.map(child => (
         <NavLink mt={2} href={child.path} key={child.path} />
       ))}
