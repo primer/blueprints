@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from '@primer/components'
-import Header from './Header'
 import NavDropdown from './NavDropdown'
 import NavItem from './NavItem'
 

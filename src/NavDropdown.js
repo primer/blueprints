@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {ChevronDown} from '@githubprimer/octicons-react'
-import {Text, Flex, Relative, BorderBox, StyledOcticon, Absolute, Box} from '@primer/components'
+import {Text, Flex, Relative, StyledOcticon, Absolute, Box} from '@primer/components'
 import getDirectionStyles from './getDirectionStyles'
 import Details from './Details'
 
@@ -37,19 +37,19 @@ function NavDropdown({children, title, color, direction = 'se', ...rest}) {
   )
 }
 
-const Responsive = ({children, title, color, ...rest}) => {
+const Responsive = ({children, title, color}) => {
   return (
     <Details
       render={({toggle}) => (
         <>
-          <Flex as="summary" alignItems='center' justifyContent='space-between' onClick={toggle}>
-            <Text fontWeight="bold" color={color}>{title}</Text>
+          <Flex as="summary" alignItems="center" justifyContent="space-between" onClick={toggle}>
+            <Text fontWeight="bold" color={color}>
+              {title}
+            </Text>
             <StyledOcticon icon={ChevronDown} />
           </Flex>
 
-          <Relative>
-            {children}
-          </Relative>
+          <Relative>{children}</Relative>
         </>
       )}
     />
