@@ -8,10 +8,13 @@ export default [
   {
     input: 'src/index.js',
     plugins,
+    external: [
+      "styled-components"
+    ],
     output: formats.map(format => ({
       file: `dist/index.${format}.js`,
       format,
       name: 'primer'
     }))
-  },
+  }
 ]

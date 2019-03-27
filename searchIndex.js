@@ -28,16 +28,6 @@ export default {
     "path": "content-components/frame",
     "content": "\nThe Frame component wraps children components in an iframe\n\n\n```.jsx\n<Frame minHeight={50}>\n  <Text>Hi</Text>\n</Frame>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| minHeight | String or Number | 0 | minHeight of iframe\n| border | String | 0 | border for element\n| borderRadius | String or Number | 0 | borderRadius for element\n| width | String or Number | 100% | width of iframe\n"
   },
-  "content-components/link": {
-    "title": "Link",
-    "path": "content-components/link",
-    "content": "\nUse the Link component to add links within documentation. The link component wraps the standard Primer link with Next's link component for easy routing in Next.js applications.\n\n```.jsx\n<Link href=\"https://github.com/primer\">Primer</Link>\n\n```\n"
-  },
-  "navigation-components/section": {
-    "title": "Section",
-    "path": "navigation-components/section",
-    "content": "\nA `Section` gets a `path` and optional children. If it has children it will\nrender those and prepend each child's `href` prop with the provided `path`.\nThis means that you can do:\n\n```.jsx\n<Section path=\"/section\">\n  <Section.Link href=\"foo\">Links to /section/foo</Section.Link>\n</Section>\n```\n\nIf no children are provided, it renders a [`NavList`](/blueprints/nav-components/NavList) with the provided\n`path`.\n"
-  },
   "navigation-components/header": {
     "title": "Header",
     "path": "navigation-components/header",
@@ -47,30 +37,30 @@ export default {
     ],
     "content": "\nUse Header to provide a top navigation for your site. Children of `Header` will be rendered on the right side of the component. Children should be top level navigation links. The `title` prop specifies what should be rendered to the right of the GitHub Mark. The `root` prop specifies where you'd like the GitHub Mark to link to. Leave blank if you'd like it to route to `/`.\n```.jsx\n<Header title=\"Hello world!\" root='/blueprints'>\n  <NavDropdown title={`What's new`}>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Design'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Development'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Content'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n  <NavDropdown title='Tools'>\n    <NavItem>Overview</NavItem>\n    <NavItem>Interface Guidelines</NavItem>\n    <NavItem>Octicons</NavItem>\n  </NavDropdown>\n</Header>\n```\n"
   },
-  "navigation-components/nav-link": {
-    "title": "NavLink",
-    "path": "navigation-components/nav-link",
-    "content": "\nThe NavLink component is a PageLink that turns black when it's href matches the current path. NavLinks are typically used in sidebar sub-navigation.\n\n\n```.jsx\nMatches current path:\n<NavLink mb={4} href='/blueprints/navigation-components/NavLink' />\n\nDoes not match current path:\n<NavLink href='/blueprints/navigation-components/Section' />\n```\n"
+  "navigation-components/section": {
+    "title": "Section",
+    "path": "navigation-components/section",
+    "content": "\nA `Section` gets a `path` and optional children. If it has children it will\nrender those and prepend each child's `href` prop with the provided `path`.\nThis means that you can do:\n\n```.jsx\n<Section path=\"/section\">\n  <Section.Link href=\"foo\">Links to /section/foo</Section.Link>\n</Section>\n```\n\nIf no children are provided, it renders a [`NavList`](/blueprints/nav-components/NavList) with the provided\n`path`.\n"
   },
-  "navigation-components/side-nav": {
-    "title": "SideNav",
-    "path": "navigation-components/side-nav",
-    "content": "\n\nContainer component that takes children and nests them in a Router with layout styling. The `SideNav` of this site uses `Section` components to show both the Content Components and Navigation Components sections. See [the `Section` docs](/blueprints/navigation-components/section) for more details.\n\nYou may also use the `RouteMatch` components in your `SideNav` to conditionally show specific navigation links in the SideNav depending on where you are on the docs site. See [`RouteMatch` docs](/blueprints/navigation-components/section) for more details.\n\n\n```.jsx\n<SideNav>\n  <RouteMatch path=\"/blueprints\">\n    <Section path=\"content-components\" />\n  </RouteMatch>\n</SideNav>\n```\n"
+  "navigation-components": {
+    "title": "Navigation Components",
+    "path": "navigation-components",
+    "content": "\nNavigation components can be used to build navigation on documentation sites\n"
+  },
+  "content-components/link": {
+    "title": "Link",
+    "path": "content-components/link",
+    "content": "\nUse the Link component to add links within documentation. The link component wraps the standard Primer link with Next's link component for easy routing in Next.js applications.\n\n```.jsx\n<Link href=\"https://github.com/primer\">Primer</Link>\n\n```\n"
   },
   "navigation-components/nav-list": {
     "title": "NavList",
     "path": "navigation-components/nav-list",
     "content": "\n\nA `<NavList>` renders a `<Section.Link>` for the given `path` and looks up the\npath in the page tree. If a node is found, it renders a `<NavLink>` for each\nof the node's children.\n\nThe automatically generated page links in a NavList are sorted alphabetically by either the sort_title or title frontmatter keys. If a page has a non-empty sort_title, that value is used only to determine its position in the list; otherwise, the title determines their sort order. The title key is always used as a page's link text.\n\n\n```.jsx\n<NavList path='/blueprints/content-components'/>\n```\n"
   },
-  "navigation-components/route-match": {
-    "title": "RouteMatch",
-    "path": "navigation-components/route-match",
-    "content": "\nUse `RouteMatch` to conditionally render content without a wrapper\nelement when contained directly in a `Router`. `RouteMatch` is most commonly used to conditionally render a chunk of side navigation links.\n\n\n```.jsx\n<Router>\n  <RouteMatch path=\"/blueprints/navigation-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/navigation-components\"</Box>\n  </RouteMatch>\n  <RouteMatch path=\"/blueprints/content-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/content-components\"</Box>\n  </RouteMatch>\n</Router>\n\n```\n"
-  },
-  "navigation-components": {
-    "title": "Navigation Components",
-    "path": "navigation-components",
-    "content": "\nNavigation components can be used to build navigation on documentation sites\n"
+  "navigation-components/nav-link": {
+    "title": "NavLink",
+    "path": "navigation-components/nav-link",
+    "content": "\nThe NavLink component is a PageLink that turns black when it's href matches the current path. NavLinks are typically used in sidebar sub-navigation.\n\n\n```.jsx\nMatches current path:\n<NavLink mb={4} href='/blueprints/navigation-components/NavLink' />\n\nDoes not match current path:\n<NavLink href='/blueprints/navigation-components/Section' />\n```\n"
   },
   "navigation-components/page-link": {
     "title": "PageLink",
@@ -81,5 +71,15 @@ export default {
     "title": "Tools",
     "path": "tools",
     "content": "\nComing soon\n"
+  },
+  "navigation-components/side-nav": {
+    "title": "SideNav",
+    "path": "navigation-components/side-nav",
+    "content": "\n\nContainer component that takes children and nests them in a Router with layout styling. The `SideNav` of this site uses `Section` components to show both the Content Components and Navigation Components sections. See [the `Section` docs](/blueprints/navigation-components/section) for more details.\n\nYou may also use the `RouteMatch` components in your `SideNav` to conditionally show specific navigation links in the SideNav depending on where you are on the docs site. See [`RouteMatch` docs](/blueprints/navigation-components/section) for more details.\n\n\n```.jsx\n<SideNav>\n  <RouteMatch path=\"/blueprints\">\n    <Section path=\"content-components\" />\n  </RouteMatch>\n</SideNav>\n```\n"
+  },
+  "navigation-components/route-match": {
+    "title": "RouteMatch",
+    "path": "navigation-components/route-match",
+    "content": "\nUse `RouteMatch` to conditionally render content without a wrapper\nelement when contained directly in a `Router`. `RouteMatch` is most commonly used to conditionally render a chunk of side navigation links.\n\n\n```.jsx\n<Router>\n  <RouteMatch path=\"/blueprints/navigation-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/navigation-components\"</Box>\n  </RouteMatch>\n  <RouteMatch path=\"/blueprints/content-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/content-components\"</Box>\n  </RouteMatch>\n</Router>\n\n```\n"
   }
 }
