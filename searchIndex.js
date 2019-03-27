@@ -14,6 +14,11 @@ export default {
     "path": "/",
     "content": "\n# Introduction\n\nThese components are to be used to build documentation sites across our different Primer projects.\n"
   },
+  "content-components/frame": {
+    "title": "Frame",
+    "path": "content-components/frame",
+    "content": "\nThe Frame component wraps children components in an iframe\n\n\n```.jsx\n<Frame minHeight={50}>\n  <Text>Hi</Text>\n</Frame>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| minHeight | String or Number | 0 | minHeight of iframe\n| border | String | 0 | border for element\n| borderRadius | String or Number | 0 | borderRadius for element\n| width | String or Number | 100% | width of iframe\n"
+  },
   "content-components/contributors": {
     "title": "Contributors",
     "path": "content-components/contributors",
@@ -28,11 +33,6 @@ export default {
     "title": "Link",
     "path": "content-components/link",
     "content": "\nUse the Link component to add links within documentation. The link component wraps the standard Primer link with Next's link component for easy routing in Next.js applications.\n\n```.jsx\n<Link href=\"https://github.com/primer\">Primer</Link>\n\n```\n"
-  },
-  "content-components/frame": {
-    "title": "Frame",
-    "path": "content-components/frame",
-    "content": "\nThe Frame component wraps children components in an iframe\n\n\n```.jsx\n<Frame minHeight={50}>\n  <Text>Hi</Text>\n</Frame>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| minHeight | String or Number | 0 | minHeight of iframe\n| border | String | 0 | border for element\n| borderRadius | String or Number | 0 | borderRadius for element\n| width | String or Number | 100% | width of iframe\n"
   },
   "navigation-components/section": {
     "title": "Section",

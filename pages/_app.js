@@ -2,6 +2,7 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import {withMDXLive} from 'mdx-live'
+import documents from '../searchIndex'
 import Head from 'next/head'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
@@ -29,7 +30,6 @@ export const H5 = props => <MarkdownHeading as="h5" fontSize={1} fontWeight="lig
 
 function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
-
   return {
     h1: H1,
     h2: H2,
@@ -79,7 +79,7 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header root="https://primer.style" subfolder="blueprints" title="Primer" subtitle="Blueprints">
+          <Header documents={documents} root="https://primer.style" subfolder="blueprints" title="Primer" subtitle="Blueprints">
             <JumpNav />
           </Header>
           <Flex
