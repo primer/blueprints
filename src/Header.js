@@ -20,12 +20,14 @@ const Header = ({title, subtitle, root, subfolder, children}) => (
           <Link href={root} color="white" ml={5}>
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
           </Link>
-          <Link href={root} color="white" mx={3}>
-            <HeaderText color="blue.4" fontSize={3} fontFamily="mono" fontWeight="bold">
-              {title}
-            </HeaderText>
-          </Link>
-          <StyledOcticon icon={ChevronRight} mx={1} color="blue.2" />
+          <Box display={['none', 'inline-block', 'inline-block', 'inline-block']}>
+            <Link href={root} color="white" mx={3}>
+              <HeaderText color="blue.4" fontSize={3} fontFamily="mono" fontWeight="bold">
+                {title}
+              </HeaderText>
+            </Link>
+            <StyledOcticon icon={ChevronRight} mx={1} color="blue.2" />
+          </Box>
           <Link href={`${root}/${subfolder}`} color="white" ml={3} mr={4}>
             <HeaderText fontWeight="bold" color="blue.2">
               {subtitle}
