@@ -24,6 +24,8 @@
   ],
   "files": [
     "dist",
+    "lib",
+    "meta.js",
     "src"
   ],
   "author": "GitHub, Inc.",
