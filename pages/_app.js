@@ -8,7 +8,6 @@ import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
 import {config} from '../src/utils'
 import {pageMap} from '../meta'
-import {join} from 'path'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {

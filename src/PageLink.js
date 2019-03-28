@@ -29,6 +29,7 @@ export default function PageLink(props) {
   }
   const page = pageMap.get(href)
   if (!page) {
+    // eslint-disable-next-line no-console
     console.warn(`no page for "${href}"`, pageMap.keys())
   }
   const children = (page ? page.meta.title : null) || href

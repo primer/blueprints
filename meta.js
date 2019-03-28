@@ -6,10 +6,9 @@
  */
 const globby = require('globby')
 const matter = require('gray-matter')
-const {dirname, join, parse: parsePath} = require('path')
+const {join, parse: parsePath} = require('path')
 const {readFileSync} = require('fs')
 
-const INDEX_PATTERN = /\/index[^\/]*$/
 const RUNTIME_TEMPLATE_PATH = require.resolve('./lib/meta-runtime.template')
 
 module.exports = () => {
@@ -20,35 +19,31 @@ module.exports = () => {
   const pagesDir = join(process.cwd(), 'pages')
   // console.warn(`loading pages from: ${pagesDir}`)
 
-  const globs = [
-    '!node_modules',
-    ...pageExtensions.map(ext => `**/*.${ext}`)
-  ]
+  const globs = ['!node_modules', ...pageExtensions.map(ext => `**/*.${ext}`)]
   // console.warn(`page globs: ${globs.join(', ')}`)
 
-  return globby(globs, {cwd: pagesDir})
-    .then(pagePaths => {
-      const pages = pagePaths.map(path => {
-        const file = join(pagesDir, path)
-        const page = loadPage(file)
-        return Object.assign(page, {
-          path: getURLPathForFile(path),
-          requirePath: './' + path,
-          file
-        })
+  return globby(globs, {cwd: pagesDir}).then(pagePaths => {
+    const pages = pagePaths.map(path => {
+      const file = join(pagesDir, path)
+      const page = loadPage(file)
+      return Object.assign(page, {
+        path: getURLPathForFile(path),
+        requirePath: `./${path}`,
+        file
       })
-
-      return {
-        cacheable: true,
-        dependencies: [RUNTIME_TEMPLATE_PATH, ...pages.map(page => page.file)],
-        code: getCodeForPages(pages)
-      }
     })
+
+    return {
+      cacheable: true,
+      dependencies: [RUNTIME_TEMPLATE_PATH, ...pages.map(page => page.file)],
+      code: getCodeForPages(pages)
+    }
+  })
 }
 
 function loadPage(path) {
   const buffer = readFileSync(path)
-  const {data, excerpt, content} = matter(buffer, {excerpt: true})
+  const {data, excerpt} = matter(buffer, {excerpt: true})
   return {path, meta: data, excerpt}
 }
 
@@ -119,6 +114,6 @@ function removePrefix(str, prefix) {
 }
 
 function getURLPathForFile(path) {
-  let {dir, name} = parsePath(path)
+  const {dir, name} = parsePath(path)
   return name === 'index' ? join('/', dir) : join('/', dir, name)
 }
