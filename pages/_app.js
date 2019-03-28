@@ -4,10 +4,10 @@ import {MDXProvider} from '@mdx-js/tag'
 import {withMDXLive} from 'mdx-live'
 import documents from '../searchIndex'
 import Head from 'next/head'
+import {pageMap} from '@primer/blueprints/meta'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
 import {config} from '../src/utils'
-import {pageMap} from '../meta'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {
