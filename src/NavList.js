@@ -1,5 +1,5 @@
 import React from 'react'
-import {pageMap} from '../meta'
+import {pageMap} from '@primer/blueprints/meta'
 import {nodeSort} from './utils'
 import NavLink from './NavLink'
 import SectionLink from './SectionLink'

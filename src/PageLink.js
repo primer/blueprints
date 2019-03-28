@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from './Link'
-import {pageMap} from '../meta'
+import {pageMap} from '@primer/blueprints/meta'
 
 /**
  * The PageLink component takes an `href` and optional `children`.
