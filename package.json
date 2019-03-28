@@ -9,6 +9,7 @@
     "prebuild": "npm run dist",
     "now-build": "next build",
     "now-start": "next start",
+    "now-test": "npm run now-build && npm run now-start",
     "predist": "rm -rf dist",
     "dist": "NODE_ENV=production rollup -c",
     "prepublishOnly": "npm run dist",
