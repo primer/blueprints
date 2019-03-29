@@ -2,21 +2,41 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import {withMDXLive} from 'mdx-live'
+import documents from '../searchIndex'
 import Head from 'next/head'
+import {pageMap} from '@primer/blueprints/meta'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
-import {config, requirePage, rootPage} from '../src/utils'
+import {config} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
-export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
-const {Header, SideNav, RouteMatch, Section, Link, Outline} = docsComponents
-const {BaseStyles, BorderBox, Box, Flex, theme, Heading} = primerComponents
+const {
+  MarkdownHeading,
+  SideNav,
+  ResponsiveJumpNav,
+  RouteMatch,
+  Header,
+  JumpNav,
+  Section,
+  Link,
+  Outline
+} = docsComponents
+const {BaseStyles, BorderBox, Box, Flex, theme} = primerComponents
+
+export const H1 = props => <MarkdownHeading fontSize={5} fontWeight="light" {...props} />
+export const H2 = props => <MarkdownHeading as="h2" fontSize={4} fontWeight="light" {...props} />
+export const H3 = props => <MarkdownHeading as="h3" fontSize={3} fontWeight="light" {...props} />
+export const H4 = props => <MarkdownHeading as="h4" fontSize={2} fontWeight="light" {...props} />
+export const H5 = props => <MarkdownHeading as="h5" fontSize={1} fontWeight="light" {...props} />
 
 function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
-
   return {
     h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    h5: H5,
     a: Link,
     code: withMDXLive('pre'),
     p: ({children, ...rest}) => {
@@ -29,30 +49,32 @@ function getComponents(page = {}) {
     // "unwrap" <pre> elements around <code> blocks
     pre: props => props.children,
     ...docsComponents,
-    ...primerComponents
+    ...primerComponents,
+    documents
   }
 }
 
+const requirePage = require.context('.', true, /\.(js|md)x?$/)
+
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
-    let page = {}
+    let initialProps = {}
 
     if (Component.getInitialProps) {
-      page = await Component.getInitialProps(ctx)
+      initialProps = await Component.getInitialProps(ctx)
     }
 
-    return {page}
+    return {initialProps}
   }
 
   render() {
     // strip the trailing slash
     const pathname = this.props.router.pathname.replace(/\/$/, '')
-    const {Component, page} = this.props
+    const {Component, initialProps} = this.props
 
-    const node = rootPage.first(node => node.path === pathname) || {}
-    const {file, meta = {}} = node || {}
-
-    const Hero = file ? requirePage(file).Hero : null
+    const page = pageMap.get(pathname) || {}
+    const {meta = {}, requirePath} = page
+    const Hero = requirePath ? requirePage(requirePath).Hero : null
 
     return (
       <BaseStyles fontSize={2} style={{fontFamily: theme.fonts.normal}}>
@@ -60,10 +82,14 @@ export default class MyApp extends App {
           <Head>
             <title>Primer Blueprints{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header title="Primer Blueprints" root={'blueprints'}>
-            <Section.Link px={4} color="white" href="/blueprints">
-              Docs
-            </Section.Link>
+          <Header
+            documents={documents}
+            root="https://primer.style"
+            subfolder="blueprints"
+            title="Primer"
+            subtitle="Blueprints"
+          >
+            <JumpNav />
           </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
@@ -74,9 +100,9 @@ export default class MyApp extends App {
               {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
-                  {!meta.hero && meta.title ? <h1>{meta.title}</h1> : null}
-                  <MDXProvider components={getComponents(node)}>
-                    <Component {...page} />
+                  {!meta.hero && meta.title ? <MarkdownHeading>{meta.title}</MarkdownHeading> : null}
+                  <MDXProvider components={getComponents(page)}>
+                    <Component {...initialProps} />
                   </MDXProvider>
                   {config.production ? null : (
                     <details>
@@ -88,7 +114,7 @@ export default class MyApp extends App {
               </Box>
             </Box>
             <BorderBox
-              width={['100%', '100%', 256]}
+              width={['100%', '100%', '100%', 256]}
               minWidth={256}
               bg="gray.0"
               borderColor="gray.2"
@@ -97,6 +123,9 @@ export default class MyApp extends App {
               borderRight={1}
               borderTop={[1, 1, 0, 0]}
             >
+              <Box display={['block', 'block', 'block', 'none']}>
+                <ResponsiveJumpNav />
+              </Box>
               <SideNav>
                 <RouteMatch path="/blueprints">
                   <Section path="content-components" />

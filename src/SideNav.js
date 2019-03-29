@@ -4,13 +4,15 @@ import Router from './Router'
 
 function SideNav(props) {
   return (
-    <Relative is="nav">
-      <Box id="sidenav" {...props}>
-        <Flex flexDirection="column" alignItems="start">
-          <Router>{props.children}</Router>
-        </Flex>
-      </Box>
-    </Relative>
+    <Box height="100vh">
+      <Relative as="nav">
+        <Box id="sidenav" {...props}>
+          <Flex flexDirection="column" alignItems="start">
+            <Router>{props.children}</Router>
+          </Flex>
+        </Box>
+      </Relative>
+    </Box>
   )
 }
 

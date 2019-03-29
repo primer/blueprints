@@ -3,7 +3,9 @@
     "next/babel"
   ],
   "plugins": [
-    "add-react-displayname"
+    "macros",
+    "add-react-displayname",
+    "babel-plugin-styled-components"
   ],
   "env": {
     "test": {

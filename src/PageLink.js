@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from './Link'
-import {rootPage} from './utils'
+import {pageMap} from '@primer/blueprints/meta'
 
 /**
  * The PageLink component takes an `href` and optional `children`.
  * If no `children` are provided, we look up the "node" of the corresponding
  * page in the tree (the one whose `path` matches the given `href`) and use
- * that node's `meta.title` if it's set. In other words, given the following
+ * that page's `meta.title` if it's set. In other words, given the following
  * pages/foo/bar.md:
  *
  * ```md
@@ -27,7 +27,11 @@ export default function PageLink(props) {
   if (content) {
     return <Link {...props} />
   }
-  const node = rootPage.first(node => node.path === href)
-  const children = (node ? node.meta.title : null) || href
+  const page = pageMap.get(href)
+  if (!page) {
+    // eslint-disable-next-line no-console
+    console.warn(`no page for "${href}"`, pageMap.keys())
+  }
+  const children = (page ? page.meta.title : null) || href
   return <Link {...props}>{children}</Link>
 }
