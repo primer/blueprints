@@ -1,5 +1,6 @@
 import React from 'react'
-import {rootPage, nodeSort} from './utils'
+import {pageMap} from '@primer/blueprints/meta'
+import {nodeSort} from './utils'
 import NavLink from './NavLink'
 import SectionLink from './SectionLink'
 
@@ -9,7 +10,7 @@ import SectionLink from './SectionLink'
  * of the node's children.
  */
 export default function NavList({path}) {
-  const node = rootPage.first(node => node.path === path)
+  const node = pageMap.get(path)
   const children = node ? node.children.sort(nodeSort) : []
   return (
     <>

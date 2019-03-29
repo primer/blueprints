@@ -4,9 +4,10 @@ import {MDXProvider} from '@mdx-js/tag'
 import {withMDXLive} from 'mdx-live'
 import documents from '../searchIndex'
 import Head from 'next/head'
+import {pageMap} from '@primer/blueprints/meta'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
-import {config, requirePage, rootPage} from '../src/utils'
+import {config} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {
@@ -52,26 +53,27 @@ function getComponents(page = {}) {
   }
 }
 
+const requirePage = require.context('.', true, /\.(js|md)x?$/)
+
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
-    let page = {}
+    let initialProps = {}
 
     if (Component.getInitialProps) {
-      page = await Component.getInitialProps(ctx)
+      initialProps = await Component.getInitialProps(ctx)
     }
 
-    return {page}
+    return {initialProps}
   }
 
   render() {
     // strip the trailing slash
     const pathname = this.props.router.pathname.replace(/\/$/, '')
-    const {Component, page} = this.props
+    const {Component, initialProps} = this.props
 
-    const node = rootPage.first(node => node.path === pathname) || {}
-    const {file, meta = {}} = node || {}
-
-    const Hero = file ? requirePage(file).Hero : null
+    const page = pageMap.get(pathname) || {}
+    const {meta = {}, requirePath} = page
+    const Hero = requirePath ? requirePage(requirePath).Hero : null
 
     return (
       <BaseStyles fontSize={2} style={{fontFamily: theme.fonts.normal}}>
@@ -98,8 +100,8 @@ export default class MyApp extends App {
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
                   {!meta.hero && meta.title ? <MarkdownHeading>{meta.title}</MarkdownHeading> : null}
-                  <MDXProvider components={getComponents(node)}>
-                    <Component {...page} />
+                  <MDXProvider components={getComponents(page)}>
+                    <Component {...initialProps} />
                   </MDXProvider>
                   {config.production ? null : (
                     <details>
