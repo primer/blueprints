@@ -7,14 +7,18 @@ const SearchResults = styled.div`
   border-radius: 3px;
   width: 100%;
   overflow: auto;
-  right: 0;
+  left: 0;
+  max-height: 90vh;
+  overflow-y: scroll;
   background-color: #fff;
   display: ${props => (props.open ? 'block' : 'none')};
   position: absolute;
 
   @media (max-width: 1012px) {
     width: 100vw;
-    height: auto;
+    max-height:inherit;
+    height: 100vh;
+    margin-top: 15px;
     right: 0;
     left: 0;
   }

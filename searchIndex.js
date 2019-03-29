@@ -1,27 +1,27 @@
 export default {
-  "content-components/code-example": {
-    "title": "CodeExample",
-    "path": "content-components/code-example",
-    "content": "\nUse the CodeExample component to wrap HTML code examples. This component was created to prevent CSS from our markdown styles from bleeding over into examples by displaying examples in an iframe.\n\nThis component can also be passed to the component prop of your MDXProvider to replace all code blocks with CodeExample like so:\n\n```\nconst components = {\n  code: CodeExample\n}\n\nreturn (\n  <MDXProvider components={components}>\n    <Component {...page} />\n  </MDXProvider>\n)\n\n```\n\n```.jsx\n<CodeExample>\n  <div>hello world!</div>\n</CodeExample>\n\n```\n"
-  },
   "/": {
     "path": "/",
     "content": "\nimport {Box, Heading} from '@primer/components'\nimport {CONTENT_MAX_WIDTH} from '../../src/constants'\n\nexport const Hero = () => (\n   <Box bg=\"black\">\n    <Box maxWidth={CONTENT_MAX_WIDTH} p={6} mx=\"auto\" mb={3}>\n      <Box mt={4} mb={4}>\n        <Heading fontWeight=\"bold\" color=\"blue.4\" fontSize={7} pb={3} m={0}>\n          Primer Blueprints\n        </Heading>\n      </Box>\n    </Box>\n  </Box>\n)\n\n# Introduction\n\nThese components are to be used to build documentation sites across our different Primer projects.\n"
   },
-  "content-components/clipboard-copy": {
-    "title": "ClipboardCopy",
-    "path": "content-components/clipboard-copy",
-    "content": "\nUse the ClipboardCopy component to add copying functionality next to code blocks in documentation.\nThe `value` prop must be provided with the current value of the code block.\n\n```.jsx\n<ClipboardCopy value={'hihihi'}/>\n\n```\n\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| value | String | | The content that will be added to the user's clipboard when clicked.\n"
+  "content-components/frame": {
+    "title": "Frame",
+    "path": "content-components/frame",
+    "content": "\nThe Frame component wraps children components in an iframe\n\n\n```.jsx\n<Frame minHeight={50}>\n  <Text>Hi</Text>\n</Frame>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| minHeight | String or Number | 0 | minHeight of iframe\n| border | String | 0 | border for element\n| borderRadius | String or Number | 0 | borderRadius for element\n| width | String or Number | 100% | width of iframe\n"
   },
   "content-components/contributors": {
     "title": "Contributors",
     "path": "content-components/contributors",
     "content": "\nUse the Contributors component to add contributor credit to the bottom of any docs page. With a provided file path & repo path, the component will fetch commit data from the GitHub API and display all contributors to that file. In instances where you'd like to add additional contributor credits that are not reflected in the commit data (for example, if a repository has been moved and the git history lost) you can use the `contributor` prop to add additional contributors.\n\n\n```.jsx\n<Contributors\n  filePath='README.md'\n  repoPath='primer/components'\n  contributors={[{login: 'emplums'}, {login: 'broccolini'}]}\n/>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| filePath | String | | The path to the file you'd like to pull contributor data from. |\n| repoPath | String | | The repository path on GitHub. For example: `primer/components` |\n| contributors | Array | | Prop for adding additional contributors not reflected in commit history. Format is an array of objects with a `login` key. Ex. `[{login: 'emplums'}, {login: 'broccolini'}]` |\n"
   },
-  "content-components/frame": {
-    "title": "Frame",
-    "path": "content-components/frame",
-    "content": "\nThe Frame component wraps children components in an iframe\n\n\n```.jsx\n<Frame minHeight={50}>\n  <Text>Hi</Text>\n</Frame>\n```\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| minHeight | String or Number | 0 | minHeight of iframe\n| border | String | 0 | border for element\n| borderRadius | String or Number | 0 | borderRadius for element\n| width | String or Number | 100% | width of iframe\n"
+  "content-components/clipboard-copy": {
+    "title": "ClipboardCopy",
+    "path": "content-components/clipboard-copy",
+    "content": "\nUse the ClipboardCopy component to add copying functionality next to code blocks in documentation.\nThe `value` prop must be provided with the current value of the code block.\n\n```.jsx\n<ClipboardCopy value={'hihihi'}/>\n\n```\n\n\n## Component props\n\n| Name | Type | Default | Description |\n| :- | :- | :-: | :- |\n| value | String | | The content that will be added to the user's clipboard when clicked.\n"
+  },
+  "content-components/code-example": {
+    "title": "CodeExample",
+    "path": "content-components/code-example",
+    "content": "\nUse the CodeExample component to wrap HTML code examples. This component was created to prevent CSS from our markdown styles from bleeding over into examples by displaying examples in an iframe.\n\nThis component can also be passed to the component prop of your MDXProvider to replace all code blocks with CodeExample like so:\n\n```\nconst components = {\n  code: CodeExample\n}\n\nreturn (\n  <MDXProvider components={components}>\n    <Component {...page} />\n  </MDXProvider>\n)\n\n```\n\n```.jsx\n<CodeExample>\n  <div>hello world!</div>\n</CodeExample>\n\n```\n"
   },
   "content-components/link": {
     "title": "Link",
@@ -67,15 +67,15 @@ export default {
     "path": "navigation-components/page-link",
     "content": "\nThe PageLink component takes an `href` and optional `children`.\nIf no `children` are provided, we look up the \"node\" of the corresponding\npage in the tree (the one whose `path` matches the given `href`) and use\nthat node's `title` frontmatter key. In other words, given the following\npages/foo/bar.md:\n\n```md\n---\ntitle: Foo Bar\n---\n```\n\nThe following instance of PageLink should render a link to \"/foo/bar\" with\n\"Foo Bar\" as its text:\n```.jsx\n<PageLink href=\"/foo/bar\" />\n```\n"
   },
-  "navigation-components/side-nav": {
-    "title": "SideNav",
-    "path": "navigation-components/side-nav",
-    "content": "\n\nContainer component that takes children and nests them in a Router with layout styling. The `SideNav` of this site uses `Section` components to show both the Content Components and Navigation Components sections. See [the `Section` docs](/blueprints/navigation-components/section) for more details.\n\nYou may also use the `RouteMatch` components in your `SideNav` to conditionally show specific navigation links in the SideNav depending on where you are on the docs site. See [`RouteMatch` docs](/blueprints/navigation-components/section) for more details.\n\n\n```.jsx\n<SideNav>\n  <RouteMatch path=\"/blueprints\">\n    <Section path=\"content-components\" />\n  </RouteMatch>\n</SideNav>\n```\n"
-  },
   "navigation-components/route-match": {
     "title": "RouteMatch",
     "path": "navigation-components/route-match",
     "content": "\nUse `RouteMatch` to conditionally render content without a wrapper\nelement when contained directly in a `Router`. `RouteMatch` is most commonly used to conditionally render a chunk of side navigation links.\n\n\n```.jsx\n<Router>\n  <RouteMatch path=\"/blueprints/navigation-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/navigation-components\"</Box>\n  </RouteMatch>\n  <RouteMatch path=\"/blueprints/content-components\">\n    <Box>this will only show up on pages whose path begins with \"/blueprints/content-components\"</Box>\n  </RouteMatch>\n</Router>\n\n```\n"
+  },
+  "navigation-components/side-nav": {
+    "title": "SideNav",
+    "path": "navigation-components/side-nav",
+    "content": "\n\nContainer component that takes children and nests them in a Router with layout styling. The `SideNav` of this site uses `Section` components to show both the Content Components and Navigation Components sections. See [the `Section` docs](/blueprints/navigation-components/section) for more details.\n\nYou may also use the `RouteMatch` components in your `SideNav` to conditionally show specific navigation links in the SideNav depending on where you are on the docs site. See [`RouteMatch` docs](/blueprints/navigation-components/section) for more details.\n\n\n```.jsx\n<SideNav>\n  <RouteMatch path=\"/blueprints\">\n    <Section path=\"content-components\" />\n  </RouteMatch>\n</SideNav>\n```\n"
   },
   "tools": {
     "title": "Tools",
