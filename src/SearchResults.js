@@ -16,7 +16,7 @@ const SearchResults = styled.div`
 
   @media (max-width: 1012px) {
     width: 100vw;
-    max-height:inherit;
+    max-height: inherit;
     height: 100vh;
     margin-top: 15px;
     right: 0;
