@@ -40,13 +40,13 @@ export default function CodeExample(props) {
               <LivePreview />
             </Frame>
           </BorderBox>
-          <Box is={Relative} bg="gray.1" p={3}>
+          <Box as={Relative} bg="gray.1" p={3}>
             <LiveEditor style={{margin: 0, padding: 0}} />
             <Absolute right={0} top={0} m={3}>
               <ClipboardCopy value={source} />
             </Absolute>
             <Text
-              is={LiveError}
+              as={LiveError}
               fontFamily="mono"
               style={{
                 overflow: 'auto',
@@ -63,7 +63,7 @@ export default function CodeExample(props) {
       dangerouslySetInnerHTML
     }
     // eslint-disable-next-line react/no-danger-with-children
-    return <BorderBox data-source={source} is="pre" {...rest} />
+    return <BorderBox data-source={source} as="pre" {...rest} />
   }
 }
 

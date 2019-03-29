@@ -1,5 +1,6 @@
 ---
 title: NavLink
+path: navigation-components/nav-link
 ---
 
 The NavLink component is a PageLink that turns black when it's href matches the current path. NavLinks are typically used in sidebar sub-navigation.

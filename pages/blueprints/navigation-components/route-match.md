@@ -1,5 +1,6 @@
 ---
 title: RouteMatch
+path: navigation-components/route-match
 ---
 
 Use `RouteMatch` to conditionally render content without a wrapper

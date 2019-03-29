@@ -1,5 +1,6 @@
 ---
 title: PageLink
+path: navigation-components/page-link
 ---
 
 The PageLink component takes an `href` and optional `children`.
