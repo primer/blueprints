@@ -49,7 +49,8 @@ function getComponents(page = {}) {
     // "unwrap" <pre> elements around <code> blocks
     pre: props => props.children,
     ...docsComponents,
-    ...primerComponents
+    ...primerComponents,
+    documents
   }
 }
 
