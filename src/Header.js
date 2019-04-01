@@ -24,9 +24,9 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
             <Link href={root} color="blue.4" mx={3}>
               <HeaderText>{title}</HeaderText>
             </Link>
-            <StyledOcticon icon={ChevronRight} mx={1} color="blue.2" />
+            <StyledOcticon icon={ChevronRight} mx={1} color="blue.4" />
           </Box>
-          <Link href={`${root}/${subfolder}`} color="blue.2" ml={3} mr={4}>
+          <Link href={`${root}/${subfolder}`} color='blue.4' ml={3} mr={4}>
             <HeaderText>{subtitle}</HeaderText>
           </Link>
           <Box display={['none', 'none', 'none', 'flex']}>
