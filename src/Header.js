@@ -10,7 +10,7 @@ const BoxShadow = styled(Box)`
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 `
 
-const HeaderText = props => <Text fontSize={2} fontWeight="bold" {...props} />
+const HeaderText = props => <Text fontSize={3} color='blue.4' fontWeight="bold" {...props} />
 
 const Header = ({title, subtitle, root, subfolder, documents, children}) => (
   <Sticky zIndex={100}>
@@ -21,12 +21,12 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
           </Link>
           <Box display={['none', 'inline-block', 'inline-block', 'inline-block']}>
-            <Link href={root} color="blue.4" mx={3}>
+            <Link href={root} mr={2} ml={3}>
               <HeaderText>{title}</HeaderText>
             </Link>
             <StyledOcticon icon={ChevronRight} mx={1} color="blue.4" />
           </Box>
-          <Link href={`${root}/${subfolder}`} color='blue.4' ml={3} mr={4}>
+          <Link href={`${root}/${subfolder}`} ml={2} mr={4}>
             <HeaderText>{subtitle}</HeaderText>
           </Link>
           <Box display={['none', 'none', 'none', 'flex']}>
