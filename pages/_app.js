@@ -17,6 +17,7 @@ const {
   RouteMatch,
   Header,
   JumpNav,
+  CodeExample,
   Section,
   Link,
   Outline
@@ -38,7 +39,7 @@ function getComponents(page = {}) {
     h4: H4,
     h5: H5,
     a: Link,
-    code: withMDXLive('pre'),
+    code: CodeExample,
     p: ({children, ...rest}) => {
       if (children === '{:toc}') {
         return <Outline outline={getOutline()} {...rest} />

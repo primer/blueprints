@@ -20,9 +20,9 @@ return (
 
 ```
 
-```.jsx
-<CodeExample>
-  <div>hello world!</div>
-</CodeExample>
-
+```html
+<div class="flash">
+  <p>This is a longer flash message in it's own paragraph. It ends up looking something like this. If we keep adding more text, it'll eventually wrap to a new line.</p>
+  <p>And this is another paragraph.</p>
+</div>
 ```
