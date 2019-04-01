@@ -1,7 +1,6 @@
 import React from 'react'
 import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
-import {withMDXLive} from 'mdx-live'
 import documents from '../searchIndex'
 import Head from 'next/head'
 import {pageMap} from '@primer/blueprints/meta'

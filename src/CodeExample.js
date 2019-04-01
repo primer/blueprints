@@ -8,7 +8,6 @@ import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
 import CodeExampleStyles from './CodeExampleStyles'
 
-
 const StyledLiveProvider = styled(LiveProvider)`
   ${CodeExampleStyles}
 `
