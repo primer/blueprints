@@ -1,6 +1,7 @@
 import React from 'react'
 import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
+import {withMDXLive} from 'mdx-live'
 import documents from '../searchIndex'
 import Head from 'next/head'
 import {pageMap} from '@primer/blueprints/meta'
@@ -16,7 +17,6 @@ const {
   RouteMatch,
   Header,
   JumpNav,
-  CodeExample,
   Section,
   Link,
   Outline
@@ -38,7 +38,7 @@ function getComponents(page = {}) {
     h4: H4,
     h5: H5,
     a: Link,
-    code: CodeExample,
+    code: withMDXLive('pre'),
     p: ({children, ...rest}) => {
       if (children === '{:toc}') {
         return <Outline outline={getOutline()} {...rest} />
