@@ -4,11 +4,13 @@ import {MDXProvider} from '@mdx-js/tag'
 import {withMDXLive} from 'mdx-live'
 import documents from '../searchIndex'
 import Head from 'next/head'
-import {pageMap} from '@primer/blueprints/meta'
+import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
 import {config} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
+
+const {pageMap = new Map()} = Pages
 
 const {
   MarkdownHeading,

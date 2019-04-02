@@ -1,8 +1,10 @@
 import React from 'react'
-import {pageMap} from '@primer/blueprints/meta'
+import Pages from '@primer/next-pages'
 import {nodeSort} from './utils'
 import NavLink from './NavLink'
 import SectionLink from './SectionLink'
+
+const {pageMap = new Map()} = Pages
 
 /**
  * A <NavList> renders a <Section.Link> for the given `path` and looks up the
