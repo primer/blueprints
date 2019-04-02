@@ -4,20 +4,12 @@
 import React, {useState} from 'react'
 import Router from 'next/router'
 import lunr from 'lunr'
-import styled from 'styled-components'
 import {Relative, Box, Text} from '@primer/components'
 import SearchItem from './SearchItem'
 import Downshift from 'downshift'
 import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 import ResponsiveSearchInput from './ResponsiveSearchInput'
-
-const SearchContainer = styled.div`
-  position: relative;
-  @media (max-width: 1012px) {
-    position: initial;
-  }
-`
 
 const generateBreadcrumb = path => {
   const a = path
@@ -100,7 +92,7 @@ function Search({subfolder, documents}) {
   }
 
   return (
-    <SearchContainer>
+    <div>
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? documents[item.ref].title : '')}
@@ -125,7 +117,10 @@ function Search({subfolder, documents}) {
             <Box display={['none', 'none', 'none', 'flex']}>
               <SearchInput placeholder="Search" {...getInputProps({onChange})} />
             </Box>
-            <Box display={['inline-block', 'inline-block', 'inline-block', 'none']}>
+            <Box
+              display={['inline-block', 'inline-block', 'inline-block', 'none']}
+              width={['100%', '100%', '100%', 'initial']}
+            >
               <ResponsiveSearchInput closeMenu={closeMenu} {...getInputProps({onChange})} />
             </Box>
             <SearchResults color="black" open={isOpen} {...getMenuProps()}>
@@ -134,7 +129,7 @@ function Search({subfolder, documents}) {
           </div>
         )}
       </Downshift>
-    </SearchContainer>
+    </div>
   )
 }
 
