@@ -1,5 +1,5 @@
 import {TextInput} from '@primer/components'
-import {space} from 'styled-system'
+import {space, width} from 'styled-system'
 import styled from 'styled-components'
 
 const SearchInput = styled(TextInput)`
@@ -14,5 +14,6 @@ const SearchInput = styled(TextInput)`
     box-shadow: none;
   }
   ${space};
+  ${width}
 `
 export default SearchInput

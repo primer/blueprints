@@ -36,8 +36,8 @@ const ResponsiveSearchInput = props => {
     setOpen(!open)
   }
   return (
-    <Flex>
-      {open && <SearchInput mr={3} {...props} />}
+    <Flex width={open ? '100%' : 'initial'}>
+      {open && <SearchInput mr={3} width='100%' {...props} />}
       <StyledButton onClick={handleClick}>
         <StyledOcticon icon={open ? X : Search} />
       </StyledButton>
