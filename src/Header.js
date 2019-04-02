@@ -35,7 +35,7 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
         </Flex>
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
         <Box display={['flex', 'flex', 'flex', 'none']}>
-          <Link href="#sidenav">
+          <Link href="#jumpnav">
             <BorderBox
               border={1}
               borderColor="gray.6"

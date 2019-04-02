@@ -3,6 +3,7 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import {withMDXLive} from 'mdx-live'
 import documents from '../searchIndex'
+import styled from 'styled-components'
 import Head from 'next/head'
 import {pageMap} from '@primer/blueprints/meta'
 import * as primerComponents from '@primer/components'
@@ -28,6 +29,13 @@ export const H2 = props => <MarkdownHeading as="h2" fontSize={4} fontWeight="lig
 export const H3 = props => <MarkdownHeading as="h3" fontSize={3} fontWeight="light" {...props} />
 export const H4 = props => <MarkdownHeading as="h4" fontSize={2} fontWeight="light" {...props} />
 export const H5 = props => <MarkdownHeading as="h5" fontSize={1} fontWeight="light" {...props} />
+
+const Anchor = styled.div`
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
+`
 
 function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
@@ -123,6 +131,7 @@ export default class MyApp extends App {
               borderRight={1}
               borderTop={[1, 1, 0, 0]}
             >
+              <Anchor id='jumpnav' />
               <Box display={['block', 'block', 'block', 'none']}>
                 <ResponsiveJumpNav />
               </Box>
