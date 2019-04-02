@@ -10,11 +10,11 @@ const BoxShadow = styled(Box)`
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 `
 
-const HeaderText = props => <Text fontSize={3} color='blue.4' fontWeight="bold" {...props} />
+const HeaderText = props => <Text fontFamily='mono' fontSize={2} color='blue.4' {...props} />
 
 const Header = ({title, subtitle, root, subfolder, documents, children}) => (
   <Sticky zIndex={100}>
-    <BoxShadow py={3} bg="gray.9" color="white">
+    <BoxShadow py={3} bg="black" color="white">
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
           <Link href={root} color="white" ml={5}>
@@ -46,7 +46,7 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
               py="6px"
               mr={3}
             >
-              <Text fontWeight="bold" fontSize={1}>
+              <Text fontWeight="bold" color='blue.2' fontSize={1}>
                 Menu
               </Text>
             </BorderBox>
