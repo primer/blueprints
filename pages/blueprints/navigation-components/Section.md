@@ -9,7 +9,7 @@ This means that you can do:
 
 ```.jsx
 <Section path="/section">
-  <Section.Link href="foo">Links to /section/foo</Section.Link>
+  <SectionLink href="foo">Links to /section/foo</SectionLink>
 </Section>
 ```
 
