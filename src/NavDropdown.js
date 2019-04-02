@@ -22,11 +22,11 @@ function NavDropdown({children, title, color, direction = 'se', ...rest}) {
         mx={3}
         render={({toggle}) => (
           <>
-            <Text fontWeight="bold" color={color} as="summary" onClick={toggle}>
+            <Text color={color} as="summary" onClick={toggle}>
               {title} <StyledOcticon icon={ChevronDown} />
             </Text>
             <Relative>
-              <DropdownMenu as={Absolute} zIndex={90} bg="black" direction={direction}>
+              <DropdownMenu as={Absolute} py={2} zIndex={90} bg="black" direction={direction}>
                 {children}
               </DropdownMenu>
             </Relative>

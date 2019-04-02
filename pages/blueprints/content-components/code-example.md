@@ -19,10 +19,3 @@ return (
 )
 
 ```
-
-```.jsx
-<CodeExample>
-  <div>hello world!</div>
-</CodeExample>
-
-```
