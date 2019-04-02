@@ -7,7 +7,7 @@ import SearchInput from './SearchInput'
 const StyledButton = styled.button`
   background: none;
   display: inline-block;
-  color: #fff;
+  color: #c8e1ff;
   margin-right: 16px;
   padding-left: 12px;
   padding-right: 12px;
@@ -20,7 +20,7 @@ const StyledButton = styled.button`
 
   &:hover,
   &:focus {
-    color: #fff;
+    color: #c8e1ff;
     background-color: #0366d6;
     background-image: none;
     border-color: #0366d6;
