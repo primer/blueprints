@@ -18,7 +18,7 @@ const SearchResults = styled.div`
     width: 100vw;
     max-height: inherit;
     height: 100vh;
-    margin-top: 15px;
+    margin-top: 30px;
     right: 0;
     left: 0;
   }

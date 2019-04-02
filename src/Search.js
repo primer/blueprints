@@ -12,16 +12,16 @@ import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 import ResponsiveSearchInput from './ResponsiveSearchInput'
 
-const StyledWrapper = styled.div`
-  @media (max-width: 1012px) {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    display: block;
-  }
-`
+// const StyledWrapper = styled.div`
+//   @media (max-width: 1012px) {
+//     position: ${props => props.isOpen ? 'absolute' : 'relative'};
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 50px;
+//     display: block;
+//   }
+// `
 const generateBreadcrumb = path => {
   const a = path
     .toLowerCase()
@@ -103,7 +103,7 @@ function Search({subfolder, documents}) {
   }
 
   return (
-    <Relative>
+    <div>
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? documents[item.ref].title : '')}
@@ -114,13 +114,14 @@ function Search({subfolder, documents}) {
           getInputProps,
           getMenuProps,
           getLabelProps,
+          getRootProps,
           closeMenu,
           getItemProps,
           isOpen,
           highlightedIndex,
           selectedItem
         }) => (
-          <StyledWrapper isOpen={isOpen}>
+          <div>
             <label hidden {...getLabelProps()}>
               {' '}
               Search docs
@@ -135,10 +136,10 @@ function Search({subfolder, documents}) {
             <SearchResults color="black" open={isOpen} {...getMenuProps()}>
               {renderResults(selectedItem, getItemProps, highlightedIndex)}
             </SearchResults>
-          </StyledWrapper>
+          </div>
         )}
       </Downshift>
-    </Relative>
+    </div>
   )
 }
 

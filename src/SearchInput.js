@@ -14,6 +14,6 @@ const SearchInput = styled(TextInput)`
     box-shadow: none;
   }
   ${space};
-  ${width}
+  ${width};
 `
 export default SearchInput
