@@ -15,20 +15,6 @@ const NavItem = styled(Link)`
     background-color: ${theme.colors.blue[4]};
     text-decoration: none;
   }
-  &:last-child {
-    padding-bottom: 8px;
-  }
-  &:first-child {
-    padding-top: 8px;
-  }
-  &:last-child:hover {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-  &:first-child:hover {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-  }
 `
 
 export default NavItem

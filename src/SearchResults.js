@@ -5,9 +5,7 @@ const SearchResults = styled.div`
   border: 1px solid #e1e4e8;
   min-width: 320px;
   border-radius: 3px;
-  width: 100%;
   overflow: auto;
-  left: 0;
   max-height: 90vh;
   overflow-y: scroll;
   background-color: #fff;
@@ -15,10 +13,10 @@ const SearchResults = styled.div`
   position: absolute;
 
   @media (max-width: 1012px) {
-    width: 100vw;
+    width: 100%;
     max-height: inherit;
     height: 100vh;
-    margin-top: 15px;
+    margin-top: 30px;
     right: 0;
     left: 0;
   }

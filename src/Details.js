@@ -5,6 +5,7 @@ import {theme} from '@primer/components'
 import {space, color} from 'styled-system'
 
 const DetailsReset = styled('details')`
+  cursor: pointer;
   & > summary {
     list-style: none;
   }
