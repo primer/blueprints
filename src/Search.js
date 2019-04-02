@@ -4,7 +4,6 @@
 import React, {useState} from 'react'
 import Router from 'next/router'
 import lunr from 'lunr'
-import styled from 'styled-components'
 import {Relative, Box, Text} from '@primer/components'
 import SearchItem from './SearchItem'
 import Downshift from 'downshift'
@@ -104,7 +103,6 @@ function Search({subfolder, documents}) {
           getInputProps,
           getMenuProps,
           getLabelProps,
-          getRootProps,
           closeMenu,
           getItemProps,
           isOpen,
@@ -119,8 +117,10 @@ function Search({subfolder, documents}) {
             <Box display={['none', 'none', 'none', 'flex']}>
               <SearchInput placeholder="Search" {...getInputProps({onChange})} />
             </Box>
-            <Box display={['inline-block', 'inline-block', 'inline-block', 'none']}
-                  width={['100%', '100%', '100%', 'initial']}>
+            <Box
+              display={['inline-block', 'inline-block', 'inline-block', 'none']}
+              width={['100%', '100%', '100%', 'initial']}
+            >
               <ResponsiveSearchInput closeMenu={closeMenu} {...getInputProps({onChange})} />
             </Box>
             <SearchResults color="black" open={isOpen} {...getMenuProps()}>

@@ -1,14 +1,15 @@
-import {Flex, Box, StyledOcticon} from '@primer/components'
+import {StyledOcticon} from '@primer/components'
 import {Search, X} from '@githubprimer/octicons-react'
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import SearchInput from './SearchInput'
 
-
 const Wrapper = styled.div`
   display: flex;
   position: relative;
-  ${props => props.open && `
+  ${props =>
+    props.open &&
+    `
     width: 100%;
     position: absolute;
     right: 0;
@@ -52,7 +53,7 @@ const ResponsiveSearchInput = props => {
   }
   return (
     <Wrapper open={open}>
-      {open && <SearchInput mr={3} width='100%' {...props} />}
+      {open && <SearchInput mr={3} width="100%" {...props} />}
       <StyledButton onClick={handleClick}>
         <StyledOcticon icon={open ? X : Search} />
       </StyledButton>

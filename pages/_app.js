@@ -131,13 +131,13 @@ export default class MyApp extends App {
               borderRight={1}
               borderTop={[1, 1, 0, 0]}
             >
-              <Anchor id='jumpnav' />
+              <Anchor id="jumpnav" />
               <Box display={['block', 'block', 'block', 'none']}>
                 <ResponsiveJumpNav />
               </Box>
               <SideNav>
                 <Box px={5} pt={5} display={['block', 'block', 'block', 'none']}>
-                  <Text fontFamily='mono'>Primer CSS</Text>
+                  <Text fontFamily="mono">Primer CSS</Text>
                 </Box>
                 <RouteMatch path="/blueprints">
                   <Section path="content-components" />
