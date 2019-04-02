@@ -12,16 +12,6 @@ import SearchInput from './SearchInput'
 import SearchResults from './SearchResults'
 import ResponsiveSearchInput from './ResponsiveSearchInput'
 
-// const StyledWrapper = styled.div`
-//   @media (max-width: 1012px) {
-//     position: ${props => props.isOpen ? 'absolute' : 'relative'};
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 50px;
-//     display: block;
-//   }
-// `
 const generateBreadcrumb = path => {
   const a = path
     .toLowerCase()
