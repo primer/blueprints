@@ -22,7 +22,7 @@ const {
   Link,
   Outline
 } = docsComponents
-const {BaseStyles, BorderBox, Box, Flex, theme} = primerComponents
+const {BaseStyles, BorderBox, Box, Text, Flex, theme} = primerComponents
 
 export const H1 = props => <MarkdownHeading fontSize={5} fontWeight="light" {...props} />
 export const H2 = props => <MarkdownHeading as="h2" fontSize={4} fontWeight="light" {...props} />
@@ -136,6 +136,9 @@ export default class MyApp extends App {
                 <ResponsiveJumpNav />
               </Box>
               <SideNav>
+                <Box px={5} pt={5} display={['block', 'block', 'block', 'none']}>
+                  <Text fontFamily='mono'>Primer CSS</Text>
+                </Box>
                 <RouteMatch path="/blueprints">
                   <Section path="content-components" />
                   <Section path="navigation-components" />
