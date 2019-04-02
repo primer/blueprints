@@ -13,7 +13,7 @@ const DropdownLink = ({href, children}) => (
 
 const ResponsiveJumpNav = () => {
   return (
-    <BorderBox p={5} bg='gray.1' border={0} borderBottom={1} borderColor="gray.2" borderRadius={0} width="100%">
+    <BorderBox p={5} bg="gray.1" border={0} borderBottom={1} borderColor="gray.2" borderRadius={0} width="100%">
       <BorderBox py={3} borderColor="gray.2" borderTop={0} borderLeft={0} borderRight={0} borderBottom={1}>
         <PrimerLink color="black" fontWeight="bold" my={2} href="https://primer.style/news">
           What’s New
