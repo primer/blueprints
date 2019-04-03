@@ -15,7 +15,7 @@ const HeaderText = props => <Text fontFamily="mono" fontSize={2} color="blue.4" 
 const Header = ({title, subtitle, root, subfolder, documents, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="black" color="white">
-      <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
+      <Flex alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
           <Link href={root} color="white" ml={5}>
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
