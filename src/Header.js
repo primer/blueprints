@@ -24,14 +24,18 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
             <Link href={root} mr={2} ml={3}>
               <HeaderText>{title}</HeaderText>
             </Link>
-            <StyledOcticon icon={ChevronRight} mx={1} color="blue.4" />
+            {subfolder && <StyledOcticon icon={ChevronRight} mx={1} color="blue.4" />}
           </Box>
-          <Link href={`${root}/${subfolder}`} ml={2} mr={4}>
-            <HeaderText>{subtitle}</HeaderText>
-          </Link>
-          <Box display={['none', 'none', 'none', 'flex']}>
-            <Search documents={documents} subfolder={subfolder} />
-          </Box>
+          {subfolder && (
+            <Link href={`${root}/${subfolder}`} ml={2} mr={4}>
+              <HeaderText>{subtitle}</HeaderText>
+            </Link>
+          )}
+          {subfolder && (
+            <Box display={['none', 'none', 'none', 'flex']}>
+              <Search documents={documents} subfolder={subfolder} />
+            </Box>
+          )}
         </Flex>
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
         <Box display={['flex', 'flex', 'flex', 'none']}>
