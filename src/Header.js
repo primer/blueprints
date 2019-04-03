@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {MarkGithub, ChevronRight} from '@githubprimer/octicons-react'
-import {Text, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
-import Link from './Link'
+import {Text, Link, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
 import Search from './Search'
 
 const BoxShadow = styled(Box)`
