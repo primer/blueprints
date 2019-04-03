@@ -55,7 +55,7 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
               </Text>
             </BorderBox>
           </Link>
-          <Search documents={documents} root={root} />
+          {subfolder && <Search documents={documents} root={root} />}
         </Box>
       </Flex>
     </BoxShadow>
