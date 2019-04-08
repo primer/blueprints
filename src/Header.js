@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {MarkGithub, ChevronRight} from '@githubprimer/octicons-react'
-import {Text, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
-import Link from './Link'
+import {Text, Link, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
 import Search from './Search'
 
 const BoxShadow = styled(Box)`
@@ -15,7 +14,7 @@ const HeaderText = props => <Text fontFamily="mono" fontSize={2} color="blue.4" 
 const Header = ({title, subtitle, root, subfolder, documents, children}) => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="black" color="white">
-      <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
+      <Flex alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
           <Link href={root} color="white" ml={5}>
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
@@ -24,14 +23,18 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
             <Link href={root} mr={2} ml={3}>
               <HeaderText>{title}</HeaderText>
             </Link>
-            <StyledOcticon icon={ChevronRight} mx={1} color="blue.4" />
+            {subfolder && <StyledOcticon icon={ChevronRight} mx={1} color="blue.4" />}
           </Box>
-          <Link href={`${root}/${subfolder}`} ml={2} mr={4}>
-            <HeaderText>{subtitle}</HeaderText>
-          </Link>
-          <Box display={['none', 'none', 'none', 'flex']}>
-            <Search documents={documents} subfolder={subfolder} />
-          </Box>
+          {subfolder && (
+            <Link href={`${root}/${subfolder}`} ml={2} mr={4}>
+              <HeaderText>{subtitle}</HeaderText>
+            </Link>
+          )}
+          {subfolder && (
+            <Box display={['none', 'none', 'none', 'flex']}>
+              <Search documents={documents} subfolder={subfolder} />
+            </Box>
+          )}
         </Flex>
         <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
         <Box display={['flex', 'flex', 'flex', 'none']}>
@@ -51,7 +54,7 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
               </Text>
             </BorderBox>
           </Link>
-          <Search documents={documents} root={root} />
+          {subfolder && <Search documents={documents} root={root} />}
         </Box>
       </Flex>
     </BoxShadow>
