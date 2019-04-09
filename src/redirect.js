@@ -10,8 +10,6 @@ import Router from 'next/router'
  * ```
  */
 export function redirect(uri, status = 303) {
-  // XXX this doesn't need to extend React.Component because
-  // it doesn't "do" anything React-y
   return class {
     static getInitialProps({res}) {
       // the "context" object passed to getInitialProps() will
