@@ -71,10 +71,6 @@ const styles = `
  .token.entity {
    cursor: help;
  }
-
- .namespace {
-   opacity: 0.7;
- }
 `
 
 export default styles
