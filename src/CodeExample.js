@@ -6,11 +6,6 @@ import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
 import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
-import CodeExampleStyles from './CodeExampleStyles'
-
-const StyledLiveProvider = styled(LiveProvider)`
-  ${CodeExampleStyles}
-`
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
@@ -37,7 +32,7 @@ export default function CodeExample(props) {
       mountStylesheet: false
     }
     return (
-      <StyledLiveProvider {...liveProps}>
+      <LiveProvider {...liveProps}>
         <BorderBox {...rest}>
           <BorderBox bg="white" p={3} border={0} borderBottom={1} borderRadius={0}>
             <Frame>
@@ -59,7 +54,7 @@ export default function CodeExample(props) {
             />
           </Box>
         </BorderBox>
-      </StyledLiveProvider>
+      </LiveProvider>
     )
   } else {
     const rest = {
