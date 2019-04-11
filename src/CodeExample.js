@@ -45,7 +45,7 @@ export default function CodeExample(props) {
             </Frame>
           </BorderBox>
           <Box as={Relative} bg="gray.1" p={3}>
-            <StyledLiveEditor style={{margin: 0, padding: 0}} />
+            <LiveEditor theme={{}} style={{margin: 0, padding: 0}} />
             <Absolute right={0} top={0} m={3}>
               <ClipboardCopy value={source} />
             </Absolute>
