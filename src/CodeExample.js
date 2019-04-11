@@ -1,6 +1,5 @@
 import React from 'react'
 import HTMLtoJSX from 'html-2-jsx'
-import styled from 'styled-components'
 import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text} from '@primer/components'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
