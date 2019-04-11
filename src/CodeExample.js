@@ -1,16 +1,11 @@
 import React from 'react'
 import HTMLtoJSX from 'html-2-jsx'
-import styled from 'styled-components'
 import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text} from '@primer/components'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
 import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
-import CodeExampleStyles from './CodeExampleStyles'
-
-const StyledLiveProvider = styled(LiveProvider)`
-  ${CodeExampleStyles}
-`
+import prismTheme from 'prism-react-renderer/themes/duotoneLight'
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
@@ -37,7 +32,7 @@ export default function CodeExample(props) {
       mountStylesheet: false
     }
     return (
-      <StyledLiveProvider {...liveProps}>
+      <LiveProvider {...liveProps}>
         <BorderBox {...rest}>
           <BorderBox bg="white" p={3} border={0} borderBottom={1} borderRadius={0}>
             <Frame>
@@ -45,7 +40,7 @@ export default function CodeExample(props) {
             </Frame>
           </BorderBox>
           <Box as={Relative} bg="gray.1" p={3}>
-            <LiveEditor style={{margin: 0, padding: 0}} />
+            <LiveEditor theme={prismTheme} style={{margin: 0, padding: 0}} />
             <Absolute right={0} top={0} m={3}>
               <ClipboardCopy value={source} />
             </Absolute>
@@ -59,7 +54,7 @@ export default function CodeExample(props) {
             />
           </Box>
         </BorderBox>
-      </StyledLiveProvider>
+      </LiveProvider>
     )
   } else {
     const rest = {
