@@ -6,11 +6,6 @@ import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
 import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
-import CodeExampleStyles from './CodeExampleStyles'
-
-const StyledLiveEditor = styled(LiveEditor)`
-  ${CodeExampleStyles}
-`
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
