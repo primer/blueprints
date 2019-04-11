@@ -22,8 +22,7 @@ const {
   JumpNav,
   Section,
   Link,
-  Outline,
-  CodeExample
+  Outline
 } = docsComponents
 const {BaseStyles, BorderBox, Box, Text, Flex, theme} = primerComponents
 
@@ -49,7 +48,7 @@ function getComponents(page = {}) {
     h4: H4,
     h5: H5,
     a: Link,
-    code: CodeExample,
+    code: withMDXLive('pre'),
     p: ({children, ...rest}) => {
       if (children === '{:toc}') {
         return <Outline outline={getOutline()} {...rest} />
