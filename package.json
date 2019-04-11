@@ -49,6 +49,7 @@
     "next": "7.0.2",
     "next-compose-plugins": "2.1.1",
     "now": "^12.1.8",
+    "prism-react-renderer": "0.1.6",
     "react": "16.8.0",
     "react-dom": "16.8.1",
     "refractor": "^2.6.2",

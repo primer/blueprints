@@ -6,6 +6,7 @@ import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
 import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
+import prismTheme from 'prism-react-renderer/themes/duotoneLight'
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
@@ -40,7 +41,7 @@ export default function CodeExample(props) {
             </Frame>
           </BorderBox>
           <Box as={Relative} bg="gray.1" p={3}>
-            <LiveEditor theme={{}} style={{margin: 0, padding: 0}} />
+            <LiveEditor theme={prismTheme} style={{margin: 0, padding: 0}} />
             <Absolute right={0} top={0} m={3}>
               <ClipboardCopy value={source} />
             </Absolute>
