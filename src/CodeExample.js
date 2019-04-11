@@ -6,6 +6,7 @@ import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
 import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
+import prismTheme from 'prism-react-renderer/themes/duotoneLight'
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
@@ -13,13 +14,6 @@ const converter = new HTMLtoJSX({
   indent: '  ',
   createClass: false
 })
-
-var prismTheme = {
-  plain: {
-    backgroundColor: "#f6f8fa",
-    color: "#24292e"
-  }
-}
 
 const defaultTransform = code => `<React.Fragment>${code}</React.Fragment>`
 
