@@ -1,12 +1,14 @@
 import React from 'react'
-import {withRouter} from 'next/router'
-import {Box} from '@primer/components'
+import {Box, Link} from '@primer/components'
 import PageLink from './PageLink'
 
-const SectionLink = withRouter(({href, router, ...rest}) => (
-  <Box {...rest}>
-    <PageLink href={href} {...rest} fontSize={2} fontWeight={router.pathname.startsWith(href) ? 'bold' : null} />
-  </Box>
-))
+const SectionLink = ({href, router, currentPath, next, ...rest}) => {
+  const Tag = next ? NextLink : Link
+  return (
+    <Box mb={3} color='gray.9' {...rest}>
+      <Tag href={href} {...rest} fontSize={2} fontWeight={currentPath.startsWith(href) ? 'bold' : null} />
+    </Box>
+  )
+}
 
 export default SectionLink

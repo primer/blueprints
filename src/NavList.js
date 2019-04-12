@@ -11,14 +11,14 @@ const {pageMap = new Map()} = Pages
  * path in the page tree. If a node is found, it renders a <NavLink> for each
  * of the node's children.
  */
-export default function NavList({path}) {
+export default function NavList({path, currentPath}) {
   const node = pageMap.get(path)
   const children = node ? node.children.sort(nodeSort) : []
   return (
     <>
-      <SectionLink color="gray.9" href={path} mb={3} />
+      <SectionLink currentPath={currentPath} color="gray.9" href={path} mb={3} />
       {children.map(child => (
-        <NavLink mt={2} href={child.path} key={child.path} />
+        <NavLink mt={2} currentPath={currentPath} href={child.path} key={child.path} />
       ))}
     </>
   )

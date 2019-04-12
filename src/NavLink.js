@@ -1,14 +1,16 @@
 import React from 'react'
 import {withRouter} from 'next/router'
-import {Box} from '@primer/components'
+import {Box, Link} from '@primer/components'
 import PageLink from './PageLink'
 
-const NavLink = withRouter(({href, router, ...rest}) => {
+const NavLink = ({href, next, currentPath, ...rest}) => {
+  const Tag = next ? PageLink : Link
+
   return (
     <Box {...rest}>
-      <PageLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
+      <Tag href={href} color={currentPath === href ? 'black' : undefined} fontSize={1} {...rest} />
     </Box>
   )
-})
+}
 
 export default NavLink
