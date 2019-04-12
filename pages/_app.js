@@ -144,10 +144,8 @@ export default class MyApp extends App {
                   <Text fontFamily="mono">Primer CSS</Text>
                 </Box>
                 <RouteMatch path="/blueprints">
-                  <Section next currentPath={this.props.router.pathname} path="content-components" />
-                    <SectionLink currentPath={this.props.router.pathname} path={'/content-components'} />
-                    <NavList currentPath={this.props.router.pathname} mt={2} path='content-components' />
-                  <Section next currentPath={this.props.router.pathname} path="navigation-components" />
+                  <NavList currentPath={pathname} mt={2} path='content-components' />
+                  <NavList currentPath={pathname} mt={2} path='navigation-components' />
                 </RouteMatch>
               </SideNav>
             </BorderBox>
