@@ -5,7 +5,6 @@ import PageLink from './PageLink'
 
 const NavLink = ({href, next, currentPath, ...rest}) => {
   const Tag = next ? PageLink : Link
-
   return (
     <Box {...rest}>
       <Tag href={href} color={currentPath === href ? 'black' : undefined} fontSize={1} {...rest} />
