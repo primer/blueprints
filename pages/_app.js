@@ -22,7 +22,6 @@ const {
   JumpNav,
   SectionLink,
   NavList,
-  Section,
   Link,
   Outline
 } = docsComponents
