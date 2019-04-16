@@ -3,8 +3,7 @@ title: RouteMatch
 path: navigation-components/route-match
 ---
 
-Use `RouteMatch` to conditionally render content without a wrapper
-element when contained directly in a `Router`. `RouteMatch` is most commonly used to conditionally render a chunk of side navigation links.
+Use `RouteMatch` to conditionally render content when contained directly in a `Router`. `RouteMatch` is most commonly used to conditionally render a chunk of side navigation links.
 
 
 ```.jsx
