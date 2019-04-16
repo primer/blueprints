@@ -3,7 +3,7 @@ title: NavList
 path: navigation-components/nav-list
 ---
 
-***This component only works in Next.js applications which use our [pages plugin](https://github.com/primer/next-pages). If you are not using Next.js or our pages plugin, manually create your own NavList using `<SectionLink>` components***
+***This component only works in Next.js applications which use our [pages plugin](https://github.com/primer/next-pages). If you are not using Next.js or our pages plugin, manually create your own NavList using `<SectionLink>` components.***
 
 A `<NavList>` renders a `<SectionLink>` for the given `path` and looks up the path in the page tree. If a node is found, it renders a `<NavLink>` for each of the node's children.
 
@@ -13,7 +13,7 @@ If the current path matches the link's path, the link will appear bold.
 
 
 ```.jsx
-<NavList path='/blueprints/content-components' currentPath='/blueprints/navigation-components/NavList'/>
+<NavList path='/blueprints/navigation-components' currentPath='/blueprints/navigation-components/nav-list'/>
 ```
 
 ## Component props
