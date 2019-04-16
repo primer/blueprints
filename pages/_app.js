@@ -99,6 +99,7 @@ export default class MyApp extends App {
             subfolder="blueprints"
             title="Primer"
             subtitle="Blueprints"
+            next
           >
             <JumpNav />
           </Header>

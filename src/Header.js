@@ -32,7 +32,7 @@ const Header = ({next, title, subtitle, root, subfolder, documents, children}) =
           )}
           {subfolder && (
             <Box display={['none', 'none', 'none', 'flex']}>
-              <Search documents={documents} subfolder={subfolder} />
+              <Search next documents={documents} subfolder={subfolder} />
             </Box>
           )}
         </Flex>
