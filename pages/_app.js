@@ -21,6 +21,7 @@ const {
   Header,
   JumpNav,
   NavList,
+  Router,
   Link,
   Outline
 } = docsComponents
@@ -138,16 +139,18 @@ export default class MyApp extends App {
               <Box display={['block', 'block', 'block', 'none']}>
                 <ResponsiveJumpNav />
               </Box>
-              <SideNav>
-                <Box px={5} pt={5} display={['block', 'block', 'block', 'none']}>
-                  <Text fontFamily="mono">Primer CSS</Text>
-                </Box>
-                <RouteMatch path="/blueprints">
-                  <NavList currentPath={pathname} mt={2} path='/blueprints/content-components' />
-                  <NavList currentPath={pathname} mt={2} path='/blueprints/navigation-components' />
-                  <NavList currentPath={pathname} mt={2} path='/blueprints/next-components' />
-                </RouteMatch>
-              </SideNav>
+              <Router>
+                <SideNav>
+                  <Box px={5} pt={5} display={['block', 'block', 'block', 'none']}>
+                    <Text fontFamily="mono">Primer CSS</Text>
+                  </Box>
+                  <RouteMatch path="/blueprints">
+                    <NavList currentPath={pathname} mt={2} path='/blueprints/content-components' />
+                    <NavList currentPath={pathname} mt={2} path='/blueprints/navigation-components' />
+                    <NavList currentPath={pathname} mt={2} path='/blueprints/next-components' />
+                  </RouteMatch>
+                </SideNav>
+              </Router>
             </BorderBox>
           </Flex>
         </Container>
