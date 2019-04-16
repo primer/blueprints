@@ -145,6 +145,7 @@ export default class MyApp extends App {
                 <RouteMatch path="/blueprints">
                   <NavList currentPath={pathname} mt={2} path='/blueprints/content-components' />
                   <NavList currentPath={pathname} mt={2} path='/blueprints/navigation-components' />
+                  <NavList currentPath={pathname} mt={2} path='/blueprints/next-components' />
                 </RouteMatch>
               </SideNav>
             </BorderBox>

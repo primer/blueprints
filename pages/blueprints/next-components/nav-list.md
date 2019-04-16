@@ -1,6 +1,6 @@
 ---
 title: NavList
-path: navigation-components/nav-list
+path: next-components/nav-list
 ---
 
 ***This component only works in Next.js applications which use our [pages plugin](https://github.com/primer/next-pages). If you are not using Next.js or our pages plugin, manually create your own NavList using `<SectionLink>` components.***

@@ -1,6 +1,6 @@
 ---
 title: PageLink
-path: navigation-components/page-link
+path: next-components/page-link
 ---
 
 ***This component only works in Next.js applications which use our [pages plugin](https://github.com/primer/next-pages). If you aren't using Next.js, use Primer Components' [Link component](https://primer.style/components/docs/Link).***

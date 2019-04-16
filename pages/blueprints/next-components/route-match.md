@@ -1,6 +1,6 @@
 ---
 title: RouteMatch
-path: navigation-components/route-match
+path: next-components/route-match
 ---
 
 ***This component is meant to work only in Next.js applications with our `Router` component.***
