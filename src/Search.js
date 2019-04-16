@@ -23,7 +23,7 @@ const generateBreadcrumb = path => {
     .join(' ')
 }
 
-function Search({subfolder, documents}) {
+function Search({subfolder, documents, next}) {
   const idx = lunr(function() {
     this.ref('path') //eslint-disable-line
     this.field('title')//eslint-disable-line
@@ -88,6 +88,7 @@ function Search({subfolder, documents}) {
   }
 
   const onSelect = item => {
+    if (!next) return
     Router.push(`/${subfolder}/${item.ref}`)
   }
 
