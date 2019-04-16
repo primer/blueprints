@@ -20,5 +20,5 @@ If the current path matches the link's path, the link will appear bold.
 
 | Prop name | Type | Default | Description |
 | :- | :- | :-: | :- |
-| path | String | | The path in `pages` that you'd like to generate a NavList ffor |
+| path | String | | The path in `pages` that you'd like to generate a NavList for |
 | currentPath | String | | The current page. Pass this down as a string from your router |
