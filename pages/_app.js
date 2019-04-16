@@ -20,7 +20,6 @@ const {
   RouteMatch,
   Header,
   JumpNav,
-  SectionLink,
   NavList,
   Link,
   Outline
@@ -144,8 +143,8 @@ export default class MyApp extends App {
                   <Text fontFamily="mono">Primer CSS</Text>
                 </Box>
                 <RouteMatch path="/blueprints">
-                  <NavList currentPath={pathname} mt={2} path='content-components' />
-                  <NavList currentPath={pathname} mt={2} path='navigation-components' />
+                  <NavList currentPath={pathname} mt={2} path='/blueprints/content-components' />
+                  <NavList currentPath={pathname} mt={2} path='/blueprints/navigation-components' />
                 </RouteMatch>
               </SideNav>
             </BorderBox>
