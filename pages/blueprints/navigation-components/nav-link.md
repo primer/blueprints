@@ -3,7 +3,7 @@ title: NavLink
 path: navigation-components/nav-link
 ---
 
-The NavLink component is a Link that turns black when it's href matches the current path. NavLinks are typically used in sidebar sub-navigation. If you are using a Next.js application with our pages plugin, you can pass true for the `next` prop and a [next/link](https://github.com/zeit/next.js/#with-link) link will be used.
+The NavLink component is a Link that turns black when it's href matches the current path. NavLinks are typically used in sidebar sub-navigation. If you are using a Next.js application with our [pages plugin](https://github.com/primer/next-pages), you can pass true for the `next` prop and a [next/link](https://github.com/zeit/next.js/#with-link) link will be used.
 
 
 ```.jsx
