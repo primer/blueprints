@@ -27,11 +27,11 @@ const {
 } = docsComponents
 const {BaseStyles, BorderBox, Box, Text, Flex, theme} = primerComponents
 
-export const H1 = props => <MarkdownHeading fontSize={5} fontWeight="light" {...props} />
-export const H2 = props => <MarkdownHeading as="h2" fontSize={4} fontWeight="light" {...props} />
-export const H3 = props => <MarkdownHeading as="h3" fontSize={3} fontWeight="light" {...props} />
-export const H4 = props => <MarkdownHeading as="h4" fontSize={2} fontWeight="light" {...props} />
-export const H5 = props => <MarkdownHeading as="h5" fontSize={1} fontWeight="light" {...props} />
+export const H1 = props => <MarkdownHeading {...props} />
+export const H2 = props => <MarkdownHeading as="h2" {...props} />
+export const H3 = props => <MarkdownHeading as="h3" {...props} />
+export const H4 = props => <MarkdownHeading as="h4" {...props} />
+export const H5 = props => <MarkdownHeading as="h5" {...props} />
 
 const Anchor = styled.div`
   display: block;
