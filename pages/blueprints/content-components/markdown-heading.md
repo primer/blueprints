@@ -35,7 +35,6 @@ function getComponents() {
 
 
 
-
 ```.jsx
 <MarkdownHeading>Hello world!</MarkdownHeading>
 <MarkdownHeading as='h2'>Hello world!</MarkdownHeading>
@@ -45,7 +44,6 @@ function getComponents() {
 ```
 
 
-## Component props
 ## Component props
 
 | Name | Type | Default | Description |
