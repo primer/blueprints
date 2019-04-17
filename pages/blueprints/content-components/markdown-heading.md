@@ -50,4 +50,4 @@ function getComponents() {
 
 | Name | Type | Default | Description |
 | :- | :- | :-: | :- |
-| as | String or Component | 'h1' | Sets the tag used in the Heading
+| as | String or Component | h1 | Sets the tag used in the Heading
