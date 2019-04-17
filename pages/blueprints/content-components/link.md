@@ -8,5 +8,11 @@ Use the Link component to add links within documentation. The link component wra
 
 ```.jsx
 <Link href="https://github.com/primer">Primer</Link>
-
 ```
+
+
+## Component props
+
+| Name | Type | Default | Description |
+| :- | :- | :-: | :- |
+| href | String | | The URL to navigate the user to on click.
