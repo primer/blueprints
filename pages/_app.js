@@ -9,7 +9,7 @@ import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
 import * as nextComponents from '../next-components'
-import {config} from '../src/utils'
+import {config} from '../next-components/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {pageMap = new Map()} = Pages
