@@ -16,7 +16,7 @@ export default [
     }))
   },
   {
-    input: 'next/components/index.js',
+    input: 'next-components/index.js',
     plugins,
     output: formats.map(format => ({
       file: `dist/next-components-index.${format}.js`,
