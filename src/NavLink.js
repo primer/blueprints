@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box} from '@primer/components'
+import {Box, Link} from '@primer/components'
 
 const NavLink = ({href, link: Tag, currentPath, ...rest}) => {
   return (

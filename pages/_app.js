@@ -8,24 +8,15 @@ import Head from 'next/head'
 import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src/components'
+import * as nextComponents from '../next-components'
 import {config} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {pageMap = new Map()} = Pages
 
-const {
-  MarkdownHeading,
-  SideNav,
-  ResponsiveJumpNav,
-  RouteMatch,
-  Header,
-  JumpNav,
-  NavList,
-  Router,
-  Link,
-  Outline
-} = docsComponents
+const {MarkdownHeading, SideNav, ResponsiveJumpNav, RouteMatch, Header, JumpNav, Router, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Text, Flex, theme} = primerComponents
+const {Link, NavList} = nextComponents
 
 export const H1 = props => <MarkdownHeading {...props} />
 export const H2 = props => <MarkdownHeading as="h2" {...props} />
