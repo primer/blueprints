@@ -27,7 +27,8 @@
     "dist",
     "lib",
     "meta.js",
-    "src"
+    "src",
+    "next-components"
   ],
   "author": "GitHub, Inc.",
   "license": "MIT",

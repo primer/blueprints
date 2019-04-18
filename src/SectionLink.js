@@ -1,9 +1,7 @@
 import React from 'react'
 import {Box, Link} from '@primer/components'
-import PageLink from './PageLink'
 
-const SectionLink = ({href, currentPath, next, ...rest}) => {
-  const Tag = next ? PageLink : Link
+const SectionLink = ({href, currentPath, link: Tag, ...rest}) => {
   return (
     <Box mb={3} {...rest}>
       <Tag
@@ -18,7 +16,7 @@ const SectionLink = ({href, currentPath, next, ...rest}) => {
 }
 
 SectionLink.defaultProps = {
-  next: false
+  link: Link
 }
 
 export default SectionLink
