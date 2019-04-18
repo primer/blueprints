@@ -11,9 +11,9 @@ const StyledLabel = styled(BorderBox)`
 
 export const STATUS_COLORS = {
   stable: 'green.6',
-  new_release: 'green.6',
+  newRelease: 'green.6',
   experimental: 'yellow.7',
-  in_review: 'yellow.7',
+  inReview: 'yellow.7',
   deprecated: 'red.6'
 }
 
@@ -33,6 +33,5 @@ export function getStatusColor(status) {
 }
 
 StatusLabel.propTypes = {
-  status: PropTypes.oneOf('stable', 'new_release', 'experimental', 'in_review', 'deprecated')
-
+  status: PropTypes.oneOf('stable', 'newRelease', 'experimental', 'inReview', 'deprecated')
 }

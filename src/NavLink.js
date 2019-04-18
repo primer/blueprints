@@ -1,5 +1,4 @@
 import React from 'react'
-import {withRouter} from 'next/router'
 import {Box, Link} from '@primer/components'
 import PageLink from './PageLink'
 

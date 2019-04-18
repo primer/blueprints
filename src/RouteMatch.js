@@ -1,6 +1,3 @@
-import React from 'react'
-import {addPath} from './utils'
-
-export default function RouteMatch({path, children}) {
+export default function RouteMatch({children}) {
   return children
 }
