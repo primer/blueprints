@@ -2,8 +2,8 @@ import React from 'react'
 import Pages from '@primer/next-pages'
 import {nodeSort} from './utils'
 import {BorderBox} from '@primer/components'
-import NavLink from './NavLink'
-import SectionLink from './SectionLink'
+import NavLink from '../src/NavLink'
+import SectionLink from '../src/SectionLink'
 import PageLink from './PageLink'
 
 const {pageMap = new Map()} = Pages
