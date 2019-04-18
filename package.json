@@ -71,7 +71,6 @@
     "@primer/components": "12.0.1",
     "@primer/next-pages": "0.0.3",
     "downshift": "3.2.7",
-    "globby": "9.1.0",
     "lunr": "2.3.6",
     "next": "7.0.2",
     "prism-github": "^1.1.0",
