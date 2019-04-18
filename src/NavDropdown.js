@@ -63,7 +63,9 @@ NavDropdown.defaultProps = {
 }
 
 NavDropdown.propTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
+  title: PropTypes.string,
+  direction: PropTypes.string
 }
 
 export default NavDropdown
