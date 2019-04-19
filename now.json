@@ -20,5 +20,6 @@
     "rollup.config.js",
     "src",
     "static"
+    "next-components"
   ]
 }
