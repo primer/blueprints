@@ -1,9 +1,10 @@
 ---
 title: Frame
-path: content-components/frame
+path: next-components/frame
 ---
+**This component only works in Next.js applications. We are currently working to decouple it from Next.js**
 
-The Frame component wraps children components in an iframe
+The Frame component wraps children components in an iframe.
 
 
 ```.jsx
