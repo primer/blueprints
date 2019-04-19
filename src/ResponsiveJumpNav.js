@@ -1,7 +1,6 @@
 import React from 'react'
-import {Link as PrimerLink, BorderBox, Box} from '@primer/components'
+import {Link, BorderBox, Box} from '@primer/components'
 import NavDropdown from './NavDropdown'
-import Link from './Link'
 
 const DropdownLink = ({href, children}) => (
   <Box mt={2}>
@@ -15,14 +14,14 @@ const ResponsiveJumpNav = () => {
   return (
     <BorderBox p={5} bg="gray.1" border={0} borderBottom={1} borderColor="gray.2" borderRadius={0} width="100%">
       <BorderBox py={3} borderColor="gray.2" borderTop={0} borderLeft={0} borderRight={0} borderBottom={1}>
-        <PrimerLink color="black" fontWeight="bold" my={2} href="https://primer.style/news">
+        <Link color="black" fontWeight="bold" my={2} href="https://primer.style/news">
           What’s New
-        </PrimerLink>
+        </Link>
       </BorderBox>
       <BorderBox py={3} borderColor="gray.2" borderTop={0} borderLeft={0} borderRight={0} borderBottom={1}>
-        <PrimerLink color="black" fontWeight="bold" my={2} href="https://primer.style/team">
+        <Link color="black" fontWeight="bold" my={2} href="https://primer.style/team">
           Team
-        </PrimerLink>
+        </Link>
       </BorderBox>
       <BorderBox py={3} borderColor="gray.2" borderTop={0} borderLeft={0} borderRight={0} borderBottom={1}>
         <NavDropdown.Responsive color="black" title="Design">

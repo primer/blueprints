@@ -3,7 +3,7 @@ import HTMLtoJSX from 'html-2-jsx'
 import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text} from '@primer/components'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
-import ClipboardCopy from './ClipboardCopy'
+import ClipboardCopy from '../src/ClipboardCopy'
 import Frame from './Frame'
 import prismTheme from 'prism-react-renderer/themes/duotoneLight'
 

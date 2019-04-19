@@ -1,7 +1,9 @@
 ---
 title: PageLink
-path: navigation-components/page-link
+path: next-components/page-link
 ---
+
+**This component only works in Next.js applications that use our [pages plugin](https://github.com/primer/next-pages). If you aren't using Next.js, use the Primer [Link component](https://primer.style/components/docs/Link).**
 
 The PageLink component takes an `href` and optional `children`.
 If no `children` are provided, we look up the "node" of the corresponding
@@ -20,3 +22,9 @@ The following instance of PageLink should render a link to "/foo/bar" with
 ```.jsx
 <PageLink href="/foo/bar" />
 ```
+
+## Component props
+
+| Prop name | Type | Default | Description |
+| :- | :- | :-: | :- |
+| href | String | | Location to navigate to |

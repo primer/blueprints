@@ -11,8 +11,8 @@ const BoxShadow = styled(Box)`
 
 const HeaderText = props => <Text fontFamily="mono" fontSize={2} color="blue.4" {...props} />
 
-const Header = ({title, subtitle, root, subfolder, documents, children}) => (
-  <Sticky zIndex={100}>
+const Header = ({next, title, subtitle, root, subfolder, documents, children}) => (
+  <Sticky zIndex={999}>
     <BoxShadow py={3} bg="black" color="white">
       <Flex alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
@@ -32,7 +32,7 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
           )}
           {subfolder && (
             <Box display={['none', 'none', 'none', 'flex']}>
-              <Search documents={documents} subfolder={subfolder} />
+              <Search next documents={documents} subfolder={subfolder} />
             </Box>
           )}
         </Flex>
@@ -54,7 +54,7 @@ const Header = ({title, subtitle, root, subfolder, documents, children}) => (
               </Text>
             </BorderBox>
           </Link>
-          {subfolder && <Search documents={documents} root={root} />}
+          {subfolder && <Search next={next} documents={documents} root={root} />}
         </Box>
       </Flex>
     </BoxShadow>

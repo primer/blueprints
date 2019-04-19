@@ -7,30 +7,22 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
-import * as docsComponents from '../src/components'
-import {config} from '../src/utils'
+import * as docsComponents from '../src'
+import * as nextComponents from '../next-components'
+import {config} from '../next-components/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {pageMap = new Map()} = Pages
 
-const {
-  MarkdownHeading,
-  SideNav,
-  ResponsiveJumpNav,
-  RouteMatch,
-  Header,
-  JumpNav,
-  Section,
-  Link,
-  Outline
-} = docsComponents
+const {MarkdownHeading, SideNav, ResponsiveJumpNav, RouteMatch, Header, JumpNav, Router, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Text, Flex, theme} = primerComponents
+const {Link, NavList} = nextComponents
 
-export const H1 = props => <MarkdownHeading fontSize={5} fontWeight="light" {...props} />
-export const H2 = props => <MarkdownHeading as="h2" fontSize={4} fontWeight="light" {...props} />
-export const H3 = props => <MarkdownHeading as="h3" fontSize={3} fontWeight="light" {...props} />
-export const H4 = props => <MarkdownHeading as="h4" fontSize={2} fontWeight="light" {...props} />
-export const H5 = props => <MarkdownHeading as="h5" fontSize={1} fontWeight="light" {...props} />
+export const H1 = props => <MarkdownHeading {...props} />
+export const H2 = props => <MarkdownHeading as="h2" {...props} />
+export const H3 = props => <MarkdownHeading as="h3" {...props} />
+export const H4 = props => <MarkdownHeading as="h4" {...props} />
+export const H5 = props => <MarkdownHeading as="h5" {...props} />
 
 const Anchor = styled.div`
   display: block;
@@ -98,6 +90,7 @@ export default class MyApp extends App {
             subfolder="blueprints"
             title="Primer"
             subtitle="Blueprints"
+            next
           >
             <JumpNav />
           </Header>
@@ -137,15 +130,18 @@ export default class MyApp extends App {
               <Box display={['block', 'block', 'block', 'none']}>
                 <ResponsiveJumpNav />
               </Box>
-              <SideNav>
-                <Box px={5} pt={5} display={['block', 'block', 'block', 'none']}>
-                  <Text fontFamily="mono">Primer CSS</Text>
-                </Box>
-                <RouteMatch path="/blueprints">
-                  <Section path="content-components" />
-                  <Section path="navigation-components" />
-                </RouteMatch>
-              </SideNav>
+              <Router>
+                <SideNav>
+                  <Box px={5} pt={5} display={['block', 'block', 'block', 'none']}>
+                    <Text fontFamily="mono">Primer CSS</Text>
+                  </Box>
+                  <RouteMatch path="/blueprints">
+                    <NavList currentPath={pathname} mt={2} path="/blueprints/content-components" />
+                    <NavList currentPath={pathname} mt={2} path="/blueprints/navigation-components" />
+                    <NavList currentPath={pathname} mt={2} path="/blueprints/next-components" />
+                  </RouteMatch>
+                </SideNav>
+              </Router>
             </BorderBox>
           </Flex>
         </Container>
