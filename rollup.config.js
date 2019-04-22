@@ -20,7 +20,7 @@ export default [
     plugins,
     output: {
       format: 'umd',
-      file: 'next-components/index.js',
+      file: 'dist/next-components/index.js',
       name: 'primer'
     }
   }
