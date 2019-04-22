@@ -18,10 +18,9 @@ export default [
   {
     input: 'src/next-components/index.js',
     plugins,
-    output: formats.map(format => ({
-      file: `dist/next-components/index.${format}.js`,
-      format,
-      name: 'primer'
-    }))
+    output: {
+      format: 'umd',
+      file: 'next-components/index.js'
+    }
   }
 ]
