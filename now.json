@@ -19,7 +19,6 @@
     "pages",
     "rollup.config.js",
     "src",
-    "static",
-    "next-components"
+    "static"
   ]
 }

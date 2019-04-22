@@ -16,10 +16,10 @@ export default [
     }))
   },
   {
-    input: 'next-components/index.js',
+    input: 'src/next-components/index.js',
     plugins,
     output: formats.map(format => ({
-      file: `dist/next-components-index.${format}.js`,
+      file: `dist/next-components/index.${format}.js`,
       format,
       name: 'primer'
     }))

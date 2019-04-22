@@ -27,8 +27,7 @@
     "dist",
     "lib",
     "meta.js",
-    "src",
-    "next-components"
+    "src"
   ],
   "author": "GitHub, Inc.",
   "license": "MIT",
@@ -47,6 +46,7 @@
     "loader-utils": "^1.1.0",
     "mdx-constant": "^0.1.0",
     "mdx-live": "2.0.0-alpha.2",
+    "next": "7.0.2",
     "next-compose-plugins": "2.1.1",
     "now": "^12.1.8",
     "prism-react-renderer": "0.1.6",
@@ -73,7 +73,6 @@
     "@primer/next-pages": "0.0.3",
     "downshift": "3.2.7",
     "lunr": "2.3.6",
-    "next": "7.0.2",
     "prism-github": "^1.1.0",
     "prop-types": "^15.6.2",
     "react-live": "2.0.0",

@@ -8,8 +8,8 @@ import Head from 'next/head'
 import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src'
-import * as nextComponents from '../next-components'
-import {config} from '../next-components/utils'
+import * as nextComponents from '../src/next-components'
+import {config} from '../src/next-components/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {pageMap = new Map()} = Pages

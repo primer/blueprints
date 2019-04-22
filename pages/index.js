@@ -1,2 +1,2 @@
-import {redirect} from '../next-components'
+import {redirect} from '../src/next-components'
 export default redirect('/blueprints')
