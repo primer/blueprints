@@ -22,7 +22,7 @@ export default [
     plugins: rollupPlugins(),
     output: {
       format: 'esm',
-      file: 'dist/next-components/index.esm.js',
+      file: 'dist/next-components.esm.js',
       name: 'primer'
     }
   }
