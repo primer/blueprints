@@ -2,12 +2,14 @@ import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 
 const formats = ['esm', 'umd'] // 'cjs' ?
-const plugins = [babel({exclude: 'node_modules/**'}), commonjs()]
+function rollupPlugins() {
+  return [babel({exclude: 'node_modules/**'}), commonjs()]
+}
 
 export default [
   {
     input: 'src/index.js',
-    plugins,
+    plugins: rollupPlugins(),
     external: ['@primer/blueprints'],
     output: formats.map(format => ({
       file: `dist/index.${format}.js`,
@@ -17,10 +19,10 @@ export default [
   },
   {
     input: 'src/next-components/index.js',
-    plugins,
+    plugins: rollupPlugins(),
     output: {
       format: 'umd',
-      file: 'dist/next-components/index.js',
+      file: 'dist/next-components-index.js',
       name: 'primer'
     }
   }
