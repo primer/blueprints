@@ -21,8 +21,8 @@ export default [
     input: 'src/next-components/index.js',
     plugins: rollupPlugins(),
     output: {
-      format: 'esm',
-      file: 'dist/next-components.esm.js',
+      format: 'umd',
+      file: 'dist/next-components.umd.js',
       name: 'primer'
     }
   }
