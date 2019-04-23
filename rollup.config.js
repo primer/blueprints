@@ -22,7 +22,7 @@ export default [
     plugins: rollupPlugins(),
     output: {
       format: 'umd',
-      file: 'dist/next-components-index.js',
+      file: 'dist/next-components/index.umd.js',
       name: 'primer'
     }
   }
