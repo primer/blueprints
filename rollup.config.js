@@ -14,14 +14,5 @@ export default [
       format,
       name: 'primer'
     }))
-  },
-  {
-    input: 'next-components/index.js',
-    plugins,
-    output: formats.map(format => ({
-      file: `dist/next-components-index.${format}.js`,
-      format,
-      name: 'primer'
-    }))
   }
 ]
