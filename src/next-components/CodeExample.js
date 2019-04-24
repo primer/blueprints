@@ -14,6 +14,7 @@ export default function CodeExample(props) {
   if (lang && !dead) {
     const liveProps = {
       code: source,
+      language: lang,
       scope: {Octicon, getIconByName},
       mountStylesheet: false
     }
