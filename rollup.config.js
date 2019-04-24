@@ -16,14 +16,5 @@ export default [
       format,
       name: 'primer'
     }))
-  },
-  {
-    input: 'src/next-components/index.js',
-    plugins: rollupPlugins(),
-    output: {
-      format: 'umd',
-      file: 'dist/next-components.umd.js',
-      name: 'primer'
-    }
   }
 ]
