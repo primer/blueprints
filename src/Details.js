@@ -21,6 +21,7 @@ function DetailsBase({children, overlay, render = getRenderer(children), ...rest
   const [open, setOpen] = useState(Boolean(rest.open))
 
   function toggle(event) {
+    debugger;
     if (event) event.preventDefault()
     if (overlay) {
       openMenu()
@@ -30,6 +31,7 @@ function DetailsBase({children, overlay, render = getRenderer(children), ...rest
   }
 
   function openMenu() {
+    debugger;
     if (!open) {
       setOpen(true)
       document.addEventListener('click', closeMenu)
@@ -37,6 +39,7 @@ function DetailsBase({children, overlay, render = getRenderer(children), ...rest
   }
 
   function closeMenu() {
+    debugger;
     setOpen(false)
     document.removeEventListener('click', closeMenu)
   }
