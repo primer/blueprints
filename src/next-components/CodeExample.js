@@ -2,11 +2,19 @@ import React from 'react'
 import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text} from '@primer/components'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
+import HTML2React from 'html2react'
 import ClipboardCopy from '../ClipboardCopy'
 import Frame from './Frame'
 import prismTheme from 'prism-react-renderer/themes/duotoneLight'
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
+
+const defaultTransform = code => `<React.Fragment>${code}</React.Fragment>`
+
+const languageTransforms = {
+  html: html => HTML2React(html),
+  jsx: defaultTransform
+}
 
 export default function CodeExample(props) {
   const {children, dangerouslySetInnerHTML, dead, source, ...rest} = props
@@ -14,8 +22,8 @@ export default function CodeExample(props) {
   if (lang && !dead) {
     const liveProps = {
       code: source,
-      language: lang,
       scope: {Octicon, getIconByName},
+      transformCode: getTransformForLanguage(lang),
       mountStylesheet: false
     }
     return (
@@ -60,4 +68,8 @@ CodeExample.defaultProps = {
 function getLanguage(className) {
   const match = className && className.match(LANG_PATTERN)
   return match ? match[1] : undefined
+}
+
+function getTransformForLanguage(lang) {
+  return lang in languageTransforms ? languageTransforms[lang] : null
 }
