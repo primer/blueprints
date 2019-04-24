@@ -8,11 +8,6 @@ import prismTheme from 'prism-react-renderer/themes/duotoneLight'
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
-const languageTransforms = {
-  html: html => defaultTransform(converter.convert(html)),
-  jsx: defaultTransform
-}
-
 export default function CodeExample(props) {
   const {children, dangerouslySetInnerHTML, dead, source, ...rest} = props
   const lang = getLanguage(props.className)
@@ -65,8 +60,4 @@ CodeExample.defaultProps = {
 function getLanguage(className) {
   const match = className && className.match(LANG_PATTERN)
   return match ? match[1] : undefined
-}
-
-function getTransformForLanguage(lang) {
-  return lang in languageTransforms ? languageTransforms[lang] : null
 }
