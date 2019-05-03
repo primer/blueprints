@@ -29,7 +29,6 @@ const MarkdownHeading = ({children, className, ...rest}) => {
   )
 }
 
-
 MarkdownHeading.propTypes = {
   children: PropTypes.string
 }
