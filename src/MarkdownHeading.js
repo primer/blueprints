@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import {StyledOcticon, Heading, Box, Text} from '@primer/components'
 import {Link} from '@githubprimer/octicons-react'
 import slugify from 'slugify'
@@ -17,7 +18,7 @@ const StyledHeading = styled(Heading)`
   }
 `
 const MarkdownHeading = ({children, className, ...rest}) => {
-  const id = slugify(children.toString())
+  const id = children ? slugify(children.toString(), {lower: true}) : ''
   return (
     <StyledHeading id={id} className={className} {...rest}>
       <Box as={Text} lineHeight={1} className="anchorWrapper" pr={1} ml={'-20px'} display={'none'}>
@@ -28,4 +29,7 @@ const MarkdownHeading = ({children, className, ...rest}) => {
   )
 }
 
+MarkdownHeading.propTypes = {
+  children: PropTypes.string
+}
 export default MarkdownHeading
