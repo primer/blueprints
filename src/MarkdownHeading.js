@@ -18,7 +18,7 @@ const StyledHeading = styled(Heading)`
   }
 `
 const MarkdownHeading = ({children, className, ...rest}) => {
-  const id = slugify(children.toString(), {lower: true})
+  const id = children ? slugify(children.toString(), {lower: true}) : ''
   return (
     <StyledHeading id={id} className={className} {...rest}>
       <Box as={Text} lineHeight={1} className="anchorWrapper" pr={1} ml={'-20px'} display={'none'}>
