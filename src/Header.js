@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {MarkGithub, ChevronRight} from '@githubprimer/octicons-react'
 import {Text, Link, Flex, Sticky, BorderBox, Box, StyledOcticon} from '@primer/components'
 import Search from './Search'
+import Hide from './Hide'
 
 const BoxShadow = styled(Box)`
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -19,25 +20,25 @@ const Header = ({next, title, subtitle, root, subfolder, documents, children}) =
           <Link href={root} color="white" ml={5}>
             <StyledOcticon color="blue.4" icon={MarkGithub} size="medium" />
           </Link>
-          <Box display={['none', 'inline-block', 'inline-block', 'inline-block']}>
+          <Hide display={['none', 'inline-block', 'inline-block', 'inline-block']}>
             <Link href={root} mr={2} ml={3}>
               <HeaderText>{title}</HeaderText>
             </Link>
             {subfolder && <StyledOcticon icon={ChevronRight} mx={1} color="blue.4" />}
-          </Box>
+          </Hide>
           {subfolder && (
             <Link href={`${root}/${subfolder}`} ml={2} mr={4}>
               <HeaderText>{subtitle}</HeaderText>
             </Link>
           )}
           {subfolder && (
-            <Box display={['none', 'none', 'none', 'flex']}>
+            <Hide display={['none', 'none', 'none', 'flex']}>
               <Search next documents={documents} subfolder={subfolder} />
-            </Box>
+            </Hide>
           )}
         </Flex>
-        <Box display={['none', 'none', 'none', 'flex']}>{children}</Box>
-        <Box display={['flex', 'flex', 'flex', 'none']}>
+        <Hide display={['none', 'none', 'none', 'flex']}>{children}</Hide>
+        <Hide display={['flex', 'flex', 'flex', 'none']}>
           <Link href="#jumpnav">
             <BorderBox
               border={1}
@@ -55,7 +56,7 @@ const Header = ({next, title, subtitle, root, subfolder, documents, children}) =
             </BorderBox>
           </Link>
           {subfolder && <Search next={next} documents={documents} root={root} />}
-        </Box>
+        </Hide>
       </Flex>
     </BoxShadow>
   </Sticky>
