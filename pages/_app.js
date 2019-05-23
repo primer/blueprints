@@ -9,7 +9,6 @@ import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src'
 import * as nextComponents from '../next-components'
-import {config} from '../next-components/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {pageMap = new Map()} = Pages
@@ -107,12 +106,6 @@ export default class MyApp extends App {
                   <MDXProvider components={getComponents(page)}>
                     <Component {...initialProps} />
                   </MDXProvider>
-                  {config.production ? null : (
-                    <details>
-                      <summary>Metadata</summary>
-                      <pre>{JSON.stringify(meta, null, 2)}</pre>
-                    </details>
-                  )}
                 </div>
               </Box>
             </Box>
