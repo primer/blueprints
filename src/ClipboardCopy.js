@@ -1,9 +1,22 @@
 import React from 'react'
 import {findDOMNode} from 'react-dom'
-import {Button} from '@primer/components'
-import Octicon, {Clippy} from '@githubprimer/octicons-react'
+import {Button, Link, StyledOcticon} from '@primer/components'
+import {Check, Clippy} from '@githubprimer/octicons-react'
 
 export default class ClipboardCopy extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {copied: false}
+  }
+  onClick() {
+    this.copy()
+
+    /* set copied and reset it in 1.5s */
+    this.setState({copied: true})
+    window.setTimeout(() => {
+      this.setState({copied: false})
+    }, 1500)
+  }
   copy() {
     const {value = ''} = this.props
     const {clipboard} = window.navigator
@@ -38,9 +51,10 @@ export default class ClipboardCopy extends React.Component {
   render() {
     // eslint-disable-next-line no-unused-vars
     const {value = '', ...rest} = this.props
+
     return (
-      <Button onClick={() => this.copy()} type="button" {...rest}>
-        <Octicon icon={Clippy} />
+      <Button onClick={this.onClick.bind(this)} type="button" {...rest}>
+        <StyledOcticon icon={this.state.copied ? Check : Clippy} color={this.state.copied ? 'green.5' : 'inherit'} />
       </Button>
     )
   }
