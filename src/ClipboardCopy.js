@@ -50,12 +50,27 @@ export default class ClipboardCopy extends React.Component {
 
   render() {
     // eslint-disable-next-line no-unused-vars
-    const {value = '', ...rest} = this.props
+    const {value = '', as, ...rest} = this.props
 
-    return (
-      <Button onClick={this.onClick.bind(this)} type="button" {...rest}>
-        <StyledOcticon icon={this.state.copied ? Check : Clippy} color={this.state.copied ? 'green.5' : 'inherit'} />
-      </Button>
+    const Icon = (
+      <StyledOcticon icon={this.state.copied ? Check : Clippy} color={this.state.copied ? 'green.5' : 'inherit'} />
     )
+
+    if (as === 'link')
+      return (
+        <Link onClick={this.onClick.bind(this)} style={{cursor: 'pointer'}} {...rest}>
+          {Icon}
+        </Link>
+      )
+    else
+      return (
+        <Button onClick={this.onClick.bind(this)} type="button" {...rest}>
+          {Icon}
+        </Button>
+      )
   }
+}
+
+ClipboardCopy.defaultProps = {
+  as: 'button'
 }
