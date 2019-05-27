@@ -18,9 +18,6 @@ const JumpNav = () => {
         <NavItem href="https://primer.style/css">Primer CSS</NavItem>
         <NavItem href="https://primer.style/components">Primer Components</NavItem>
       </NavDropdown>
-      <Link color="blue.2" mr={3} href="https://primer.style/team">
-        Team
-      </Link>
     </>
   )
 }
