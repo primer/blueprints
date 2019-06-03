@@ -33,5 +33,5 @@ export function getStatusColor(status) {
 }
 
 StatusLabel.propTypes = {
-  status: PropTypes.oneOf('stable', 'newRelease', 'experimental', 'inReview', 'deprecated')
+  status: PropTypes.oneOf(['stable', 'newRelease', 'experimental', 'inReview', 'deprecated'])
 }
