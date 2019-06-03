@@ -1,7 +1,6 @@
 import React from 'react'
 import Document, {Head, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
-import {CommonStyles, CommonScripts} from '../next-components/utils'
 
 import favicon from '../static/favicon.png'
 import touchIcon from '../static/apple-touch-icon.png'
