@@ -7,9 +7,9 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
+import withAnalytics from '../src/analytics'
 import * as docsComponents from '../src'
 import * as nextComponents from '../next-components'
-import withAnalytics from '../src/analytics'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {pageMap = new Map()} = Pages
@@ -144,4 +144,4 @@ export class BlueprintsApp extends App {
   }
 }
 
-export default withAnalytics(BluePrintsApp)
+export default withAnalytics(BlueprintsApp)
