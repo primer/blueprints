@@ -1,0 +1,9 @@
+.babelrc
+.eslintrc.json
+.github
+.npmrc
+LICENSE
+README.md
+prettier.config.js
+script
+src
