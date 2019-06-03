@@ -1,9 +1,12 @@
 import React from 'react'
 import Document, {Head, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
-import {getAssetPath, CommonStyles, CommonScripts} from '../next-components/utils'
+import {CommonStyles, CommonScripts} from '../next-components/utils'
 
-export default class MyDocument extends Document {
+import favicon from '../static/favicon.png'
+import touchIcon from '../static/apple-touch-icon.png'
+
+export default class BlueprintsDocument extends Document {
   static getInitialProps({renderPage}) {
     const sheet = new ServerStyleSheet()
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
@@ -19,14 +22,12 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-2" />
-          <script async href={getAssetPath('analytics.js')} />
           <meta charSet="utf8" />
-          <link rel="icon" href={getAssetPath('favicon.png')} />
-          <link rel="apple-touch-icon" href={getAssetPath('apple-touch-icon.png')} />
+          <link rel="icon" href={favicon} />
+          <link rel="apple-touch-icon" href={touchIcon} />
           <link rel="stylesheet" href="https://unpkg.com/primer-markdown@4.0.0/build/build.css" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <meta property="og:title" content="Primer CSS" />
+          <meta property="og:title" content="Primer Blueprints" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://primer.style/blueprints/" />
           <meta property="og:description" content="Shareable Components from Primer Documentation Sites" />
