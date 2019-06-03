@@ -9,6 +9,7 @@ import Pages from '@primer/next-pages'
 import * as primerComponents from '@primer/components'
 import * as docsComponents from '../src'
 import * as nextComponents from '../next-components'
+import withAnalytics from '../src/analytics'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 const {pageMap = new Map()} = Pages
@@ -57,7 +58,7 @@ function getComponents(page = {}) {
 
 const requirePage = require.context('.', true, /\.(js|md)x?$/)
 
-export default class MyApp extends App {
+export class BlueprintsApp extends App {
   static async getInitialProps({Component, ctx}) {
     let initialProps = {}
 
@@ -142,3 +143,5 @@ export default class MyApp extends App {
     )
   }
 }
+
+export default withAnalytics(BluePrintsApp)
