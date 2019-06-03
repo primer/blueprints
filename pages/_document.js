@@ -39,13 +39,11 @@ export default class BlueprintsDocument extends Document {
           <meta property="og:image:height" content="630" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@githubprimer" />
-          <CommonStyles />
           {renderedStyles}
         </Head>
         <body data-files={JSON.stringify(files)}>
           <Main />
           <NextScript />
-          <CommonScripts />
         </body>
       </html>
     )

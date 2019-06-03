@@ -2,19 +2,6 @@ import React from 'react'
 import getConfig from 'next/config'
 import {join} from 'path'
 
-export const CommonStyles = () => {
-  const sheets = [getAssetPath('github/styleguide.css')]
-  return sheets.map(href => <link href={href} rel="stylesheet" key={href} />)
-}
-
-export const CommonScripts = () => <script src={getAssetPath('github/styleguide.js')} />
-
-export const config = getConfig().publicRuntimeConfig || {}
-
-export const assetPrefix = config.assetPrefix || ''
-export const assetPath = `${assetPrefix}/static/`
-export const getAssetPath = path => `${assetPath}${path}`
-
 export function sortCompare(a, b, get) {
   const aa = get(a)
   const bb = get(b)
