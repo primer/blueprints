@@ -13,7 +13,7 @@
     "predist": "rm -rf dist",
     "dist": "NODE_ENV=production rollup -c",
     "prepublishOnly": "npm run dist",
-    "lint": "eslint src pages"
+    "lint": "eslint src next-components pages"
   },
   "repository": "primer/blueprints",
   "keywords": [
