@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Measure from 'react-measure'
 import {BorderBox} from '@primer/components'
-import {assetPrefix} from './utils'
 
 export default class Frame extends React.Component {
   static defaultProps = {
@@ -30,9 +29,7 @@ export default class Frame extends React.Component {
   getHead() {
     const {files} = this.state
     return files
-      ? files
-          .filter(file => file.endsWith('.css'))
-          .map(file => <link rel="stylesheet" href={`${assetPrefix}/_next/${file}`} key={file} />)
+      ? files.filter(file => file.endsWith('.css')).map(file => <link rel="stylesheet" href={file} key={file} />)
       : null
   }
 

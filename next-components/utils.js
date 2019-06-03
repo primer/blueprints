@@ -1,5 +1,4 @@
 import React from 'react'
-import getConfig from 'next/config'
 import {join} from 'path'
 
 export function sortCompare(a, b, get) {
