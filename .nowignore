@@ -1,6 +1,9 @@
 .eslintrc.json
 .github
 .npmrc
+.next/
+# this is generated in the build
+dist/
 LICENSE
 README.md
 prettier.config.js
