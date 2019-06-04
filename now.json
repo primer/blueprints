@@ -3,6 +3,12 @@
   "name": "primer-blueprints",
   "alias": "primer-blueprints.now.sh",
   "builds": [
-    {"src": "next.config.js", "use": "@now/next"}
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "www"
+      }
+    }
   ]
 }
