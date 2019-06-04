@@ -6,10 +6,9 @@
   "module": "dist/index.esm.js",
   "scripts": {
     "start": "next dev",
-    "prebuild": "npm run dist",
-    "now-build": "next build",
-    "now-start": "next start",
-    "now-test": "npm run now-build && npm run now-start",
+    "now-dev": "next dev",
+    "now-build": "npm run dist && next build && next export -o www",
+    "now-test": "next build && next start",
     "predist": "rm -rf dist",
     "dist": "NODE_ENV=production rollup -c",
     "prepublishOnly": "npm run dist",
