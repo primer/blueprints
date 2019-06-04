@@ -15,8 +15,12 @@ export function redirect(uri, status = 303) {
       // the "context" object passed to getInitialProps() will
       // have a "res" (response) object if we're server-side
       if (res) {
-        res.writeHead(status, {Location: uri})
-        res.end()
+        try {
+          res.writeHead(status, {Location: uri})
+          res.end()
+        } catch (error) {
+          console.warn(`Unable to redirect: ${error.message}`)
+        }
       }
     }
 
