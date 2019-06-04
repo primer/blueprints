@@ -20,6 +20,7 @@ export function redirect(uri, status = 303) {
           res.writeHead(status, {Location: uri})
           res.end()
         } catch (error) {
+          // eslint-disable-next-line no-console
           console.warn(`Unable to redirect: ${error.message}`)
         }
       }
@@ -30,11 +31,13 @@ export function redirect(uri, status = 303) {
     }
 
     render() {
-      return <>
-        Redirecting to
-        <a href={uri}>{uri}</a>
-        ...
-      </>
+      return (
+        <>
+          Redirecting to
+          <a href={uri}>{uri}</a>
+          ...
+        </>
+      )
     }
   }
 }
