@@ -1,3 +1,4 @@
+import React from 'react'
 import Router from 'next/router'
 
 /**
@@ -10,7 +11,7 @@ import Router from 'next/router'
  * ```
  */
 export function redirect(uri, status = 303) {
-  return class {
+  return class extends React.Component {
     static getInitialProps({res}) {
       // the "context" object passed to getInitialProps() will
       // have a "res" (response) object if we're server-side
@@ -24,9 +25,16 @@ export function redirect(uri, status = 303) {
       }
     }
 
-    render() {
+    componentDidMount() {
       Router.replace(uri)
-      return null
+    }
+
+    render() {
+      return <>
+        Redirecting to
+        <a href={uri}>{uri}</a>
+        ...
+      </>
     }
   }
 }
