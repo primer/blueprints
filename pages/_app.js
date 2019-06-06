@@ -58,7 +58,7 @@ function getComponents(page = {}) {
 
 const requirePage = require.context('.', true, /\.(js|md)x?$/)
 
-export class BlueprintsApp extends App {
+class BlueprintsApp extends App {
   static async getInitialProps({Component, ctx}) {
     let initialProps = {}
 

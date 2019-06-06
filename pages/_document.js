@@ -5,7 +5,7 @@ import {ServerStyleSheet} from 'styled-components'
 import favicon from '../static/favicon.png'
 import touchIcon from '../static/apple-touch-icon.png'
 
-class BlueprintsDocument extends Document {
+export default class BlueprintsDocument extends Document {
   static getInitialProps({renderPage}) {
     const sheet = new ServerStyleSheet()
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
