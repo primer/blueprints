@@ -1,9 +1,8 @@
-const withNextPages = require('@primer/next-pages/plugin')
-const configure = require('./lib/config')
+const configure = require('./configure')
 
-module.exports = configure(withNextPages({
+module.exports = configure({
   target: 'serverless',
   env: {
     GOOGLE_ANALYTICS_UA: 'UA-126681523-1'
   }
-}))
+})
