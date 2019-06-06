@@ -2,8 +2,8 @@ import React from 'react'
 import Document, {Head, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
 
-import favicon from '../static/favicon.png'
-import touchIcon from '../static/apple-touch-icon.png'
+import favicon from '../assets/favicon.png'
+import touchIcon from '../assets/apple-touch-icon.png'
 
 export default class BlueprintsDocument extends Document {
   static getInitialProps({renderPage}) {
