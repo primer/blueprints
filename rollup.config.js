@@ -12,16 +12,16 @@ export default [
     output: formats.map(format => ({
       file: `dist/index.${format}.js`,
       format,
-      name: 'primer'
+      name: 'blueprints'
     }))
   },
   {
     input: 'next-components/index.js',
     plugins,
-    output: formats.map(format => ({
-      file: `dist/next-components-index.${format}.js`,
-      format,
-      name: 'primer'
-    }))
+    output: {
+      file: `dist/next-components.js`,
+      format: 'esm',
+      name: 'blueprints-next'
+    }
   }
 ]
