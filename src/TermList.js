@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Text} from '@primer/components'
 
 export default function TermList(props) {
   const {children, prefixLastInList, separator, termComponent: Term, ...rest} = props
@@ -30,5 +29,6 @@ TermList.propTypes = {
 TermList.defaultProps = {
   separator: ', ',
   prefixLastInList: ', or ',
+  // the default is wrapper is just returns the child(ren) unchanged
   termComponent: ({children}) => children
 }
