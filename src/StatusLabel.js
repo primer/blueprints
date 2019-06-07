@@ -9,17 +9,19 @@ const StyledLabel = styled(BorderBox)`
   white-space: nowrap;
 `
 
-export const STATUS_COLORS = {
+export const STATUS_VALUES = Object.freeze(['stable', 'newRelease', 'experimental', 'inReview', 'deprecated'])
+
+export const STATUS_COLORS = Object.freeze({
   stable: 'green.6',
   newRelease: 'green.6',
   experimental: 'yellow.7',
   inReview: 'yellow.7',
   deprecated: 'red.6'
-}
+})
 
 export default function StatusLabel({status, children, ...rest}) {
   return (
-    <StyledLabel px={2} py={1} {...rest}>
+    <StyledLabel {...rest}>
       <Octicon icon={PrimitiveDot} color={getStatusColor(status)} mr={2} />
       <Text color="black" fontSize={1}>
         {children}
@@ -28,12 +30,21 @@ export default function StatusLabel({status, children, ...rest}) {
   )
 }
 
+StatusLabel.defaultProps = {
+  px: 2,
+  py: 1
+}
+
+StatusLabel.propTypes = {
+  status: PropTypes.oneOf(STATUS_VALUES)
+}
+
 export function getStatusColor(status) {
   return STATUS_COLORS[status.toLowerCase()] || 'gray.5'
 }
 
-StatusLabel.statuses = Object.freeze(['stable', 'newRelease', 'experimental', 'inReview', 'deprecated'])
-
-StatusLabel.propTypes = {
-  status: PropTypes.oneOf(StatusLabel.statuses)
-}
+Object.assign(StatusLabel, {
+  STATUS_VALUES,
+  STATUS_COLORS,
+  getStatusColor
+})
