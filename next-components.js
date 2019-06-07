@@ -1,1 +1,1 @@
-module.exports = require('./dist/next-components-index.js')
+module.exports = require('./dist/next-components')
