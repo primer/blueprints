@@ -5,18 +5,14 @@ import {withMDXLive} from 'mdx-live'
 import documents from '../searchIndex'
 import styled from 'styled-components'
 import Head from 'next/head'
-import Pages from '@primer/next-pages'
-import * as primerComponents from '@primer/components'
-import withAnalytics from '../src/analytics'
-import * as docsComponents from '../src'
-import * as nextComponents from '../next-components'
+import {pageMap} from '@primer/next-pages'
+import {withAnalytics, Link, NavList} from '../next-components'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
-
-const {pageMap = new Map()} = Pages
+import * as primerComponents from '@primer/components'
+import * as docsComponents from '../src'
 
 const {MarkdownHeading, SideNav, ResponsiveJumpNav, RouteMatch, Header, JumpNav, Router, Outline} = docsComponents
 const {BaseStyles, BorderBox, Box, Text, Flex, theme} = primerComponents
-const {Link, NavList} = nextComponents
 
 export const H1 = props => <MarkdownHeading {...props} />
 export const H2 = props => <MarkdownHeading as="h2" {...props} />
