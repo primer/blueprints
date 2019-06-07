@@ -8,13 +8,10 @@ The `value` prop must be provided with the current value of the code block.
 
 ```.jsx
 <ClipboardCopy value={'hihihi'}/>
-<br/>
-<ClipboardCopy as="link" value={'hihihi'}/>
 ```
 
 ## Component props
 
-| Name  | Type   | Default | Description                                                                                 |
-| :---- | :----- | :-----: | :------------------------------------------------------------------------------------------ |
-| value | String |         | The content that will be added to the user's clipboard when clicked.                        |
-| as    | String | button  | One of "button" or "link". Use `as="link"` when you want to put this button inside an input |
+| Name  | Type   | Default | Description                                                          |
+| :---- | :----- | :-----: | :------------------------------------------------------------------- |
+| value | String |         | The content that will be added to the user's clipboard when clicked. |

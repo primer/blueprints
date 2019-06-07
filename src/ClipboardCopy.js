@@ -1,6 +1,6 @@
 import React from 'react'
 import {findDOMNode} from 'react-dom'
-import {Button, Link, StyledOcticon} from '@primer/components'
+import {Button, StyledOcticon} from '@primer/components'
 import {Check, Clippy} from '@githubprimer/octicons-react'
 
 export default class ClipboardCopy extends React.Component {
@@ -50,27 +50,12 @@ export default class ClipboardCopy extends React.Component {
 
   render() {
     // eslint-disable-next-line no-unused-vars
-    const {value = '', as, ...rest} = this.props
+    const {value = ''} = this.props
 
-    const Icon = (
-      <StyledOcticon icon={this.state.copied ? Check : Clippy} color={this.state.copied ? 'green.5' : 'inherit'} />
+    return (
+      <Button onClick={this.onClick.bind(this)} type="button">
+        <StyledOcticon icon={this.state.copied ? Check : Clippy} color={this.state.copied ? 'green.5' : 'inherit'} />
+      </Button>
     )
-
-    if (as === 'link')
-      return (
-        <Link onClick={this.onClick.bind(this)} style={{cursor: 'pointer'}} {...rest}>
-          {Icon}
-        </Link>
-      )
-    else
-      return (
-        <Button onClick={this.onClick.bind(this)} type="button" {...rest}>
-          {Icon}
-        </Button>
-      )
   }
-}
-
-ClipboardCopy.defaultProps = {
-  as: 'button'
 }
