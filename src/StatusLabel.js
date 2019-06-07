@@ -32,6 +32,8 @@ export function getStatusColor(status) {
   return STATUS_COLORS[status.toLowerCase()] || 'gray.5'
 }
 
+StatusLabel.statuses = Object.freeze(['stable', 'newRelease', 'experimental', 'inReview', 'deprecated'])
+
 StatusLabel.propTypes = {
-  status: PropTypes.oneOf(['stable', 'newRelease', 'experimental', 'inReview', 'deprecated'])
+  status: PropTypes.oneOf(StatusLabel.statuses)
 }
