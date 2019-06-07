@@ -27,6 +27,7 @@
     "lib",
     "meta.js",
     "src",
+    "configure.js",
     "next-components.js"
   ],
   "author": "GitHub, Inc.",
