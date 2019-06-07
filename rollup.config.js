@@ -20,7 +20,7 @@ export default [
     plugins,
     output: {
       file: `dist/next-components.js`,
-      format: 'esm',
+      format: 'umd',
       name: 'blueprints-next'
     }
   }
