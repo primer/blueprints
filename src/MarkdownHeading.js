@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import {StyledOcticon, Heading, Box, Text} from '@primer/components'
-import {Link} from '@githubprimer/octicons-react'
+import {Link} from '@primer/octicons-react'
 import slugify from 'slugify'
 
 const Anchor = ({id}) => (

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {BorderBox, StyledOcticon as Octicon, Text} from '@primer/components'
-import {PrimitiveDot} from '@githubprimer/octicons-react'
+import {PrimitiveDot} from '@primer/octicons-react'
 
 const StyledLabel = styled(BorderBox)`
   display: inline-block;

@@ -1,7 +1,7 @@
 import React from 'react'
 import {findDOMNode} from 'react-dom'
 import {Button} from '@primer/components'
-import Octicon, {Clippy} from '@githubprimer/octicons-react'
+import Octicon, {Clippy} from '@primer/octicons-react'
 
 export default class ClipboardCopy extends React.Component {
   copy() {

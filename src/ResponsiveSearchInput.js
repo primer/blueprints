@@ -1,5 +1,5 @@
 import {StyledOcticon} from '@primer/components'
-import {Search, X} from '@githubprimer/octicons-react'
+import {Search, X} from '@primer/octicons-react'
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import SearchInput from './SearchInput'
