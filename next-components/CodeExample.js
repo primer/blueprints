@@ -37,6 +37,7 @@ export default function CodeExample(props) {
           <BorderBox bg="white" p={3} border={0} borderBottom={1} borderRadius={0}>
             <Frame>
               <LivePreview />
+              {children}
             </Frame>
           </BorderBox>
           <Box as={Relative} bg="gray.1" p={3}>
@@ -57,12 +58,8 @@ export default function CodeExample(props) {
       </LiveProvider>
     )
   } else {
-    const rest = {
-      children,
-      dangerouslySetInnerHTML
-    }
     // eslint-disable-next-line react/no-danger-with-children
-    return <BorderBox data-source={source} as="pre" {...rest} />
+    return <BorderBox data-source={source} as="pre" {...{children, dangerouslySetInnerHTML}} />
   }
 }
 
