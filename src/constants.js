@@ -1,4 +1,4 @@
-import {compose, get as getKey} from 'styled-system'
+import {get as getKey} from 'styled-system'
 import themeGet from '@styled-system/theme-get'
 import {theme} from '@primer/components'
 
