@@ -52,6 +52,7 @@ function getComponents(page = {}) {
     pre: props => props.children,
     ...docsComponents,
     ...primerComponents,
+    ...nextComponents,
     documents
   }
 }
