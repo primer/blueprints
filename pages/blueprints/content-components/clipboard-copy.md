@@ -11,7 +11,6 @@ The `value` prop must be provided with the current value of the code block.
 
 ```
 
-
 ## Component props
 
 | Name | Type | Default | Description |
